@@ -1,0 +1,27 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Local DB / index state (rebuilt via Docker + notebooks)
+data/qdrant_storage/
+data/esdata/
+data/postgres_data/
+data/processed/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local-only (you asked to defer cleanup)
+docs/
+reference/
+to_do/
+
+update_docs.py
