@@ -14,7 +14,7 @@ __pycache__/
 data/qdrant_storage/
 data/esdata/
 data/postgres_data/
-data/processed/
+
 
 # Jupyter
 .ipynb_checkpoints/
