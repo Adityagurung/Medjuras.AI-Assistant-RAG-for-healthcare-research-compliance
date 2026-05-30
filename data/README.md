@@ -1,7 +1,5 @@
 # data
 
-Same layout as [Brahman.ai/data](https://github.com/Adityagurung/Brahman.ai/tree/main/data):
-
 ```
 data/
 ├── raw/           # HF downloads

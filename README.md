@@ -2,8 +2,6 @@
 
 Agentic retrieval-augmented generation for healthcare research using **MedRAG** corpora ([textbooks](https://huggingface.co/datasets/MedRAG/textbooks), [pubmed](https://huggingface.co/datasets/MedRAG/pubmed), [wikipedia](https://huggingface.co/datasets/MedRAG/wikipedia)), **OpenAI** (`gpt-4o-mini`, `text-embedding-3-small`), optional **Ollama** (`llama3.2` in Streamlit), **Elasticsearch + Qdrant** hybrid RRF, and **LangGraph** (corpus + live PubMed).
 
-Project layout follows [Brahman.ai](https://github.com/Adityagurung/Brahman.ai): `app/`, `notebooks/`, `data/`, `results/`, `transformers/`, `config/`, `grafana/`.
-
 ## Quick start
 
 ### 1. Virtual environment
@@ -32,14 +30,16 @@ If Elasticsearch indices stay **red**, recreate the stack after pulling latest `
 
 ### 4. Notebooks (run in order)
 
-| # | Notebook | Purpose |
-|---|----------|---------|
-| 1 | `notebooks/1_ingest_medrag_huggingface.ipynb` | HF download → chunk → ES + Qdrant index |
-| 2 | `notebooks/2_ground_truth_data.ipynb` | 200 corpus-only Q&A pairs |
-| 3 | `notebooks/3_keyword_search_evaluation_minsearch.ipynb` | ES BM25 metrics → `results/` |
-| 4 | `notebooks/4_semantic_search_evaluation_qdrant.ipynb` | Qdrant dense metrics |
-| 5 | `notebooks/5_hybrid_search_evaluation_qdrant.ipynb` | Hybrid RRF metrics |
-| 6 | `notebooks/offline-rag-evaluation.ipynb` | RAG + LLM judge |
+
+| #   | Notebook                                                | Purpose                                 |
+| --- | ------------------------------------------------------- | --------------------------------------- |
+| 1   | `notebooks/1_ingest_medrag_huggingface.ipynb`           | HF download → chunk → ES + Qdrant index |
+| 2   | `notebooks/2_ground_truth_data.ipynb`                   | 200 corpus-only Q&A pairs               |
+| 3   | `notebooks/3_keyword_search_evaluation_minsearch.ipynb` | ES BM25 metrics → `results/`            |
+| 4   | `notebooks/4_semantic_search_evaluation_qdrant.ipynb`   | Qdrant dense metrics                    |
+| 5   | `notebooks/5_hybrid_search_evaluation_qdrant.ipynb`     | Hybrid RRF metrics                      |
+| 6   | `notebooks/offline-rag-evaluation.ipynb`                | RAG + LLM judge                         |
+
 
 Set kernel working directory to `notebooks/` (for `_bootstrap.py`).
 
@@ -80,7 +80,7 @@ HF MedRAG → records.json → chunks.jsonl → ES (BM25 + dense) + Qdrant (dens
 │   ├── raw/medrag/      # textbooks.json, pubmed.json, wikipedia.json
 │   ├── processed/       # records.json, chunks/chunks.jsonl
 │   └── evaluation/      # ground_truth.json
-├── notebooks/           # Six Brahman-style pipelines
+├── notebooks/           # Data Processing pipelines
 ├── results/             # Notebook outputs (metrics, plots, copies)
 ├── transformers/        # Pointer to app/ingestion chunking
 ├── grafana/             # provisioning/, dashboards/, assets/ only (see grafana/README.md)
@@ -91,7 +91,7 @@ HF MedRAG → records.json → chunks.jsonl → ES (BM25 + dense) + Qdrant (dens
 
 ## Grafana & monitoring
 
-- Grafana: http://localhost:3010 (see `.env` admin password)  
+- Grafana: [http://localhost:3010](http://localhost:3010) (see `.env` admin password)  
 - Postgres logs feedback from Streamlit when DB is configured (`app/monitoring/`)
 
 ## License
