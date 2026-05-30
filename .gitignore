@@ -21,6 +21,7 @@ credentials.json
 data/qdrant_storage/
 data/esdata/
 data/postgres_data/
+grafana/data/
 
 # Notebook outputs (keep folder)
 results/*

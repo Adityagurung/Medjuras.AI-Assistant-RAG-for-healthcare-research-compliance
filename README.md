@@ -83,7 +83,7 @@ HF MedRAG → records.json → chunks.jsonl → ES (BM25 + dense) + Qdrant (dens
 ├── notebooks/           # Six Brahman-style pipelines
 ├── results/             # Notebook outputs (metrics, plots, copies)
 ├── transformers/        # Pointer to app/ingestion chunking
-├── grafana/             # Dashboards + provisioning only
+├── grafana/             # provisioning/, dashboards/, assets/ only (see grafana/README.md)
 ├── scripts/             # run_streamlit, run_agent, index_all, entrypoint
 ├── docker-compose.yaml
 └── .env.example
