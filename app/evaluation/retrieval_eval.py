@@ -10,8 +10,7 @@ from evaluation.eval_utils import evaluate
 from qdrant_client import QdrantClient
 from search.es_search import search_elasticsearch
 from search.hybrid_search import hybrid_search
-from search.qdrant_search import get_model, search_qdrant
-from sentence_transformers import SentenceTransformer
+from search.qdrant_search import search_qdrant
 
 # Configuration - no client instantiation at module level
 ES_URL = os.getenv("ES_URL", "http://localhost:9200")

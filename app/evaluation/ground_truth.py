@@ -56,7 +56,7 @@ def generate_ground_truth(
     ):
         items = [
             {
-                "question": f"What does {c.get('title', 'this document')} say about EU healthcare compliance?",
+                "question": f"What does {c.get('title', 'this document')} describe in this medical passage?",
                 "doc_id": c.get("id", ""),
             }
             for c in sample[: min(5, len(sample))]
@@ -69,11 +69,15 @@ def generate_ground_truth(
     model = resolve_model(model)
     items: List[Dict[str, str]] = []
     system = (
-        "EU medico-legal RAG ground-truth generator. "
-        "Reply with JSON only with keys question and doc_id."
+        "Medical RAG ground-truth generator. Questions must be answerable ONLY from the given chunk. "
+        "Reply with JSON only: {\"question\": \"...\", \"doc_id\": \"...\"}."
     )
 
-    for c in tqdm(sample, desc=f"Generating ground truth ({provider})", unit="chunk"):
+    save_every = int(os.getenv("GROUND_TRUTH_SAVE_EVERY", "10"))
+    out = out_path or ground_truth_path()
+    out.parent.mkdir(parents=True, exist_ok=True)
+
+    for i, c in enumerate(tqdm(sample, desc=f"Generating ground truth ({provider})", unit="chunk"), start=1):
         user = (
             "Create one concise exam-style question answerable ONLY from this chunk.\n"
             f"chunk_id: {c.get('id')}\n"
@@ -101,14 +105,17 @@ def generate_ground_truth(
             fallback_q = f"What does {c.get('title', 'this document')} say about EU healthcare compliance?"
         items.append({"question": fallback_q[:500], "doc_id": str(c.get("id", ""))})
 
-    out = out_path or ground_truth_path()
-    out.parent.mkdir(parents=True, exist_ok=True)
+        if i % save_every == 0:
+            out.write_text(json.dumps(items, indent=2, ensure_ascii=False), encoding="utf-8")
+
     out.write_text(json.dumps(items, indent=2, ensure_ascii=False), encoding="utf-8")
     return out
 
 
 if __name__ == "__main__":
-    from ingestion.paths import CHUNKS_JSONL
+    from evaluation.results_utils import copy_to_results
+    from ingestion.paths import CHUNKS_JSONL, GROUND_TRUTH_JSON
 
-    p = generate_ground_truth(CHUNKS_JSONL)
+    p = generate_ground_truth(CHUNKS_JSONL, sample_size=200, out_path=GROUND_TRUTH_JSON)
+    copy_to_results(p, "ground_truth.json")
     print(f"Wrote ground truth to {p}")

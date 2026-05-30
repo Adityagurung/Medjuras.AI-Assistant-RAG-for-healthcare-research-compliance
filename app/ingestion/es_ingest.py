@@ -1,287 +1,169 @@
-# scripts/load_to_elasticsearch.py
-import argparse
-import sys
-from pathlib import Path
+"""Index chunked corpus into Elasticsearch (BM25 fields only; dense vectors in Qdrant)."""
+from __future__ import annotations
 
-APP_DIR = Path(__file__).resolve().parents[1]
-if str(APP_DIR) not in sys.path:
-    sys.path.insert(0, str(APP_DIR))
-import hashlib
+import argparse
 import json
 import os
 import time
-from typing import Dict, Iterable, List
+from pathlib import Path
+from typing import Dict, List, Tuple
 
-import numpy as np
-from elasticsearch import Elasticsearch, exceptions, helpers
-from sentence_transformers import SentenceTransformer
+from dotenv import load_dotenv
+from elasticsearch import Elasticsearch
+from elasticsearch.helpers import bulk, BulkIndexError
 from tqdm.auto import tqdm
 
-from ingestion.paths import CHUNKS_JSONL, MEDRAG_RAW_DIR
+from ingestion.paths import CHUNKS_JSONL, ensure_data_dirs
+
+load_dotenv()
+
+BULK_CHUNK = int(os.getenv("ES_BULK_CHUNK", "200"))
 
 
-def str2bool(v):
+def str2bool(v) -> bool:
+    """Parse common truthy CLI string values."""
     if isinstance(v, bool):
         return v
     return str(v).lower() in ("1", "true", "t", "yes", "y")
 
 
-def wait_for_es(es, timeout=120):
+def wait_for_es(es: Elasticsearch, timeout: int = 120) -> None:
+    """Block until Elasticsearch responds to ping."""
+    print("Waiting for Elasticsearch...", flush=True)
     start = time.time()
     while time.time() - start < timeout:
         try:
             if es.ping():
+                print("Elasticsearch is up.", flush=True)
+                try:
+                    es.cluster.put_settings(
+                        body={
+                            "persistent": {
+                                "cluster.routing.allocation.disk.threshold_enabled": False
+                            }
+                        }
+                    )
+                except Exception:
+                    pass
                 return
         except Exception:
             pass
-        time.sleep(1)
-    raise RuntimeError("Elasticsearch did not become ready in time")
+        time.sleep(2)
+    raise RuntimeError(
+        "Elasticsearch did not become ready. Start it with: docker compose up -d elasticsearch"
+    )
 
 
-def load_json_array(path: str) -> List[Dict]:
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
+def load_jsonl(path: Path) -> List[Dict]:
+    """Read all JSONL rows from disk."""
+    rows: List[Dict] = []
+    with path.open("r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line:
+                rows.append(json.loads(line))
+    return rows
 
 
-def make_doc_id(d, source_type, prefix=True, hash_if_missing=False):
-    """
-    Stable, collision-proof _id so reruns don't duplicate.
-    """
-    base = d.get("id") or d.get("title", "")
-    if not base:
-        base = hashlib.sha1(json.dumps(d, sort_keys=True).encode("utf-8")).hexdigest()[
-            :20
-        ]
-    if prefix:
-        base = f"{source_type}:{base}"
-    if hash_if_missing:
-        # optional: hash everything to avoid weird characters in IDs
-        base = hashlib.sha1(base.encode("utf-8")).hexdigest()[:20]
-    return base
-
-
-def embed_title_plus_text(title: str, text: str) -> List[float]:
-    # Creates document embeddings with the same model you’ll use for queries
-    combo = (title or "").strip()
-    if text:
-        combo = (combo + "\n\n" + text).strip() if combo else text
-    vec = model.encode([combo], normalize_embeddings=True)[0]
-    return vec.tolist() if isinstance(vec, np.ndarray) else vec
-
-
-def iter_docs() -> Iterable[Dict]:
-    for path, source_type in SOURCES:
-        rows = load_json_array(path) if str(path).endswith(".json") else [json.loads(ln) for ln in open(path, "r", encoding="utf-8") if ln.strip()]
-        for d in rows:
-            _id_raw = d.get("id", "")
-            doc_id = make_doc_id(
-                d, source_type, prefix=PREFIX_IDS, hash_if_missing=False
-            )
-            doc = {
-                "id": _id_raw if not PREFIX_IDS else f"{source_type}:{_id_raw}",
-                "source_type": source_type,  # derived from file
-                "title": d.get("title", ""),
-                "text": d.get("text", ""),
-                # "wiki_id": d.get("wiki_id", ""),
-                "source": d.get("source", ""),
-                "url": d.get("url", None),  # only if present
-            }
-            doc["text_vector"] = embed_title_plus_text(doc["title"], doc["text"])
-            yield doc_id, doc
-
-
-def ensure_index(wipe: bool):
-    exists = es.indices.exists(index=INDEX)
-    if wipe:
-        print(f"🧹 Wiping index '{INDEX}' (if exists) and recreating…")
-        # delete alias with the same name (if any)
-        try:
-            if es.indices.exists_alias(name=INDEX):
-                print(f"🔗 Found alias '{INDEX}', deleting…")
-                es.indices.delete_alias(index="*", name=INDEX)
-        except Exception as e:
-            print(f"(alias delete skipped: {e})")
-
-        # delete index
-        es.indices.delete(index=INDEX, ignore_unavailable=True)
-
-        # wait until it's actually gone
-        for _ in range(30):
-            if not es.indices.exists(index=INDEX) and not es.indices.exists_alias(
-                name=INDEX
-            ):
-                break
-            time.sleep(1)
-
-        # now (re)create
-        es.indices.create(
-            index=INDEX, body=index_settings, timeout="60s", master_timeout="60s"
-        )
-        return
-
-    if not exists:
-        print(f"📦 Creating index '{INDEX}' (did not exist)…")
-        es.indices.create(
-            index=INDEX, body=index_settings, timeout="60s", master_timeout="60s"
-        )
-    else:
-        print(f"📦 Using existing index '{INDEX}' (will upsert/overwrite by _id).")
-
-
-def es_knn(query, k=10, num_candidates=1000):
-    qvec = model.encode([query], normalize_embeddings=True)[0].tolist()
-    body = {
-        "knn": {
-            "field": "text_vector",
-            "query_vector": qvec,
-            "k": k,
-            "num_candidates": num_candidates,
-        },
-        "_source": ["id", "source_type", "title", "text", "wiki_id", "source", "url"],
-    }
-    return es.search(index=INDEX, body=body)["hits"]["hits"]
-
-
-def es_bm25(query, k=10, source_type=None):
-    body = {
-        "query": {
-            "bool": {
-                "must": {
-                    "multi_match": {"query": query, "fields": ["title^2", "text"]}
-                },
-                "filter": (
-                    [{"term": {"source_type": source_type}}] if source_type else []
-                ),
-            }
-        },
-        "_source": ["id", "source_type", "title", "text", "wiki_id", "source", "url"],
-        "size": k,
-    }
-    return es.search(index=INDEX, body=body)["hits"]["hits"]
-
-
-def old_main():
-    total, skipped = 0, 0
-    for doc in tqdm(iter_docs(), desc="Indexing to ES"):
-        es.index(index=INDEX, id=doc["id"], document=doc, request_timeout=100)
-        total += 1
-
-        print(
-            f"→ Indexed {doc.get('id','<no-id>')} [{doc.get('source_type','?')}] {doc.get('title','')[:80]}"
-        )
-
-    es.indices.refresh(index=INDEX)
-    print(f"✅ Ingested/updated {total} docs into ES index '{INDEX}'")
-    print("Count:", es.count(index=INDEX))
-
-
-def main(verbose_skips=False):
-    total, skipped = 0, 0
-    VERBOSE_SKIPS = verbose_skips  # If you want to see the skipps
-    for doc_id, doc in tqdm(
-        iter_docs(),
-        desc="Indexing to ES",
-        unit="doc",
-        dynamic_ncols=True,
-        total=sum((len(load_json_array(p)) if str(p).endswith(".json") else sum(1 for ln in open(p, "r", encoding="utf-8") if ln.strip())) for p, _ in SOURCES),
-    ):
-        # skip embedding if already present
-        if es.exists(index=INDEX, id=doc_id):
-            skipped += 1
-            if VERBOSE_SKIPS:
-                print(
-                    f"↻ Skipped (exists) {doc_id} [{doc.get('source_type','?')}] {doc.get('title','')[:80]}"
-                )
-            continue
-
-        # now embed and create
-        doc["text_vector"] = embed_title_plus_text(doc["title"], doc["text"])
-        try:
-            es.create(index=INDEX, id=doc_id, document=doc, request_timeout=100)
-            print(
-                f"→ Created {doc_id} [{doc.get('source_type','?')}] {doc.get('title','')[:80]}"
-            )
-            total += 1
-        except exceptions.ConflictError:
-            skipped += 1
-            if VERBOSE_SKIPS:
-                print(
-                    f"↻ Skipped (exists) {doc_id} [{doc.get('source_type','?')}] {doc.get('title','')[:80]}"
-                )
-
-        if (total + skipped) % 500 == 0:
-            print(f"… processed {total + skipped} (indexed={total}, skipped={skipped})")
-
-    es.indices.refresh(index=INDEX)
-    print(f"✅ Done. Indexed={total}, Skipped(existing)={skipped}")
-    print("Count:", es.count(index=INDEX))
-
-
-if __name__ == "__main__":
-    ES_URL = os.getenv("ES_URL", "http://localhost:9200")
-    INDEX = os.getenv("ES_INDEX", "medical_docs")
-    MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"  # 384 dims; cosine-friendly
-    model = SentenceTransformer(MODEL_NAME)
-
-    index_settings = {
+def index_settings() -> dict:
+    """Elasticsearch mapping for BM25 keyword search (no dense vectors)."""
+    return {
         "settings": {"number_of_shards": 1, "number_of_replicas": 0},
         "mappings": {
             "properties": {
                 "id": {"type": "keyword"},
-                "source_type": {"type": "keyword"},  # wikipedia | textbook | pubmed
+                "doc_id": {"type": "keyword"},
+                "source_type": {"type": "keyword"},
                 "title": {"type": "text", "analyzer": "english"},
                 "text": {"type": "text", "analyzer": "english"},
-                # "wiki_id": {"type": "keyword"},
+                "jurisdiction": {"type": "keyword"},
                 "source": {"type": "keyword"},
-                "url": {"type": "keyword"},
-                "text_vector": {
-                    "type": "dense_vector",
-                    "dims": 384,
-                    "index": True,
-                    "similarity": "cosine",
-                },
+                "wiki_id": {"type": "keyword"},
             }
         },
     }
 
-    # Seed JSON files under data/raw/medrag/ (see ingestion.paths.MEDRAG_RAW_DIR)
-    # unify heterogeneous data under a common shape;can filter by source_type later.
-    if CHUNKS_JSONL.exists():
-        SOURCES = [(str(CHUNKS_JSONL), "chunk")]
-    else:
-        SOURCES = [
-            (str(MEDRAG_RAW_DIR / "medical_textbook_seed.json"), "textbook"),
-            (str(MEDRAG_RAW_DIR / "medical_pubmed_seed.json"), "pubmed"),
-        ]
 
-    PREFIX_IDS = False  # this id didnt work "textbook:Anatomy_Gray_2"
+def prepare_docs(rows: List[Dict]) -> List[Tuple[str, Dict]]:
+    """Build ES document payloads from chunk rows."""
+    docs: List[Tuple[str, Dict]] = []
+    for d in rows:
+        doc_id = str(d.get("id") or d.get("chunk_id") or "")
+        if not doc_id:
+            continue
+        doc = {
+            "id": doc_id,
+            "doc_id": d.get("doc_id", ""),
+            "source_type": d.get("source_type", "chunk"),
+            "title": d.get("title", ""),
+            "text": d.get("text", ""),
+            "jurisdiction": d.get("jurisdiction", "GLOBAL"),
+            "source": d.get("source", "medrag"),
+            "wiki_id": d.get("wiki_id"),
+        }
+        docs.append((doc_id, doc))
+    return docs
 
-    es = Elasticsearch(
-        ES_URL,
-        request_timeout=100,
-        retry_on_timeout=True,
-        max_retries=5,
-        http_compress=True,
-    )
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--wipe",
-        type=str2bool,
-        default=False,
-        help="If true, delete & recreate the index before ingest; else upsert/extend.",
-    )
-    args = parser.parse_args()
+def ensure_index(es: Elasticsearch, index: str, wipe: bool) -> None:
+    """Create or recreate the target index."""
+    if wipe:
+        es.indices.delete(index=index, ignore_unavailable=True)
+        for _ in range(30):
+            if not es.indices.exists(index=index):
+                break
+            time.sleep(1)
+    if not es.indices.exists(index=index):
+        es.indices.create(index=index, body=index_settings())
 
-    print(f"🔧 Connecting to ES at {ES_URL} | index='{INDEX}' | wipe={args.wipe}")
+
+def wait_for_index(es: Elasticsearch, index: str, timeout: int = 90) -> None:
+    """Wait until the index primary shard is active."""
+    print(f"Waiting for index '{index}'...", flush=True)
+    time.sleep(3)
+    health = es.cluster.health(index=index, wait_for_status="yellow", timeout=f"{timeout}s")
+    print(f"Index '{index}' status: {health.get('status')}", flush=True)
+
+
+def ingest_chunks(
+    chunks_path: Path | None = None,
+    *,
+    es_url: str | None = None,
+    index: str | None = None,
+    wipe: bool = False,
+) -> int:
+    """Bulk-index chunks for BM25 search; return count indexed."""
+    ensure_data_dirs()
+    chunks_path = chunks_path or CHUNKS_JSONL
+    if not chunks_path.exists():
+        raise FileNotFoundError(f"Missing chunks file: {chunks_path}. Run notebook 1 first.")
+
+    es_url = es_url or os.getenv("ES_LOCAL_URL", os.getenv("ES_URL", "http://localhost:9200"))
+    index = index or os.getenv("ES_INDEX", "medical_docs")
+    print(f"ES URL: {es_url} | index: {index}", flush=True)
+    es = Elasticsearch(es_url, request_timeout=120, retry_on_timeout=True, max_retries=5)
     wait_for_es(es)
-    ensure_index(wipe=args.wipe)
-    try:
-        main(verbose_skips=False)
-    except KeyboardInterrupt:
-        es.indices.refresh(index=INDEX)
-        print("\n⏹️ Cancelled by user.")
-        print("Count:", es.count(index=INDEX))
+    ensure_index(es, index, wipe=wipe)
+    wait_for_index(es, index)
 
-    print([d["_source"]["title"] for d in es_bm25("gross anatomy")])
-    print([d["_source"]["title"] for d in es_knn("gross anatomy")])
+    prepared = prepare_docs(load_jsonl(chunks_path))
+    indexed = 0
+    for i in tqdm(range(0, len(prepared), BULK_CHUNK), desc="ES bulk ingest"):
+        batch = prepared[i : i + BULK_CHUNK]
+        actions = [{"_index": index, "_id": doc_id, "_source": doc} for doc_id, doc in batch]
+        try:
+            ok, _ = bulk(es, actions, raise_on_error=False)
+            indexed += ok
+        except BulkIndexError as exc:
+            indexed += len(actions) - len(exc.errors)
+    es.indices.refresh(index=index)
+    return indexed
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Index chunks.jsonl into Elasticsearch")
+    parser.add_argument("--wipe", type=str2bool, default=False)
+    parser.add_argument("--chunks", type=str, default=str(CHUNKS_JSONL))
+    args = parser.parse_args()
+    n = ingest_chunks(Path(args.chunks), wipe=args.wipe)
+    print(f"Indexed {n} documents into {os.getenv('ES_INDEX', 'medical_docs')}")

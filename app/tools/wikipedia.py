@@ -6,7 +6,7 @@ from typing import Any, Dict, List
 # from sentence_transformers.util import cos_sim
 import wikipedia as w
 
-from search.qdrant_search import get_model
+from llm.embeddings import embed_query, embed_texts
 
 w.set_lang("en")
 
@@ -54,8 +54,10 @@ ENTREZ_EMAIL = os.getenv("ENTREZ_EMAIL")
 
 
 class WikipediaTool:
+    """Live Wikipedia search with OpenAI embedding similarity."""
+
     def __init__(self):
-        self.model = get_model()
+        pass
 
     def search_wiki_titles(self, query, limit):
         """Search to get candidate article titles."""
@@ -90,10 +92,8 @@ class WikipediaTool:
         if not titles:
             return []
 
-        model = get_model()  # same the qdrant sentencetransformer model
-        q_vec = model.encode([query], normalize_embeddings=True, convert_to_numpy=True)[
-            0
-        ]
+        q_vec = np.array(embed_query(query), dtype=np.float32)
+        q_vec = q_vec / (np.linalg.norm(q_vec) + 1e-9)
 
         candidates = []
         for title in titles:
@@ -104,10 +104,10 @@ class WikipediaTool:
             # score each chunk by cosine similarity
             #! note: L2-normalized, then the dot product = cosine similarity.
             #! If they are not normalized, the dot product will overweight long vectors (magnitude), whereas cosine similarity divides by the norms to measure the angle only.
-            ch_vecs = model.encode(
-                chunks, normalize_embeddings=True, convert_to_numpy=True
-            )
-            sims = np.dot(ch_vecs, q_vec)  # faster
+            ch_vecs = np.array(embed_texts(chunks), dtype=np.float32)
+            norms = np.linalg.norm(ch_vecs, axis=1, keepdims=True) + 1e-9
+            ch_vecs = ch_vecs / norms
+            sims = np.dot(ch_vecs, q_vec)
 
             for chunk, sim in zip(chunks, sims):
                 candidates.append(

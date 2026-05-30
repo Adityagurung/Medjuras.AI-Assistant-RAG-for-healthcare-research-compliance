@@ -1,0 +1,802 @@
+[
+  {
+    "question": "What is the range of albedo for different types of clouds?",
+    "doc_id": "wiki20220301en000_163:0"
+  },
+  {
+    "question": "What percentage of Alabama's total land area is forested?",
+    "doc_id": "wiki20220301en000_227:0"
+  },
+  {
+    "question": "What forms the anterior wall of the inguinal canal?",
+    "doc_id": "Anatomy_Gray_655:0"
+  },
+  {
+    "question": "What effects did WA-335-BS have compared to cyproheptadine in terms of central sedative effects and activity against reserpine-induced effects?",
+    "doc_id": "pubmed23n0001_495:0"
+  },
+  {
+    "question": "What is the axillary tail of the breast and its clinical significance?",
+    "doc_id": "Anatomy_Gray_506:0"
+  },
+  {
+    "question": "What was the effect of ligation of the left internal spermatic veins on sperm quality in men with varicocele?",
+    "doc_id": "pubmed23n0001_950"
+  },
+  {
+    "question": "What is postulated to be the nature of the kidney's response to folic acid administration in the context of renal injury?",
+    "doc_id": "pubmed23n0001_655:1"
+  },
+  {
+    "question": "What type of treatment is suggested for stage-1 stress incontinence in women?",
+    "doc_id": "pubmed23n0001_822:0"
+  },
+  {
+    "question": "What effect does postischaemic hyperaemia have on anterograde vertebral flow in patients with occlusive disease of the subclavian artery?",
+    "doc_id": "pubmed23n0001_953:1"
+  },
+  {
+    "question": "What is one reason why diagnosing autism can be particularly challenging among visually impaired individuals?",
+    "doc_id": "wiki20220301en000_100"
+  },
+  {
+    "question": "What enzyme activity was established in human erythrocyte membranes and hemolysates when ADP was used as a substrate?",
+    "doc_id": "pubmed23n0001_518:1"
+  },
+  {
+    "question": "How many pairs of spinal nerves are there and how are they categorized?",
+    "doc_id": "Anatomy_Gray_202:0"
+  },
+  {
+    "question": "What was the effect of increasing ejaculation frequency from one to two ejaculates per day twice weekly on the output of spermatozoa in stallions?",
+    "doc_id": "pubmed23n0001_762"
+  },
+  {
+    "question": "What is the benefit of using direct ultrasound guidance for chest tube insertion?",
+    "doc_id": "Anatomy_Gray_517:0"
+  },
+  {
+    "question": "What are the three types of cartilage mentioned in the text, and what is a key characteristic of each?",
+    "doc_id": "Anatomy_Gray_37:0"
+  },
+  {
+    "question": "What does the similarity of the two known trypsin inhibitor structures suggest about their specificity?",
+    "doc_id": "pubmed23n0001_936:1"
+  },
+  {
+    "question": "What effect do uncouplers or valinomycin plus nigericin and K+ ions have on the rate of electron transfer in reconstituted vesicles?",
+    "doc_id": "pubmed23n0001_209:1"
+  },
+  {
+    "question": "What responsibility did the research team ignore in the conduct of the combined drug and psychotherapy research?",
+    "doc_id": "pubmed23n0001_544:1"
+  },
+  {
+    "question": "What are the optimal pH and the required ion for the activity of rabbit erythrocyte casein kinases?",
+    "doc_id": "pubmed23n0001_51:0"
+  },
+  {
+    "question": "What predominates the conjugation of UDPglucuronic acid in rat liver microsomes even in the presence of added glucuronyl acceptor substrate?",
+    "doc_id": "pubmed23n0001_622:2"
+  },
+  {
+    "question": "What is the term for the layer of deep fascia that separates the parietal peritoneum from the transversalis fascia in the abdominal cavity?",
+    "doc_id": "Anatomy_Gray_50:0"
+  },
+  {
+    "question": "What did a 2018 review conclude about the gluten- and casein-free diet as a treatment for children with autism?",
+    "doc_id": "wiki20220301en000_123:0"
+  },
+  {
+    "question": "What is the reason for the narrower elution peaks observed in the cation-exchange resin prepared from m-divinylbenzene compared to that prepared from styrene and technical divinylbenzene?",
+    "doc_id": "pubmed23n0001_691"
+  },
+  {
+    "question": "What pathogen was identified in the sputum of the patient diagnosed with infective exacerbation of bronchiectasis?",
+    "doc_id": "Anatomy_Gray_590:0"
+  },
+  {
+    "question": "What is the effect of WA 335 on analgesic potency in mice?",
+    "doc_id": "pubmed23n0001_494"
+  },
+  {
+    "question": "What effect did trypsin treatment at 0 degrees have on NADPH to NAD transhydrogenase activity in submitochondrial particles from beef heart?",
+    "doc_id": "pubmed23n0001_217"
+  },
+  {
+    "question": "What forms the inferior margin of the heart?",
+    "doc_id": "Anatomy_Gray_388:0"
+  },
+  {
+    "question": "What was the main focus of the study on Pneumococcal merodiploids?",
+    "doc_id": "pubmed23n0001_636"
+  },
+  {
+    "question": "What was the effect of carrageenin injections on paw swelling in adjuvant arthritis of the rat during the treatment period?",
+    "doc_id": "pubmed23n0001_992:0"
+  },
+  {
+    "question": "What is the name of the fascia that is better developed and lies deep to the transversus abdominis muscle?",
+    "doc_id": "Anatomy_Gray_635:0"
+  },
+  {
+    "question": "Which imidazoline compounds were found to be 3 to 5 times more potent than clonidine in stimulating peripheral alpha-adrenoceptors?",
+    "doc_id": "pubmed23n0001_322:0"
+  },
+  {
+    "question": "What is the specialized fascial layer that forms in the scrotum in men after the superficial fatty layer loses its fat and fuses with the deeper layer of superficial fascia?",
+    "doc_id": "Anatomy_Gray_628:0"
+  },
+  {
+    "question": "What was the effect of pretreating rats with narcotic antagonists on 3H-etorphine binding in synaptic membranes?",
+    "doc_id": "pubmed23n0001_359:0"
+  },
+  {
+    "question": "What type of cartilage covers the articulating surfaces of skeletal elements in synovial joints?",
+    "doc_id": "Anatomy_Gray_41:0"
+  },
+  {
+    "question": "What projects posteriorly and generally inferiorly from the roof of the vertebral arch?",
+    "doc_id": "Anatomy_Gray_138:0"
+  },
+  {
+    "question": "What ligands can elute pyruvate kinase from phosphocellulose?",
+    "doc_id": "pubmed23n0001_989"
+  },
+  {
+    "question": "What effect did EDTA have on the binding of triiodothyronine in bullfrog tadpole tail fin and tail muscle cytosol?",
+    "doc_id": "pubmed23n0001_204"
+  },
+  {
+    "question": "What parameters of guanine uptake remained unchanged in protoplasts of Schizosaccharomyces pombe compared to whole cells?",
+    "doc_id": "pubmed23n0001_263"
+  },
+  {
+    "question": "What is the shape of each lung and what are its main anatomical features?",
+    "doc_id": "Anatomy_Gray_359:0"
+  },
+  {
+    "question": "What is the most anterior component of the superior mediastinum?",
+    "doc_id": "Anatomy_Gray_432:0"
+  },
+  {
+    "question": "What event led to Achilles' death according to the text?",
+    "doc_id": "wiki20220301en000_336:0"
+  },
+  {
+    "question": "What was found to suppress allogeneic resistance in dogs during bone marrow grafts?",
+    "doc_id": "pubmed23n0001_392:0"
+  },
+  {
+    "question": "What is the effect of low doses of histamine on human eosinophils?",
+    "doc_id": "pubmed23n0001_254:1"
+  },
+  {
+    "question": "What is the largest sesamoid bone in the body?",
+    "doc_id": "Anatomy_Gray_106:0"
+  },
+  {
+    "question": "What are the two independent ductular mechanisms identified in the study regarding bicarbonate and potassium in the rat parotid gland?",
+    "doc_id": "pubmed23n0001_859:1"
+  },
+  {
+    "question": "What is the storage system used for tissue-typized skin in burns at the skinbank established at the Department of Plastic Surgery and Burns?",
+    "doc_id": "pubmed23n0001_116:0"
+  },
+  {
+    "question": "What is the most effective inhibitor of arginine decarboxylase activity from Lathyrus sativus seedlings?",
+    "doc_id": "pubmed23n0001_598:1"
+  },
+  {
+    "question": "What changes in serum and liver gamma-glutamyl transpeptidase activity were observed in rabbits after hexachlorobenzene administration?",
+    "doc_id": "pubmed23n0001_123:0"
+  },
+  {
+    "question": "What is the largest single campus in Alabama and what was its enrollment for fall 2016?",
+    "doc_id": "wiki20220301en000_291:0"
+  },
+  {
+    "question": "What is the commonest example of a condition associated with abnormal muscle leading to scoliosis?",
+    "doc_id": "Anatomy_Gray_234:0"
+  },
+  {
+    "question": "What was the effect of daily administration of chloropromazine on paw swelling in the first phase of adjuvant arthritis?",
+    "doc_id": "pubmed23n0001_992:1"
+  },
+  {
+    "question": "What method was used to visualize the thick polysaccharide capsule of Bacteroides fragilis subspecies fragilis?",
+    "doc_id": "pubmed23n0001_714"
+  },
+  {
+    "question": "What are the three major compartments of the thoracic cavity?",
+    "doc_id": "Anatomy_Gray_279:0"
+  },
+  {
+    "question": "What principle did the U.S. Supreme Court implement in Reynolds v. Sims (1964) regarding congressional districts?",
+    "doc_id": "wiki20220301en000_269"
+  },
+  {
+    "question": "Which adrenergic antagonist completely abolished the intraocular pressure fall induced by THC?",
+    "doc_id": "pubmed23n0001_653:1"
+  },
+  {
+    "question": "What is the minimum superficial intraepithelial potential difference measured in the toad skin, and at what depth does it occur?",
+    "doc_id": "pubmed23n0001_292"
+  },
+  {
+    "question": "What is the effect of making surgical skin incisions perpendicular to Langer's lines?",
+    "doc_id": "Anatomy_Gray_119:0"
+  },
+  {
+    "question": "What is the relationship between the spinal dura mater and the vertebral canal?",
+    "doc_id": "Anatomy_Gray_193:0"
+  },
+  {
+    "question": "What happens to Str. faecalis var. liquefaciens cells when the temperature in the central part of cutlets reaches 7-80 degrees?",
+    "doc_id": "pubmed23n0001_980"
+  },
+  {
+    "question": "What was the effect of ethanol drinking on the half-life of hepatic triglycerides in KK-Ay mice?",
+    "doc_id": "pubmed23n0001_272:0"
+  },
+  {
+    "question": "What is depicted in Fig. 3.17 of the Anatomy_Gray text?",
+    "doc_id": "Anatomy_Gray_478:0"
+  },
+  {
+    "question": "Where is the aortic valve best heard?",
+    "doc_id": "Anatomy_Gray_472:0"
+  },
+  {
+    "question": "What is the enzymatic defect localized to in the unsaturated fatty acid-requiring mutant of CHO cells?",
+    "doc_id": "pubmed23n0001_896"
+  },
+  {
+    "question": "What type of chelators were found to be the most effective in inducing lysis of sphingomyelinase-treated erythrocytes?",
+    "doc_id": "pubmed23n0001_163:1"
+  },
+  {
+    "question": "Where are the intercostal nerves located in relation to the rib borders?",
+    "doc_id": "Anatomy_Gray_518:0"
+  },
+  {
+    "question": "What is the optimum temperature range for the RNA-dependent RNA polymerase activity associated with Uukuniemi virus?",
+    "doc_id": "pubmed23n0001_297:0"
+  },
+  {
+    "question": "What pharmacological agents were studied for their effect on the pressor reaction of the pulmonary vessels under hypoxic conditions?",
+    "doc_id": "pubmed23n0001_301:0"
+  },
+  {
+    "question": "What effect do premicellar concentrations of ionic surfactants have on membrane structure and drug absorption?",
+    "doc_id": "pubmed23n0001_738"
+  },
+  {
+    "question": "What is the thickest layer in large veins?",
+    "doc_id": "Anatomy_Gray_57:0"
+  },
+  {
+    "question": "What was the effect of increased H+ concentration in the extracellular fluid of the fetal ventral medulla on respiration?",
+    "doc_id": "pubmed23n0001_84:0"
+  },
+  {
+    "question": "What was the mean frequency of the action potential recorded in the longitudinal muscle of the canine antrum at 37 degrees Celsius?",
+    "doc_id": "pubmed23n0001_755"
+  },
+  {
+    "question": "What are some of the motivations that may drive anarchists according to the text?",
+    "doc_id": "wiki20220301en000_46:0"
+  },
+  {
+    "question": "What is the drug of choice in the treatment of ulcerative colitis mentioned in the study?",
+    "doc_id": "pubmed23n0001_370:0"
+  },
+  {
+    "question": "What are the molecular weights of orcinol hydroxylase and resorcinol hydroxylase from Pseudomonas putida ORC under native and denaturing conditions?",
+    "doc_id": "pubmed23n0001_625"
+  },
+  {
+    "question": "What are the estimated molecular weights of the protein bands C and D in the protein-carbohydrate-lipid complex isolated from Chlamydia psittaci?",
+    "doc_id": "pubmed23n0001_664:1"
+  },
+  {
+    "question": "What are the major currents of social anarchism mentioned in the text?",
+    "doc_id": "wiki20220301en000_25:0"
+  },
+  {
+    "question": "What enzyme system is suggested to catalyze the oxidation of methane and carbon monoxide in Pseudomonas methanica?",
+    "doc_id": "pubmed23n0001_267:0"
+  },
+  {
+    "question": "What is the range of the apparent pKa of kcat/Kapp for acetylcholinesterase with neutral substrates?",
+    "doc_id": "pubmed23n0001_342:0"
+  },
+  {
+    "question": "At which vertebral level does the inferior vena cava pass through the central tendon of the diaphragm?",
+    "doc_id": "Anatomy_Gray_344:0"
+  },
+  {
+    "question": "Where is the deep inguinal ring located in relation to the anterior superior iliac spine and the pubic symphysis?",
+    "doc_id": "Anatomy_Gray_653:0"
+  },
+  {
+    "question": "What operations were studied in relation to duodenogastric reflux and gastritis?",
+    "doc_id": "pubmed23n0001_77:0"
+  },
+  {
+    "question": "What are the two general categories of fascia mentioned in the text?",
+    "doc_id": "Anatomy_Gray_48:0"
+  },
+  {
+    "question": "What are the three arbitrary clinical columns that divide vertebral column stability?",
+    "doc_id": "Anatomy_Gray_244:0"
+  },
+  {
+    "question": "What is the location of the thymus in relation to the manubrium of the sternum?",
+    "doc_id": "Anatomy_Gray_433:0"
+  },
+  {
+    "question": "What are the three regions located superiorly in the nine-region organization of the abdomen?",
+    "doc_id": "Anatomy_Gray_626:0"
+  },
+  {
+    "question": "What was the effect of alimentary and conditioned-alimentary stimulation on the content of ribosomal RNA in the brain?",
+    "doc_id": "pubmed23n0001_975"
+  },
+  {
+    "question": "What does Fig. 1.22 demonstrate in the knee joint?",
+    "doc_id": "Anatomy_Gray_97:0"
+  },
+  {
+    "question": "What is the reason given for the island of Leuce being named so according to Dionysius Periegetes?",
+    "doc_id": "wiki20220301en000_350:0"
+  },
+  {
+    "question": "What was the effect of inhibitors of bacterial RNA and protein synthesis on logarithmic phase cultures of Euglena gracilis?",
+    "doc_id": "pubmed23n0001_461"
+  },
+  {
+    "question": "What is the half-life of neutral beta-galactosidase and beta-glucosidase when inactivated at 52 degrees C?",
+    "doc_id": "pubmed23n0001_515:1"
+  },
+  {
+    "question": "What are the primary actions of the pectoralis major muscle?",
+    "doc_id": "Anatomy_Gray_311:0"
+  },
+  {
+    "question": "How does sodium acetate concentration affect the catalytic activity of yeast glutathione reductase at pH 5.5?",
+    "doc_id": "pubmed23n0001_49:1"
+  },
+  {
+    "question": "What effect does the elevation of glucose concentration from 0 or 5 mM to 20 mM have on FAD-fluorescence in perifused pancreatic islets?",
+    "doc_id": "pubmed23n0001_633"
+  },
+  {
+    "question": "What anatomical structure does the wire from a cardiac pacemaker pierce just beneath the clavicle?",
+    "doc_id": "Anatomy_Gray_572:0"
+  },
+  {
+    "question": "What is the anatomical view depicted in the chunk related to the left coronary artery?",
+    "doc_id": "Anatomy_Gray_491:0"
+  },
+  {
+    "question": "What do the observations in the study contribute to understanding regarding immunodeficiencies after fatal irradiation and bone marrow transplantation?",
+    "doc_id": "pubmed23n0001_347:2"
+  },
+  {
+    "question": "Which spinal cord levels are primarily responsible for the sympathetic innervation of cranial, cervical, and thoracic viscera?",
+    "doc_id": "Anatomy_Gray_84:0"
+  },
+  {
+    "question": "What factors were found to influence the course and prognosis of the posttraumatic period in acute cranio-cerebral trauma?",
+    "doc_id": "pubmed23n0001_403"
+  },
+  {
+    "question": "What was the GGTP activity in adult rats after portacaval shunt compared to unoperated adult controls?",
+    "doc_id": "pubmed23n0001_855"
+  },
+  {
+    "question": "What induced absorbance and ESR changes in small photosystem II particles?",
+    "doc_id": "pubmed23n0001_37:1"
+  },
+  {
+    "question": "What was the pH range investigated for the inhibitory effect of dioctyl sodium sulfosuccinate on trypsin activity?",
+    "doc_id": "pubmed23n0001_278"
+  },
+  {
+    "question": "How does the nutritional and metabolic state of an animal affect the activity of pyruvate dehydrogenase in mitochondria?",
+    "doc_id": "pubmed23n0001_823:0"
+  },
+  {
+    "question": "What is the sensitivity of the gas chromatographic method for detecting 3-(5-tetrazolyl) thioxanthone 10,10-dioxide?",
+    "doc_id": "pubmed23n0001_239:0"
+  },
+  {
+    "question": "What structures pass through the mediastinum to supply the diaphragm?",
+    "doc_id": "Anatomy_Gray_283:0"
+  },
+  {
+    "question": "What structures form the roof of the vertebral arch?",
+    "doc_id": "Anatomy_Gray_149:0"
+  },
+  {
+    "question": "What are the three connective tissue coverings that surround and protect the brain and spinal cord?",
+    "doc_id": "Anatomy_Gray_66:0"
+  },
+  {
+    "question": "What method is used for the preparation of streptococcal nuclease B?",
+    "doc_id": "pubmed23n0001_701"
+  },
+  {
+    "question": "What technique was used to study the intrinsic innervation of the lungs in Rattus rattus rufescens?",
+    "doc_id": "pubmed23n0001_998:0"
+  },
+  {
+    "question": "What is the proposed mechanism by which penicillin induces lysis in bacteria according to the findings in the study?",
+    "doc_id": "pubmed23n0001_348:1"
+  },
+  {
+    "question": "What is the primary benefit of using chromatography on controlled pore glass with chaotropic buffers for protein purification?",
+    "doc_id": "pubmed23n0001_957:0"
+  },
+  {
+    "question": "What is the clinical significance of the left recurrent laryngeal nerve in relation to the aortopulmonary window?",
+    "doc_id": "Anatomy_Gray_551:0"
+  },
+  {
+    "question": "What structure separates the mediastinum into superior and inferior parts?",
+    "doc_id": "Anatomy_Gray_290:0"
+  },
+  {
+    "question": "What percentage of total urinary radioactivity excreted was represented by metabolites in monkeys?",
+    "doc_id": "pubmed23n0001_573"
+  },
+  {
+    "question": "What is the 24-hr LD50 of colchicine in newborn rats compared to adults?",
+    "doc_id": "pubmed23n0001_583:0"
+  },
+  {
+    "question": "What was the total employment in the catfish industry in Alabama by 2020?",
+    "doc_id": "wiki20220301en000_255:0"
+  },
+  {
+    "question": "What symptoms did the 50-year-old man exhibit that indicated possible neurological involvement related to his back pain?",
+    "doc_id": "Anatomy_Gray_262:0"
+  },
+  {
+    "question": "What is the purpose of surgical plication of the diaphragm?",
+    "doc_id": "Anatomy_Gray_520:0"
+  },
+  {
+    "question": "What are the possible functions of the ileocecal fold?",
+    "doc_id": "Anatomy_Gray_684:0"
+  },
+  {
+    "question": "What was the estimated prevalence of autism among adults aged 18 years and over in the UK according to the NHS in 2012?",
+    "doc_id": "wiki20220301en000_128:0"
+  },
+  {
+    "question": "What structures are associated with the esophagus as it enters the abdominal cavity?",
+    "doc_id": "Anatomy_Gray_675:0"
+  },
+  {
+    "question": "What factor was found to be nearly proportional to the 137Cs-contamination in the meat of grazing cattle?",
+    "doc_id": "pubmed23n0001_119:0"
+  },
+  {
+    "question": "What are the two main historical traditions of anarchist thought?",
+    "doc_id": "wiki20220301en000_21:0"
+  },
+  {
+    "question": "How does arterial plasma noradrenaline concentration during hypoxic exercise at an oxygen uptake of 1500 ml/min compare to that at rest?",
+    "doc_id": "pubmed23n0001_112"
+  },
+  {
+    "question": "What are the main goals when treating autistic children?",
+    "doc_id": "wiki20220301en000_110"
+  },
+  {
+    "question": "What is a common abnormality of the lumbar vertebrae involving a fusion with the sacrum?",
+    "doc_id": "Anatomy_Gray_237:0"
+  },
+  {
+    "question": "What are the characteristics of the cervical vertebrae?",
+    "doc_id": "Anatomy_Gray_146:0"
+  },
+  {
+    "question": "What effect does dopamine have on the basilar artery according to the experimental evaluation?",
+    "doc_id": "pubmed23n0001_269"
+  },
+  {
+    "question": "What is the anatomical structure that connects the sigmoid colon to the abdominal wall?",
+    "doc_id": "Anatomy_Gray_674:0"
+  },
+  {
+    "question": "What structure is formed by the deeper membranous layer of superficial fascia in men as it passes over the penis?",
+    "doc_id": "Anatomy_Gray_630:0"
+  },
+  {
+    "question": "What anatomical structures do the horizontal and oblique fissures of the lungs follow the contour of?",
+    "doc_id": "Anatomy_Gray_474:0"
+  },
+  {
+    "question": "What did the azoprobe reveal about the conformational states of carboxypeptidase A in solution?",
+    "doc_id": "pubmed23n0001_351:1"
+  },
+  {
+    "question": "What is the approximate inferior extension of the pleural cavity in the midclavicular line?",
+    "doc_id": "Anatomy_Gray_355:0"
+  },
+  {
+    "question": "What spinal cord levels do the sympathetic components of the prevertebral plexus originate from?",
+    "doc_id": "Anatomy_Gray_624:0"
+  },
+  {
+    "question": "What growth substrates do the isolates W6A and W3A1 utilize?",
+    "doc_id": "pubmed23n0001_475"
+  },
+  {
+    "question": "What type of transition does concanavalin A exhibit with variations in pH and temperature?",
+    "doc_id": "pubmed23n0001_605:0"
+  },
+  {
+    "question": "What is the factor by which the dissociation rate increases when CO replaces O2 as the ligand in hemoglobin from Lumbricus terrestris?",
+    "doc_id": "pubmed23n0001_31:1"
+  },
+  {
+    "question": "What is the primary event in the activation process of lymphocytes by phytohaemagglutinin (PHA)?",
+    "doc_id": "pubmed23n0001_929"
+  },
+  {
+    "question": "What type of mechanism was established for the synthesis of glutamine by Escherichia coli glutamine synthetase?",
+    "doc_id": "pubmed23n0001_904"
+  },
+  {
+    "question": "What did the ancient Greeks use their version of the letter to represent after adopting the alphabet?",
+    "doc_id": "wiki20220301en000_176:0"
+  },
+  {
+    "question": "What structural form does the apoprotein of bovine superoxide dismutase assume at pH 3?",
+    "doc_id": "pubmed23n0001_57:1"
+  },
+  {
+    "question": "What was the effect of guanethidine on the activity of tyrosine hydroxylase in the superior cervical ganglia of treated rats seven months after treatment cessation?",
+    "doc_id": "pubmed23n0001_752:0"
+  },
+  {
+    "question": "What is one category of treatment mentioned in relation to autism?",
+    "doc_id": "wiki20220301en000_120:0"
+  },
+  {
+    "question": "What age range is typically associated with intense growth spurts in the skeleton?",
+    "doc_id": "Anatomy_Gray_113:0"
+  },
+  {
+    "question": "What is the molecular weight of the phosphodiesterase purified from Crotalus venom?",
+    "doc_id": "pubmed23n0001_153:0"
+  },
+  {
+    "question": "Which drugs mentioned in the study influence adenosine metabolism by elevating its content?",
+    "doc_id": "pubmed23n0001_794"
+  },
+  {
+    "question": "What structures do the right and left vagus nerves give branches to as they pass through the superior mediastinum?",
+    "doc_id": "Anatomy_Gray_444:0"
+  },
+  {
+    "question": "What is the number of hydrogens that remain unexchanged in ferricytochrome after 24 hours according to mass spectrometry?",
+    "doc_id": "pubmed23n0001_624:0"
+  },
+  {
+    "question": "What structures are supplied by the right coronary artery?",
+    "doc_id": "Anatomy_Gray_413:0"
+  },
+  {
+    "question": "What is one of the largest Shakespeare festivals in the world located in Alabama?",
+    "doc_id": "wiki20220301en000_262:0"
+  },
+  {
+    "question": "How does the right pulmonary artery compare in length to the left pulmonary artery?",
+    "doc_id": "Anatomy_Gray_372:0"
+  },
+  {
+    "question": "What is the KD for L-alanine at the optimal pH of 7.8?",
+    "doc_id": "pubmed23n0001_225:1"
+  },
+  {
+    "question": "What is the earliest certain ancestor of the English indefinite article 'A'?",
+    "doc_id": "wiki20220301en000_175:0"
+  },
+  {
+    "question": "What is the protein content percentage in the axoplasm extracted from the giant axon of Myxicola infundibulum?",
+    "doc_id": "pubmed23n0001_606"
+  },
+  {
+    "question": "Who first used the term autism in its modern sense in English?",
+    "doc_id": "wiki20220301en000_137:0"
+  },
+  {
+    "question": "What is required for the conversion of lauryl CoA to occur under anaerobic conditions in avocado mesocarp and spinach leaf tissue?",
+    "doc_id": "pubmed23n0001_826:0"
+  },
+  {
+    "question": "What type of movement of the ribs is described as 'bucket handle movement'?",
+    "doc_id": "Anatomy_Gray_481:0"
+  },
+  {
+    "question": "What significant event occurred in the Supreme Court of Alabama in 1994 involving Ernest C. Hornsby?",
+    "doc_id": "wiki20220301en000_283:0"
+  },
+  {
+    "question": "What is the function of the ligamentum nuchae?",
+    "doc_id": "Anatomy_Gray_164:0"
+  },
+  {
+    "question": "What percentage of Alabamians reported having at least some confidence in churches in the state according to a 2007 poll?",
+    "doc_id": "wiki20220301en000_247:0"
+  },
+  {
+    "question": "What is the most commonly used PET radionuclide and what is its significance in imaging?",
+    "doc_id": "Anatomy_Gray_25:0"
+  },
+  {
+    "question": "What is the only major structure that passes through the inguinal canal in women?",
+    "doc_id": "Anatomy_Gray_614:0"
+  },
+  {
+    "question": "What role does chloride play in the structure of ferricytochrome c at pH 0.0 and 25 degrees?",
+    "doc_id": "pubmed23n0001_16:1"
+  },
+  {
+    "question": "What is the association constant for the dimer-tetramer equilibrium of methaemoglobin A in the absence of added organic phosphate effectors?",
+    "doc_id": "pubmed23n0001_55:1"
+  },
+  {
+    "question": "What type of joint is the elbow classified as?",
+    "doc_id": "Anatomy_Gray_96:0"
+  },
+  {
+    "question": "What does the study suggest about the toxicity of colchicine in newborn rats?",
+    "doc_id": "pubmed23n0001_583:1"
+  },
+  {
+    "question": "What is the primary role of the ectodermal slow-conduction system (SSI) in Tealia felina according to the electrophysiological analysis?",
+    "doc_id": "pubmed23n0001_253:0"
+  },
+  {
+    "question": "What type of imaging is used to show the pelvic viscera in a woman?",
+    "doc_id": "Anatomy_Gray_94:0"
+  },
+  {
+    "question": "What was observed after the washing and incubation with saccharose in the study of B. pertussis?",
+    "doc_id": "pubmed23n0001_419:1"
+  },
+  {
+    "question": "Which religious denomination has the highest number of adherents in Alabama?",
+    "doc_id": "wiki20220301en000_245:0"
+  },
+  {
+    "question": "What significant natural disaster struck Alabama in 2004, and what was its category upon landfall?",
+    "doc_id": "wiki20220301en000_225:0"
+  },
+  {
+    "question": "What does the exchange experiment with MoO42- indicate about its uptake by Clostridium pasteurianum?",
+    "doc_id": "pubmed23n0001_186:1"
+  },
+  {
+    "question": "What is the optimum temperature for the uptake of molybdate by Clostridium pasteurianum?",
+    "doc_id": "pubmed23n0001_186:0"
+  },
+  {
+    "question": "What factor was suggested to explain the paucity of Downey cells in patients with atypical clinical forms of EBV infection?",
+    "doc_id": "pubmed23n0001_539:1"
+  },
+  {
+    "question": "What is the optimum pH for the hemicellulase activity of the fungi Trichothecium roseum and Aspergillus niger?",
+    "doc_id": "pubmed23n0001_872:0"
+  },
+  {
+    "question": "What type of group was tested for its role in the action of beta-lactamase I?",
+    "doc_id": "pubmed23n0001_480:1"
+  },
+  {
+    "question": "What method was used for the partial purification of the activator of the (Ca2+ plus Mg2+)-ATPase from human erythrocytes?",
+    "doc_id": "pubmed23n0001_518"
+  },
+  {
+    "question": "What criteria were used to classify cases as normal during the study on maternogenic fetal acidosis?",
+    "doc_id": "pubmed23n0001_274:2"
+  },
+  {
+    "question": "What is the role of the nerve net in octocorals such as Alcyonium digitatum, Pennatula phosphorea, and Virgularia mirabilis?",
+    "doc_id": "pubmed23n0001_720"
+  },
+  {
+    "question": "What percentage of normal serum alkaline phosphatase activity is constituted by liver alkaline phosphatase?",
+    "doc_id": "pubmed23n0001_555"
+  },
+  {
+    "question": "What effect does stimulation of the parasympathetic system have on heart rate?",
+    "doc_id": "Anatomy_Gray_425:0"
+  },
+  {
+    "question": "How does dopamine beta-hydroxylase activity in the locus coeruleus of young spontaneously hypertensive rats compare to that in control Wistar-Kyoto rats?",
+    "doc_id": "pubmed23n0001_956:0"
+  },
+  {
+    "question": "What is the primary function of the SSI in sea anemones according to the analysis?",
+    "doc_id": "pubmed23n0001_253"
+  },
+  {
+    "question": "What type of enzyme is confirmed to be present in Naja nigricollis venom and what is its effect when injected into mice?",
+    "doc_id": "pubmed23n0001_97:0"
+  },
+  {
+    "question": "How do biological systems compare to geochemical criteria in terms of metal cation recognition?",
+    "doc_id": "pubmed23n0001_931"
+  },
+  {
+    "question": "What was observed regarding the pHi in IPR-injected animals compared to controls?",
+    "doc_id": "pubmed23n0001_943:1"
+  },
+  {
+    "question": "What is the role of the enzyme in relation to the substrate during the transition state of a reaction?",
+    "doc_id": "pubmed23n0001_936:0"
+  },
+  {
+    "question": "What is Friedrich Engels' criticism of anarchism according to the text?",
+    "doc_id": "wiki20220301en000_66:0"
+  },
+  {
+    "question": "What were the adverse effects of minoxidil reported in the study?",
+    "doc_id": "pubmed23n0001_173:0"
+  },
+  {
+    "question": "What type of relationship was established between time cycles and the composition of the stationary atmosphere in the model of the ecosystem?",
+    "doc_id": "pubmed23n0001_806:0"
+  },
+  {
+    "question": "What factors are suggested to condition the rapid regulatory chains of local cerebral blood flow according to the study?",
+    "doc_id": "pubmed23n0001_626"
+  },
+  {
+    "question": "What structures are enclosed in the free edge of the hepatoduodenal ligament?",
+    "doc_id": "Anatomy_Gray_671:0"
+  },
+  {
+    "question": "What are the four essential features of azoTyr-248 carboxypeptidase for mechanistic studies?",
+    "doc_id": "pubmed23n0001_345:1"
+  },
+  {
+    "question": "What is the Latin letter that represents an open back unrounded vowel in the International Phonetic Alphabet?",
+    "doc_id": "wiki20220301en000_187:0"
+  },
+  {
+    "question": "What difficulty do autistic children have related to imaginative play?",
+    "doc_id": "wiki20220301en000_79:0"
+  },
+  {
+    "question": "What is the optimum pH of monoamine oxidase in dog serum?",
+    "doc_id": "pubmed23n0001_141:0"
+  },
+  {
+    "question": "What is the term used for the fascia that blends with the fascia covering the muscles of the pelvic cavity after attaching to the crest of the ilium?",
+    "doc_id": "Anatomy_Gray_636:0"
+  },
+  {
+    "question": "What methods were used to partially characterize the non-occluded virions of the nuclear polyhedrosis virus?",
+    "doc_id": "pubmed23n0001_170"
+  },
+  {
+    "question": "What is the specific activity of the purified bovine liver dihydrofolate reductase?",
+    "doc_id": "pubmed23n0001_20:0"
+  },
+  {
+    "question": "What anatomical structure connects the umbilicus of the anterior abdominal wall with the left branch of the portal vein as it enters the liver?",
+    "doc_id": "Anatomy_Gray_621:0"
+  },
+  {
+    "question": "What are the characteristics of a typical cervical vertebra?",
+    "doc_id": "Anatomy_Gray_150:0"
+  }
+]

@@ -40,7 +40,7 @@ def chunk_records(
     chunk_size: int = 1200,
     chunk_overlap: int = 200,
     source_type: str = "medrag",
-    jurisdiction: str = "EU",
+    jurisdiction: str = "GLOBAL",
 ) -> List[Dict[str, Any]]:
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=chunk_size,

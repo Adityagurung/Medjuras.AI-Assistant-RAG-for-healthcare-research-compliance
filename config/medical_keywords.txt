@@ -1,0 +1,100 @@
+# One keyword/phrase per line (case-insensitive substring match on title + contents)
+diabetes
+hypertension
+cancer
+oncology
+cardiology
+heart disease
+myocardial
+stroke
+pneumonia
+asthma
+copd
+arthritis
+alzheimer
+dementia
+epilepsy
+migraine
+depression
+anxiety
+schizophrenia
+bipolar
+hiv
+aids
+hepatitis
+cirrhosis
+kidney disease
+renal failure
+dialysis
+pregnancy
+obstetrics
+gynecology
+pediatrics
+vaccine
+immunization
+antibiotic
+antimicrobial
+insulin
+chemotherapy
+radiation therapy
+surgery
+anesthesia
+pathology
+radiology
+mri
+ct scan
+symptom
+diagnosis
+treatment
+therapy
+clinical trial
+pubmed
+medical
+medicine
+hospital
+patient
+disease
+disorder
+syndrome
+infection
+virus
+bacteria
+tumor
+malignant
+benign
+fracture
+wound
+pain
+fever
+inflammation
+blood pressure
+cholesterol
+obesity
+nutrition
+anatomy
+physiology
+pharmacology
+toxicology
+genetics
+genome
+protein
+enzyme
+hormone
+thyroid
+pancreas
+liver
+lung
+brain
+spinal
+orthopedic
+dermatology
+ophthalmology
+ent
+urology
+nephrology
+gastroenterology
+endocrinology
+rheumatology
+sepsis
+icu
+emergency medicine

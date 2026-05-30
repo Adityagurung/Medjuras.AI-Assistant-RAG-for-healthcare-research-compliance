@@ -12,14 +12,14 @@ Entrez.email = ENTREZ_EMAIL
 
 
 import numpy as np
+from llm.embeddings import embed_query, embed_texts
 from tools.tool_utils import chunk_text
 
-from search.qdrant_search import get_model
-
-
 class PubMedTool:
+    """Live PubMed search via Biopython Entrez."""
+
     def __init__(self):
-        self.model = get_model()
+        pass
 
     def search_pmids(self, query, retmax=10):
         """
@@ -156,10 +156,8 @@ class PubMedTool:
         """
         pmids = self.search_pmids(query, retmax=10)
 
-        # Encode query once (L2-normalized so dot = cosine)
-        q_vec = self.model.encode(
-            [query], normalize_embeddings=True, convert_to_numpy=True
-        )[0]
+        q_vec = np.array(embed_query(query), dtype=np.float32)
+        q_vec = q_vec / (np.linalg.norm(q_vec) + 1e-9)
 
         candidates = []
         for pmid in pmids:
@@ -176,9 +174,9 @@ class PubMedTool:
 
             chunks = chunk_text(abstract)
 
-            ch_vecs = self.model.encode(
-                chunks, normalize_embeddings=True, convert_to_numpy=True
-            )
+            ch_vecs = np.array(embed_texts(chunks), dtype=np.float32)
+            norms = np.linalg.norm(ch_vecs, axis=1, keepdims=True) + 1e-9
+            ch_vecs = ch_vecs / norms
             sims = np.dot(ch_vecs, q_vec)
 
             for ch, sim in zip(chunks, sims):

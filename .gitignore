@@ -5,15 +5,26 @@ __pycache__/
 .pytest_cache/
 .DS_Store
 
-# Secrets
+# Secrets & local env
 .env
 .env.*
 !.env.example
+*.pem
+secrets/
+credentials.json
+**/merged_ca_bundle.pem
+
+# IDE (local settings)
+.vscode/
 
 # Local DB / index state (rebuilt via Docker + notebooks)
 data/qdrant_storage/
 data/esdata/
 data/postgres_data/
+
+# Notebook outputs (keep folder)
+results/*
+!results/.gitkeep
 
 
 # Jupyter

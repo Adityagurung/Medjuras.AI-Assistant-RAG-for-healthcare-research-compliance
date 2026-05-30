@@ -1,0 +1,35 @@
+project:
+  name: MedJuras.AI
+
+data:
+  row_limits:
+    textbooks: 700
+    pubmed: 1000
+    wikipedia: 300
+
+chunking:
+  chunk_size: 1200
+  chunk_overlap: 200
+  jurisdiction_default: GLOBAL
+
+embeddings:
+  provider: openai
+  model: text-embedding-3-small
+  dimensions: 1536
+
+llm:
+  default_provider: openai
+  openai_model: gpt-4o-mini
+  ollama_model: llama3.2
+  ollama_base_url: http://localhost:11434
+
+search:
+  es_index: medical_docs
+  qdrant_collection: medjuris
+  rrf_k: 60
+  rrf_weights:
+    dense: 2.0
+    sparse: 1.0
+
+evaluation:
+  ground_truth_size: 200

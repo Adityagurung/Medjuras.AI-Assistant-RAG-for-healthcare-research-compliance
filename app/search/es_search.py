@@ -103,6 +103,12 @@ def search_elasticsearch(query, top_k=5, source_type=None, local=False):
     return results
 
 
+def es_ids(query: str, limit: int = 50, local: bool = False) -> list[str]:
+    """Return document ids from BM25 search for RRF fusion."""
+    hits = search_elasticsearch(query, top_k=limit, local=local)
+    return [h.id for h in hits if h.id]
+
+
 if __name__ == "__main__":
     # docker compose up -d elasticsearch qdrant
 

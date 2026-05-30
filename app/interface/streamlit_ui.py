@@ -50,6 +50,12 @@ class MedicalRAG_UI:
 
             # Settings
             with st.expander("⚙️ Settings"):
+                llm_provider = st.selectbox(
+                    "LLM Provider:",
+                    ["openai", "ollama"],
+                    index=0,
+                    format_func=lambda x: "OpenAI (gpt-4o-mini)" if x == "openai" else "Ollama (llama3.2)",
+                )
                 response_detail = st.selectbox(
                     "Response Detail:",
                     ["Simple", "Detailed", "Technical"],
@@ -65,6 +71,7 @@ class MedicalRAG_UI:
             "user_type": user_type,
             "response_detail": response_detail,
             "show_sources": show_sources,
+            "llm_provider": llm_provider,
         }
 
     def render_chat_interface(self, settings):
