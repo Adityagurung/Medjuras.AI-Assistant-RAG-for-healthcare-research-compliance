@@ -13,6 +13,7 @@ from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, PointStruct, VectorParams
 from tqdm.auto import tqdm
 
+from ingestion.file_io import load_jsonl
 from ingestion.paths import CHUNKS_JSONL, ensure_data_dirs
 from llm.embeddings import EMBEDDING_DIMS, build_embed_text, embed_texts
 
@@ -26,17 +27,6 @@ def str2bool(v) -> bool:
     if isinstance(v, bool):
         return v
     return str(v).lower() in ("1", "true", "t", "yes", "y")
-
-
-def load_jsonl(path: Path) -> List[Dict]:
-    """Read all JSONL rows from disk."""
-    rows: List[Dict] = []
-    with path.open("r", encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if line:
-                rows.append(json.loads(line))
-    return rows
 
 
 def recreate_collection(client: QdrantClient, collection: str) -> None:
@@ -92,7 +82,7 @@ def ingest_chunks(
     if wipe or not client.collection_exists(collection):
         recreate_collection(client, collection)
 
-    prepared = prepare_rows(load_jsonl(chunks_path))
+    prepared = prepare_rows(load_jsonl(chunks_path, desc="Loading chunks.jsonl"))
     total = 0
     for i in tqdm(range(0, len(prepared), batch_size), desc="Qdrant ingest batches"):
         batch = prepared[i : i + batch_size]

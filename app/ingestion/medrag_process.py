@@ -7,6 +7,7 @@ from typing import Any, Dict, List, Optional
 
 from tqdm.auto import tqdm
 
+from ingestion.file_io import load_json_list
 from ingestion.paths import MEDRAG_PROCESSED_DIR, MEDRAG_RAW_DIR, MEDRAG_RECORDS_JSON, RAW_FILES, ensure_data_dirs
 
 
@@ -14,18 +15,21 @@ def load_raw_json(path: Path) -> List[Dict[str, Any]]:
     """Load a JSON array written by hf_download."""
     if not path.exists():
         return []
-    data = json.loads(path.read_text(encoding="utf-8"))
-    return data if isinstance(data, list) else []
+    return load_json_list(path, desc=f"Loading {path.name}")
 
 
 def merge_raw_sources(raw_dir: Optional[Path] = None) -> List[Dict[str, Any]]:
     """Load and concatenate all three MedRAG raw files."""
     raw_dir = raw_dir or MEDRAG_RAW_DIR
     records: List[Dict[str, Any]] = []
-    for source, path in RAW_FILES.items():
+    for source, path in tqdm(
+        RAW_FILES.items(),
+        desc="Loading MedRAG raw files",
+        unit="file",
+    ):
         file_path = raw_dir / path.name if (raw_dir / path.name).exists() else path
         rows = load_raw_json(file_path)
-        for row in tqdm(rows, desc=f"Loading {source}", unit="doc", leave=False):
+        for row in rows:
             row.setdefault("source_type", source)
             row.setdefault("jurisdiction", "GLOBAL")
             records.append(row)

@@ -13,6 +13,7 @@ from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk, BulkIndexError
 from tqdm.auto import tqdm
 
+from ingestion.file_io import load_jsonl
 from ingestion.paths import CHUNKS_JSONL, ensure_data_dirs
 
 load_dotenv()
@@ -52,17 +53,6 @@ def wait_for_es(es: Elasticsearch, timeout: int = 120) -> None:
     raise RuntimeError(
         "Elasticsearch did not become ready. Start it with: docker compose up -d elasticsearch"
     )
-
-
-def load_jsonl(path: Path) -> List[Dict]:
-    """Read all JSONL rows from disk."""
-    rows: List[Dict] = []
-    with path.open("r", encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if line:
-                rows.append(json.loads(line))
-    return rows
 
 
 def index_settings() -> dict:
@@ -146,7 +136,7 @@ def ingest_chunks(
     ensure_index(es, index, wipe=wipe)
     wait_for_index(es, index)
 
-    prepared = prepare_docs(load_jsonl(chunks_path))
+    prepared = prepare_docs(load_jsonl(chunks_path, desc="Loading chunks.jsonl"))
     indexed = 0
     for i in tqdm(range(0, len(prepared), BULK_CHUNK), desc="ES bulk ingest"):
         batch = prepared[i : i + BULK_CHUNK]

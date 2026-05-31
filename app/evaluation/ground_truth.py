@@ -12,6 +12,7 @@ from pydantic import BaseModel, Field
 from tqdm.auto import tqdm
 
 from evaluation.config_paths import ground_truth_path
+from ingestion.file_io import load_jsonl
 from ingestion.paths import ensure_data_dirs
 from llm.provider import chat_completion, extract_json_object, get_provider, resolve_model
 
@@ -28,11 +29,7 @@ class GroundTruthBatch(BaseModel):
 
 
 def load_chunks_jsonl(path: Path) -> List[Dict[str, Any]]:
-    rows: List[Dict[str, Any]] = []
-    lines = [ln for ln in path.read_text(encoding="utf-8").splitlines() if ln.strip()]
-    for line in tqdm(lines, desc="Loading chunks", unit="line"):
-        rows.append(json.loads(line))
-    return rows
+    return load_jsonl(path, desc="Loading chunks")
 
 
 def generate_ground_truth(

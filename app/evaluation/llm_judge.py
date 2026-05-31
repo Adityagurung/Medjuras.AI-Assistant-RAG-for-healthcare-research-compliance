@@ -57,17 +57,17 @@ def evaluate_rag_batch(
     Returns:
         Summary dict with per-question scores and mean overall.
     """
-    from evaluation.config_paths import ground_truth_path
+    from evaluation.config_paths import load_ground_truth
     from llm.openai_client import get_openai_client, DEFAULT_MODEL
     from search.hybrid_search import hybrid_search
+    from tqdm.auto import tqdm
 
-    gt_path = ground_truth_path()
-    rows = json.loads(gt_path.read_text(encoding="utf-8"))[:max_samples]
+    rows = load_ground_truth()[:max_samples]
     client = get_openai_client()
     model = os.getenv("OPENAI_DEFAULT_MODEL", DEFAULT_MODEL)
     results = []
 
-    for row in rows:
+    for row in tqdm(rows, desc="RAG + LLM judge", unit="query"):
         question = row["question"]
         hits = hybrid_search(question, top_k=5, local=local)
         context = "\n\n".join(f"{h.title}\n{h.text[:500]}" for h in hits)

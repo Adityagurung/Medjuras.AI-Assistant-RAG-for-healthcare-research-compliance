@@ -120,7 +120,11 @@ def download_source(
 def download_all_medrag() -> Dict[str, Path]:
     """Download textbooks, pubmed, and wikipedia subsets."""
     paths = {}
-    for source in ("textbooks", "pubmed", "wikipedia"):
+    for source in tqdm(
+        ("textbooks", "pubmed", "wikipedia"),
+        desc="Downloading MedRAG sources",
+        unit="file",
+    ):
         paths[source] = download_source(source)
     return paths
 

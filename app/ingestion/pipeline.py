@@ -1,7 +1,6 @@
 """End-to-end ingest: HF download → records → chunks JSONL."""
 from __future__ import annotations
 
-import json
 from pathlib import Path
 from typing import Optional
 
@@ -10,6 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from ingestion.chunking import chunk_records, write_chunks_jsonl
+from ingestion.file_io import load_json_list
 from ingestion.hf_download import download_all_medrag
 from ingestion.medrag_process import process_medrag
 from ingestion.paths import CHUNKS_JSONL, MEDRAG_RECORDS_JSON, ensure_data_dirs
@@ -29,7 +29,7 @@ def run_ingest_pipeline(
     ensure_data_dirs()
     download_all_medrag()
     records_file = process_medrag(out_path=records_path)
-    records = json.loads(records_file.read_text(encoding="utf-8"))
+    records = load_json_list(records_file, desc="Loading merged records")
     chunks = chunk_records(records, jurisdiction="GLOBAL")
     out = write_chunks_jsonl(chunks, path=chunks_path or CHUNKS_JSONL)
     return out
