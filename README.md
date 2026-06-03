@@ -62,7 +62,7 @@ A curated medical corpus from the [MedRAG dataset](https://huggingface.co/MedRAG
 - Current medical terminology and condition descriptions
 
 **Data Processing Pipeline:**
-1. **Download**: Automated retrieval via Notebook 01 (HuggingFace MedRAG
+1. **Download**: Automated retrieval via notebook 1_ingest_medrag_huggingface.ipynb from [HuggingFace](https://huggingface.co/MedRAG)
 2. **Normalization**: medrag_process.py creates unified records.json
 3. **Chunking**: LangChain RecursiveCharacterTextSplitter with jurisdiction metadata
 4. **Indexing**: Dual-index to Elasticsearch and Qdrant with hybrid vectors
