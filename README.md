@@ -179,12 +179,12 @@ Follow these step-by-step instructions to set up MedJuras.AI on your system:
 - Docker Desktop
 - Docker Compose 
 - Python 3.11+
-- 16GB RAM recommended (Elasticsearch requires 2GB+ heap)
+- 16GB RAM recommended
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/yourusername/yourprojectname.git
-cd yourprojectname
+git clone https://github.com/Adityagurung/Medjuras.AI-Assistant-RAG-for-healthcare-research-compliance.git
+cd rootfolder
 ```
 
 ### Step 2: Environment Configuration
@@ -212,14 +212,14 @@ QDRANT_COLLECTION=medjuris
 
 # PostgreSQL
 POSTGRES_DB=ragdb
-POSTGRES_USER=raguser
-POSTGRES_PASSWORD=secure-password-here
+POSTGRES_USER=your-username
+POSTGRES_PASSWORD=your-pwd-here
 POSTGRES_PORT=5433
 
 # Grafana
-GRAFANA_ADMIN_USER=admin
-GRAFANA_ADMIN_PASSWORD=admin-password
-GRAFANA_SECRET_KEY=long-random-secret-key
+GRAFANA_ADMIN_USER=your-username
+GRAFANA_ADMIN_PASSWORD=your-password
+GRAFANA_SECRET_KEY=your-secret-key
 
 # Application
 SKIP_WARMUP=false
@@ -250,8 +250,8 @@ pip install -r requirements.txt
 # Set Python path
 export PYTHONPATH=app  # On Windows: set PYTHONPATH=app
 
-# Run data download and processing (Notebook 01)
-jupyter notebook notebooks/01_download_medrag_and_pdfs_data.ipynb
+# Run data download and processing
+jupyter notebook notebooks/1_ingest_medrag_huggingface.ipynb
 
 # Index to Elasticsearch and Qdrant
 python -m ingestion.es_ingest
@@ -283,13 +283,13 @@ python app/test_system.py
 - Collection: medjuris
 - Management interface for vector operations
 
-### Step 6: Run Evaluations (Optional)
+### Step 6: Run Evaluations
 ```bash
 # Retrieval evaluation (Hit@K, MRR, MAP, nDCG)
 PYTHONPATH=app python -m evaluation.retrieval_eval
 
 # RAG evaluation with LLM-as-judge
-jupyter notebook notebooks/07_rag_evaluation_llm_judge.ipynb
+jupyter notebook notebooks/offline-rag-evaluation.ipynb
 
 # View results
 open images/retrieval_eval_comparison.png
@@ -297,8 +297,6 @@ open images/retrieval_eval_comparison.png
 
 ### Useful Commands:
 ```bash
-# View all logs
-docker-compose logs -f
 
 # Restart specific service
 docker-compose restart streamlit
@@ -346,10 +344,10 @@ Multiple retrieval approaches evaluated with quantitative metrics:
 **Winner: Hybrid RRF Search** - Best overall performance across all metrics with optimal fusion of semantic and keyword search.
 
 **Evaluation Details:**
-- **Ground Truth**: 150+ medical question-answer pairs
+- **Ground Truth**: 200+ medical question-answer pairs
 - **Metrics**: Hit@K (recall), Mean Reciprocal Rank, Mean Average Precision, Normalized Discounted Cumulative Gain
 - **Implementation**: `app/evaluation/retrieval_eval.py`
-- **Visualization**: `notebooks/06_retrieval_evaluation.ipynb`
+- **Visualization**: `notebooks/notebooks/5_hybrid_search_evaluation_qdrant.ipynb`
 
 ### RAG Evaluation — LLM-as-Judge
 Comprehensive quality assessment with 11 criteria:
@@ -371,7 +369,7 @@ Comprehensive quality assessment with 11 criteria:
 - **Judge Model**: GPT-4o-mini with structured evaluation prompts
 - **Ground Truth**: 150+ medical queries with expected answers
 - **Implementation**: `app/evaluation/llm_judge.py`
-- **Notebook**: `notebooks/07_rag_evaluation_llm_judge.ipynb`
+- **Notebook**: `notebooks/offline-rag-evaluation.ipynb`
 
 ### Interface
 Streamlit provides the main user interface with role-based customization:
@@ -392,24 +390,19 @@ Streamlit provides the main user interface with role-based customization:
 1. **Data Acquisition**: 
    - HuggingFace MedRAG download (textbooks, PubMed)
    - EU regulatory PDF collection
-   - **Notebook**: `01_download_medrag_and_pdfs_data.ipynb`
+   - **Notebook**: `1_ingest_medrag_huggingface.ipynb`
 
-2. **PDF Processing**:
-   - Docling 2.0 for PDF-to-Markdown conversion
-   - PyPDF fallback for text extraction
-   - **Module**: `app/ingestion/docling_pdf.py`, `pdf_process.py`
-
-3. **Normalization**:
+2. **Normalization**:
    - Unified schema across all sources
    - Jurisdiction and source_type metadata
    - **Module**: `app/ingestion/medrag_process.py`
 
-4. **Chunking**:
+3. **Chunking**:
    - LangChain RecursiveCharacterTextSplitter
    - Semantic chunk boundaries
    - **Module**: `app/ingestion/chunking.py`
 
-5. **Dual Indexing**:
+4. **Dual Indexing**:
    - Elasticsearch: BM25 + dense_vector hybrid
    - Qdrant: Vector similarity search
    - **Modules**: `app/ingestion/es_ingest.py`, `qdrant_ingest.py`
