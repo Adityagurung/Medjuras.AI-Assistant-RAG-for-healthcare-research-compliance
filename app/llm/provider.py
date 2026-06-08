@@ -44,13 +44,12 @@ def chat_completion(
 
 
 def _openai_chat(system: str, user: str, model: Optional[str], temperature: float) -> str:
-    from llm.openai_client import get_openai_client
-    from llm.mygenassist_client import get_aux_model, use_mygenassist
+    from llm.mygenassist_client import get_aux_model, get_llm_client, use_mygenassist
 
     if use_mygenassist() and model is None:
         model = get_aux_model()
     model = model or os.getenv("OPENAI_DEFAULT_MODEL", DEFAULT_OPENAI_MODEL)
-    client = get_openai_client()
+    client = get_llm_client()
     resp = client.chat.completions.create(
         model=model,
         messages=[

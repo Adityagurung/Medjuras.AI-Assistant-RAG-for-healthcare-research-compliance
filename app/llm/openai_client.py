@@ -3,7 +3,6 @@ import os
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Tuple
 
-from llm.query_rewriter import rewrite_query_with_context
 from llm.rag_utils import build_rag_context, build_rag_prompt
 import certifi
 import httpx

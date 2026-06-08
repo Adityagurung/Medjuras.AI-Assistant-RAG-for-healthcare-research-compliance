@@ -52,7 +52,6 @@ def prepare_rows(rows: List[Dict]) -> List[Tuple[str, Dict]]:
             "text": d.get("text", ""),
             "jurisdiction": d.get("jurisdiction", "GLOBAL"),
             "source": d.get("source", "medrag"),
-            "wiki_id": d.get("wiki_id"),
         }
         out.append((point_id, payload))
     return out
