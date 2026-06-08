@@ -1,4 +1,4 @@
-"""End-to-end ingest: HF download → records → chunks JSONL."""
+"""End-to-end ingest: local MedRAG JSON -> records -> chunks JSONL."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -10,9 +10,18 @@ load_dotenv()
 
 from ingestion.chunking import chunk_records, write_chunks_jsonl
 from ingestion.file_io import load_json_list
-from ingestion.hf_download import download_all_medrag
 from ingestion.medrag_process import process_medrag
-from ingestion.paths import CHUNKS_JSONL, MEDRAG_RECORDS_JSON, ensure_data_dirs
+from ingestion.paths import CHUNKS_JSONL, RAW_FILES, ensure_data_dirs
+
+
+def _ensure_raw_medrag_files() -> None:
+    missing = [name for name, path in RAW_FILES.items() if not path.exists()]
+    if missing:
+        names = ", ".join(missing)
+        raise FileNotFoundError(
+            "Missing local MedRAG raw files: "
+            f"{names}. Place JSON files under the medrag raw directory."
+        )
 
 
 def run_ingest_pipeline(
@@ -20,14 +29,9 @@ def run_ingest_pipeline(
     records_path: Optional[Path] = None,
     chunks_path: Optional[Path] = None,
 ) -> Path:
-    """
-    Download MedRAG subsets, merge records, chunk, and write chunks.jsonl.
-
-    Returns:
-        Path to chunks.jsonl
-    """
+    """Merge local MedRAG JSON, chunk, and write chunks.jsonl."""
     ensure_data_dirs()
-    download_all_medrag()
+    _ensure_raw_medrag_files()
     records_file = process_medrag(out_path=records_path)
     records = load_json_list(records_file, desc="Loading merged records")
     chunks = chunk_records(records, jurisdiction="GLOBAL")

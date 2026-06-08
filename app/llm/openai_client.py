@@ -8,6 +8,7 @@ from llm.rag_utils import build_rag_context, build_rag_prompt
 import certifi
 import httpx
 from openai import OpenAI
+from llm.mygenassist_client import get_chat_model, get_llm_client, use_mygenassist
 from tools.registry import FUNCTION_MAP, TOOLS_JSON
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -53,7 +54,9 @@ def _ssl_verify_context():
 
 
 def get_openai_client(api_key=None):
-    """OpenAI client with certifi / corporate CA bundle (fixes SSL verify errors)."""
+    """LLM client: MyGenAssist when MYGENASSIST_API_KEY is set, else OpenAI."""
+    if use_mygenassist():
+        return get_llm_client(api_key=api_key)
     key = api_key or OPENAI_API_KEY
     return OpenAI(
         api_key=key,
@@ -61,7 +64,13 @@ def get_openai_client(api_key=None):
     )
 
 
-DEFAULT_MODEL = os.getenv("OPENAI_DEFAULT_MODEL", "gpt-4o-mini")
+def _default_model() -> str:
+    if use_mygenassist():
+        return get_chat_model()
+    return os.getenv("OPENAI_DEFAULT_MODEL", "gpt-4o-mini")
+
+
+DEFAULT_MODEL = _default_model()
 available_models = ["gpt-4o-mini", "gpt-5", "gpt-4o", "o3", "o4"]
 
 

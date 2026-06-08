@@ -3,7 +3,8 @@ import os
 
 from dotenv import load_dotenv
 from evaluation.eval_utils import evaluate
-from openai import OpenAI
+from llm.mygenassist_client import get_aux_model, use_mygenassist
+from llm.openai_client import get_openai_client
 from search.hybrid_search import hybrid_search
 
 # Load environment variables
@@ -41,10 +42,6 @@ Keep the rewritten query concise but comprehensive. If the original query is alr
 Rewritten query:"""
 
 
-def get_openai_client():
-    return OpenAI()
-
-
 def rewrite_query_with_context(query: str, chat_history: list = None) -> str:
     """
     Rewrite user query to be more specific, searchable, and medically precise.
@@ -71,7 +68,7 @@ def rewrite_query_with_context(query: str, chat_history: list = None) -> str:
     try:
         client = get_openai_client()
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model=get_aux_model() if use_mygenassist() else "gpt-4o-mini",
             messages=[{"role": "user", "content": rewrite_prompt}],
             temperature=0.1,
             max_tokens=100,

@@ -4,7 +4,7 @@ from typing import Any, Dict, List
 
 import numpy as np
 import pandas as pd
-from openai import OpenAI
+from llm.openai_client import get_openai_client
 from sentence_transformers import SentenceTransformer
 from tqdm.auto import tqdm
 
@@ -17,7 +17,7 @@ class SimpleLLMEvaluator:
 
     def __init__(self, embedding_model_name: str = "multi-qa-MiniLM-L6-cos-v1"):
         self.embedding_model = SentenceTransformer(embedding_model_name)
-        self.client = OpenAI()
+        self.client = get_openai_client()
 
         # Multiple LLM approaches to compare
         self.approaches = {

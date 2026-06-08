@@ -5,7 +5,7 @@ from enum import Enum
 from typing import Optional
 
 from dotenv import load_dotenv
-from openai import OpenAI
+from llm.mygenassist_client import get_aux_model, get_llm_client, structured_chat_parse, use_mygenassist
 from pydantic import BaseModel, Field
 
 load_dotenv()
@@ -51,19 +51,22 @@ def check_scope_guard(query: str, model: Optional[str] = None) -> ScopeDecision:
         return ScopeDecision(category=ScopeCategory.medical_advice_request, reason='Individual medical advice is out of scope.', jurisdiction_hint=jurisdiction_hint)
     if any(p.search(text) for p in OUT_OF_SCOPE_PATTERNS):
         return ScopeDecision(category=ScopeCategory.out_of_scope, reason='Outside EU healthcare law scope.', jurisdiction_hint=jurisdiction_hint)
-    api_key = os.getenv('OPENAI_API_KEY')
-    if not api_key:
+    if not use_mygenassist() and not os.getenv('OPENAI_API_KEY'):
         return ScopeDecision(category=ScopeCategory.in_scope, reason='Heuristic in-scope.', jurisdiction_hint=jurisdiction_hint)
-    client = OpenAI(api_key=api_key)
-    model = model or os.getenv('OPENAI_DEFAULT_MODEL', 'gpt-4o-mini')
+    client = get_llm_client()
+    chosen_model = model or (get_aux_model() if use_mygenassist() else os.getenv('OPENAI_DEFAULT_MODEL', 'gpt-4o-mini'))
     system = 'EU medico-legal scope guard. Categories: in_scope, out_of_scope, pii_phi_request, medical_advice_request. jurisdiction_hint EU or unknown.'
     try:
-        completion = client.beta.chat.completions.parse(model=model, messages=[{'role':'system','content':system},{'role':'user','content':text}], response_format=ScopeDecision, temperature=0)
-        parsed = completion.choices[0].message.parsed
-        if parsed is not None:
-            if parsed.category == ScopeCategory.pii_phi_request:
-                _log_gdpr_pii(text, parsed.reason)
-            return parsed
+        parsed = structured_chat_parse(
+            client,
+            model=chosen_model,
+            messages=[{'role': 'system', 'content': system}, {'role': 'user', 'content': text}],
+            response_format=ScopeDecision,
+            temperature=0,
+        )
+        if parsed.category == ScopeCategory.pii_phi_request:
+            _log_gdpr_pii(text, parsed.reason)
+        return parsed
     except Exception as exc:
         logger.warning('LLM scope guard failed: %s', exc)
     return ScopeDecision(category=ScopeCategory.in_scope, reason='Default allow for EU medico-legal queries.', jurisdiction_hint=jurisdiction_hint)

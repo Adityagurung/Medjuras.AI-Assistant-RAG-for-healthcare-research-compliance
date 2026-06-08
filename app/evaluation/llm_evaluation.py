@@ -7,7 +7,7 @@ from typing import Any, Dict, List
 import numpy as np
 import openai
 import pandas as pd
-from openai import OpenAI
+from llm.openai_client import get_openai_client
 from sentence_transformers import SentenceTransformer
 from tqdm.auto import tqdm
 
@@ -25,7 +25,7 @@ class AgenticLLMEvaluator:
 
     def __init__(self, embedding_model_name: str = "multi-qa-MiniLM-L6-cos-v1"):
         self.embedding_model = SentenceTransformer(embedding_model_name)
-        self.client = OpenAI()
+        self.client = get_openai_client()
 
         # Define multiple LLM approaches to compare for agentic behavior
         self.agentic_approaches = {

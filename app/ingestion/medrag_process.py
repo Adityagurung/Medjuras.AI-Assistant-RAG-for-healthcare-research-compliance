@@ -12,7 +12,7 @@ from ingestion.paths import MEDRAG_PROCESSED_DIR, MEDRAG_RAW_DIR, MEDRAG_RECORDS
 
 
 def load_raw_json(path: Path) -> List[Dict[str, Any]]:
-    """Load a JSON array written by hf_download."""
+    """Load a local MedRAG JSON array."""
     if not path.exists():
         return []
     return load_json_list(path, desc=f"Loading {path.name}")
@@ -40,7 +40,7 @@ def process_medrag(
     raw_dir: Optional[Path] = None,
     out_path: Optional[Path] = None,
 ) -> Path:
-    """Merge raw HF JSON files into data/processed/medrag/records.json."""
+    """Merge raw MedRAG JSON files into data/processed/medrag/records.json."""
     ensure_data_dirs()
     records = merge_raw_sources(raw_dir)
     out = out_path or MEDRAG_RECORDS_JSON

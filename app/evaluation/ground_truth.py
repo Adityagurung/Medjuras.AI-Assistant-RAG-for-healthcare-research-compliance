@@ -47,9 +47,7 @@ def generate_ground_truth(
     sample = random.sample(chunks, min(sample_size, len(chunks)))
     provider = get_provider()
     if provider == "stub" or (
-        provider == "openai" and not os.getenv("OPENAI_API_KEY")
-    ) or (
-        provider == "huggingface" and not (os.getenv("HF_TOKEN") or os.getenv("HUGGINGFACEHUB_API_TOKEN"))
+        provider == "openai" and not os.getenv("OPENAI_API_KEY") and not os.getenv("MYGENASSIST_API_KEY")
     ):
         items = [
             {

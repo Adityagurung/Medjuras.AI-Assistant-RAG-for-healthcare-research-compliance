@@ -53,7 +53,7 @@ Our AI-powered medical assistant revolutionizes medical research and healthcare 
 Our knowledge base integrates multiple high-quality medical and regulatory sources:
 
 ### **1. MedRAG Corpus**
-A curated medical corpus from the [MedRAG dataset](https://huggingface.co/MedRAG)
+A curated medical corpus from MedRAG (local JSON files in the repo).
 - **Textbooks**: Authoritative medical textbook passages (Harrison's Principles, etc.)
 - **PubMed**: Filtered research abstracts with 2-of-4 relevance criteria (human clinical, disease/symptom, anatomy, treatment outcomes)
 
@@ -62,7 +62,7 @@ A curated medical corpus from the [MedRAG dataset](https://huggingface.co/MedRAG
 - Current medical terminology and condition descriptions
 
 **Data Processing Pipeline:**
-1. **Download**: Automated retrieval via notebook 1_ingest_medrag_huggingface.ipynb from [HuggingFace](https://huggingface.co/MedRAG)
+1. **Ingest**: Local JSON via notebook 1_ingest_medrag.ipynb.
 2. **Normalization**: medrag_process.py creates unified records.json
 3. **Chunking**: LangChain RecursiveCharacterTextSplitter with jurisdiction metadata
 4. **Indexing**: Dual-index to Elasticsearch and Qdrant with hybrid vectors
@@ -108,7 +108,7 @@ Our technology stack combines cutting-edge AI/ML tools with robust infrastructur
 ```
 MedRAG JSON → Normalized Records → Chunking → JSONL
 ```
-- Download MedRAG from HuggingFace (textbooks, PubMed, wikipedia)
+- Ingest MedRAG from local JSON (textbooks, PubMed, wikipedia)
 - medrag_process.py normalizes all sources to unified schema
 - LangChain chunking with jurisdiction metadata preservation
 
@@ -246,7 +246,7 @@ pip install -r requirements.txt
 export PYTHONPATH=app  # On Windows: set PYTHONPATH=app
 
 # Run data download and processing
-jupyter notebook notebooks/1_ingest_medrag_huggingface.ipynb
+jupyter notebook notebooks/1_ingest_medrag.ipynb
 
 # Index to Elasticsearch and Qdrant
 python -m ingestion.es_ingest
@@ -383,9 +383,9 @@ Streamlit provides the main user interface with role-based customization:
 **Automated Multi-Source Ingestion:**
 
 1. **Data Acquisition**: 
-   - HuggingFace MedRAG download (textbooks, PubMed)
+   - Local MedRAG JSON ingest (textbooks, PubMed)
    - EU regulatory PDF collection
-   - **Notebook**: `1_ingest_medrag_huggingface.ipynb`
+   - **Notebook**: `1_ingest_medrag.ipynb`
 
 2. **Normalization**:
    - Unified schema across all sources
@@ -568,7 +568,7 @@ Production deployment considerations:
 │   │   ├── docling_pdf.py
 │   │   ├── es_ingest.py
 │   │   ├── file_io.py
-│   │   ├── hf_download.py
+│   │   ├── medrag_process.py
 │   │   ├── medrag_process.py
 │   │   ├── paths.py
 │   │   ├── pdf_process.py
@@ -659,8 +659,8 @@ Production deployment considerations:
 │   └── retrieval_eval_comparison.png
 ├── notebooks
 │   ├── .ipynb_checkpoints
-│   │   └── 1_ingest_medrag_huggingface-checkpoint.ipynb
-│   ├── 1_ingest_medrag_huggingface.ipynb
+│   │   └── 1_ingest_medrag-checkpoint.ipynb
+│   ├── 1_ingest_medrag.ipynb
 │   ├── 2_ground_truth_data.ipynb
 │   ├── 3_keyword_search_evaluation_minsearch.ipynb
 │   ├── 4_semantic_search_evaluation_qdrant.ipynb

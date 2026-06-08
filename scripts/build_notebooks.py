@@ -39,9 +39,9 @@ def code(text: str):
 BOOT = "import _bootstrap  # noqa: F401\n"
 
 NOTEBOOKS = {
-    "1_ingest_medrag_huggingface.ipynb": [
+    "1_ingest_medrag.ipynb": [
         md(
-            "# Notebook 1: Ingest MedRAG from Hugging Face\n\n"
+            "# Notebook 1: Ingest MedRAG from local JSON\n\n"
             "Downloads **textbooks (700)**, **pubmed (1000)**, and **wikipedia (300, medical-filtered)** "
             "rows, merges to `records.json`, chunks to `data/processed/chunks/chunks.jsonl`, then indexes "
             "**Elasticsearch** and **Qdrant** with OpenAI `text-embedding-3-small`.\n\n"
