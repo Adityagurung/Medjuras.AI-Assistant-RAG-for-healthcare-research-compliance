@@ -97,11 +97,6 @@ Our technology stack combines cutting-edge AI/ML tools with robust infrastructur
 - **Plotly**: Interactive evaluation charts
 - **Matplotlib**: Retrieval performance visualizations
 
-### 🛠️ **Document Processing**
-- **Docling 2.0**: Advanced PDF-to-Markdown conversion
-- **PyPDF**: PDF text extraction
-- **RecursiveCharacterTextSplitter**: Intelligent semantic chunking
-
 ### 📋 **Coding Tools**
 - **Jupyter Notebooks**: End-to-end pipeline development (01-08)
 - **Pytest**: Unit and integration testing
