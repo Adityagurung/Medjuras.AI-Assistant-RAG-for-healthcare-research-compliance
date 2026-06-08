@@ -15,6 +15,7 @@ T = TypeVar("T", bound=BaseModel)
 DEFAULT_BASE_URL = "https://chat.int.bayer.com/api/v2"
 DEFAULT_CHAT_MODEL = "gpt-oss-120b"
 DEFAULT_AUX_MODEL = "gpt-5.1"
+DEFAULT_EMBEDDING_MODEL = "text-embedding-3-small"
 
 
 def use_mygenassist() -> bool:
@@ -31,6 +32,10 @@ def get_chat_model() -> str:
 
 def get_aux_model() -> str:
     return os.getenv("MYGENASSIST_AUX_MODEL", DEFAULT_AUX_MODEL)
+
+
+def get_embedding_model() -> str:
+    return os.getenv("MYGENASSIST_EMBEDDING_MODEL", DEFAULT_EMBEDDING_MODEL)
 
 
 def get_max_tokens(env_key: str, default: int) -> int:

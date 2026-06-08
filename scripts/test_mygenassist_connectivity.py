@@ -15,6 +15,7 @@ load_dotenv(ROOT / ".env")
 from llm.mygenassist_client import (
     get_aux_model,
     get_chat_model,
+    get_embedding_model,
     get_llm_client,
     get_mygenassist_base_url,
     structured_chat_parse,
@@ -45,7 +46,7 @@ def main():
     chat_model = get_chat_model()
     aux_model = get_aux_model()
     passed = 0
-    total = 3
+    total = 4
 
     try:
         resp = client.chat.completions.create(
@@ -83,6 +84,19 @@ def main():
         passed += 1
     except Exception as exc:
         _fail("structured parse (" + aux_model + ")", exc)
+
+    embedding_model = get_embedding_model()
+    try:
+        resp = client.embeddings.create(
+            model=embedding_model,
+            input="MyGenAssist embedding connectivity check",
+        )
+        dims = len(resp.data[0].embedding)
+        print("PASS  embeddings (" + embedding_model + "): vector dims =", dims)
+        passed += 1
+    except Exception as exc:
+        _fail("embeddings (" + embedding_model + ")", exc)
+
 
     print("")
     print("Result:", passed, "of", total, "checks passed")
