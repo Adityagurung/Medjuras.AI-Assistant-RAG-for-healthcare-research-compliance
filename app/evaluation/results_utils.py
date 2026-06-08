@@ -16,6 +16,12 @@ def results_path(name: str) -> Path:
     return RESULTS_DIR / name
 
 
+def results_images_dir() -> Path:
+    d = RESULTS_DIR / "images"
+    d.mkdir(parents=True, exist_ok=True)
+    return d
+
+
 def copy_to_results(src: PathLike, dest_name: str | None = None) -> Path:
     """Copy a file into results/ and return the destination path."""
     src = Path(src)

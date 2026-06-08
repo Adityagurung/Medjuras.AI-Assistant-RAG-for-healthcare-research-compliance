@@ -38,15 +38,12 @@ def code(text: str):
 
 BOOT = "import _bootstrap  # noqa: F401\n"
 
-NOTEBOOKS = {
+specs = {
     "1_ingest_medrag.ipynb": [
         md(
             "# Notebook 1: Ingest MedRAG from local JSON\n\n"
-            "Downloads **textbooks (700)**, **pubmed (1000)**, and **wikipedia (300, medical-filtered)** "
-            "rows, merges to `records.json`, chunks to `data/processed/chunks/chunks.jsonl`, then indexes "
-            "**Elasticsearch** and **Qdrant** with OpenAI `text-embedding-3-small`.\n\n"
-            "**Prerequisites:** `.env` with `OPENAI_API_KEY`. For indexing: "
-            "`docker compose up -d elasticsearch qdrant`.\n"
+            "Downloads textbooks, pubmed, and medical-filtered wikipedia rows, "
+            "chunks them, then indexes Elasticsearch and Qdrant.\n"
         ),
         code(
             BOOT
@@ -62,14 +59,13 @@ NOTEBOOKS = {
             + "from ingestion.qdrant_ingest import ingest_chunks as qdrant_ingest\n\n"
             + "n_es = es_ingest(wipe=True)\n"
             + "n_qd = qdrant_ingest(wipe=True)\n"
-            + "print(f'ES={n_es}, Qdrant={n_qd}')\n"
+            + "print(f'ES count', n_es, 'Qdrant count', n_qd)\n"
         ),
     ],
     "2_ground_truth_data.ipynb": [
         md(
             "# Notebook 2: Ground truth (200 Q&A)\n\n"
-            "Generates **200** exam-style questions answerable **only** from ingested chunks using "
-            "**gpt-4o-mini**. Writes `data/evaluation/ground_truth.json` and copies to `results/`.\n"
+            "Generates 200 exam-style questions from ingested chunks.\n"
         ),
         code(
             BOOT
@@ -82,71 +78,73 @@ NOTEBOOKS = {
         ),
     ],
     "3_keyword_search_evaluation_minsearch.ipynb": [
-        md(
-            "# Notebook 3: Keyword / BM25 evaluation (Elasticsearch)\n\n"
-            "Measures Hit@K, MRR, MAP, nDCG using **Elasticsearch BM25**.\n"
-        ),
+        md("# Notebook 3: Keyword / BM25 evaluation (Elasticsearch)\n\nMeasures Hit@K, MRR, MAP, nDCG using Elasticsearch BM25.\n"),
         code(
             BOOT
             + "import json\n"
-            + "from evaluation.config_paths import ground_truth_path\n"
+            + "from evaluation.config_paths import load_ground_truth\n"
             + "from evaluation.eval_utils import evaluate\n"
-            + "from evaluation.results_utils import results_path\n"
+            + "from evaluation.results_utils import results_path, results_images_dir\n"
+            + "from evaluation.retrieval_results_charts import save_single_method_plot\n"
             + "from search.es_search import search_elasticsearch\n\n"
-            + "gt = json.loads(ground_truth_path().read_text(encoding='utf-8'))\n"
-            + "gt_eval = [{'query': r['question'], 'doc_id': r['doc_id']} for r in gt]\n"
-            + "metrics = evaluate(gt_eval, lambda q, **kw: search_elasticsearch(q, top_k=10, local=True), top_k=10)\n"
+            + "TOP_K = 10\n"
+            + "gt = load_ground_truth()\n"
+            + "gt_rows = [{'query': r['question'], 'doc_id': r['doc_id']} for r in gt]\n"
+            + "metrics = evaluate(gt_rows, lambda q, **kw: search_elasticsearch(q, top_k=TOP_K, local=True), top_k=TOP_K)\n"
             + "out = results_path('es_bm25_metrics.json')\n"
             + "out.write_text(json.dumps(metrics, indent=2), encoding='utf-8')\n"
+            + "png = save_single_method_plot('Elasticsearch', metrics, TOP_K, results_images_dir() / 'es_bm25_metrics.png')\n"
             + "print(metrics)\n"
+            + "print('Saved chart:', png)\n"
         ),
     ],
     "4_semantic_search_evaluation_qdrant.ipynb": [
-        md(
-            "# Notebook 4: Semantic evaluation (Qdrant)\n\n"
-            "Evaluates dense retrieval with OpenAI embeddings.\n"
-        ),
+        md("# Notebook 4: Semantic evaluation (Qdrant)\n\nMeasures dense retrieval quality with OpenAI embeddings.\n"),
         code(
             BOOT
             + "import json\n"
-            + "from evaluation.config_paths import ground_truth_path\n"
+            + "from evaluation.config_paths import load_ground_truth\n"
             + "from evaluation.eval_utils import evaluate\n"
-            + "from evaluation.results_utils import results_path\n"
+            + "from evaluation.results_utils import results_path, results_images_dir\n"
+            + "from evaluation.retrieval_results_charts import save_single_method_plot\n"
             + "from search.qdrant_search import search_qdrant\n\n"
-            + "gt = json.loads(ground_truth_path().read_text(encoding='utf-8'))\n"
-            + "gt_eval = [{'query': r['question'], 'doc_id': r['doc_id']} for r in gt]\n"
-            + "metrics = evaluate(gt_eval, lambda q, **kw: search_qdrant(q, top_k=10, local=True), top_k=10)\n"
+            + "TOP_K = 10\n"
+            + "gt = load_ground_truth()\n"
+            + "gt_rows = [{'query': r['question'], 'doc_id': r['doc_id']} for r in gt]\n"
+            + "metrics = evaluate(gt_rows, lambda q, **kw: search_qdrant(q, top_k=TOP_K, local=True), top_k=TOP_K)\n"
             + "out = results_path('qdrant_dense_metrics.json')\n"
             + "out.write_text(json.dumps(metrics, indent=2), encoding='utf-8')\n"
+            + "png = save_single_method_plot('Qdrant', metrics, TOP_K, results_images_dir() / 'qdrant_dense_metrics.png')\n"
             + "print(metrics)\n"
+            + "print('Saved chart:', png)\n"
         ),
     ],
     "5_hybrid_search_evaluation_qdrant.ipynb": [
-        md(
-            "# Notebook 5: Hybrid RRF evaluation\n\n"
-            "Fuses Qdrant dense (2.0) and Elasticsearch BM25 (1.0) with RRF k=60.\n"
-        ),
+        md("# Notebook 5: Hybrid RRF evaluation\n\nFuses Qdrant dense and Elasticsearch BM25 with reciprocal rank fusion.\n"),
         code(
             BOOT
             + "import json\n"
-            + "from evaluation.config_paths import ground_truth_path\n"
+            + "from evaluation.config_paths import load_ground_truth\n"
             + "from evaluation.eval_utils import evaluate\n"
-            + "from evaluation.results_utils import results_path\n"
+            + "from evaluation.results_utils import results_path, results_images_dir\n"
+            + "from evaluation.retrieval_results_charts import save_single_method_plot, save_comparison_from_result_files\n"
+            + "from ingestion.paths import RESULTS_DIR\n"
             + "from search.hybrid_search import hybrid_search\n\n"
-            + "gt = json.loads(ground_truth_path().read_text(encoding='utf-8'))\n"
-            + "gt_eval = [{'query': r['question'], 'doc_id': r['doc_id']} for r in gt]\n"
-            + "metrics = evaluate(gt_eval, lambda q, **kw: hybrid_search(q, top_k=10, local=True), top_k=10)\n"
+            + "TOP_K = 10\n"
+            + "gt = load_ground_truth()\n"
+            + "gt_rows = [{'query': r['question'], 'doc_id': r['doc_id']} for r in gt]\n"
+            + "metrics = evaluate(gt_rows, lambda q, **kw: hybrid_search(q, top_k=TOP_K, local=True), top_k=TOP_K)\n"
             + "out = results_path('hybrid_rrf_metrics.json')\n"
             + "out.write_text(json.dumps(metrics, indent=2), encoding='utf-8')\n"
+            + "png = save_single_method_plot('Hybrid', metrics, TOP_K, results_images_dir() / 'hybrid_rrf_metrics.png')\n"
             + "print(metrics)\n"
+            + "print('Saved chart:', png)\n\n"
+            + "comparison_png = save_comparison_from_result_files(RESULTS_DIR, TOP_K)\n"
+            + "print('Saved comparison:', comparison_png)\n"
         ),
     ],
     "offline-rag-evaluation.ipynb": [
-        md(
-            "# Offline RAG + LLM-as-judge\n\n"
-            "Hybrid RAG with **gpt-4o-mini** and LLM judge scoring. "
-            "Adjust `max_samples` for cost/time.\n"
-        ),
+        md("# Offline RAG + LLM-as-judge\n\nHybrid RAG with gpt-4o-mini and an LLM judge.\n"),
         code(
             BOOT
             + "import json\n"
@@ -164,9 +162,9 @@ NOTEBOOKS = {
 def main():
     root = Path(__file__).resolve().parents[1] / "notebooks"
     root.mkdir(exist_ok=True)
-    for name, cells in NOTEBOOKS.items():
-        (root / name).write_text(json.dumps(nb(cells), indent=1), encoding="utf-8")
-    print(f"Wrote {len(NOTEBOOKS)} notebooks to {root}")
+    for name in specs:
+        (root / name).write_text(json.dumps(nb(specs[name]), indent=1), encoding="utf-8")
+    print("Wrote", len(specs), "notebooks to", root)
 
 
 if __name__ == "__main__":
