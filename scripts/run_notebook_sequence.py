@@ -74,8 +74,8 @@ def main():
     # 6 — comprehensive LLM evaluation (offline RAG judge + agentic)
     def llm_eval():
         summary = run_full_llm_evaluation(
-            rag_max_samples=20,
-            agentic_max_samples=10,
+            rag_max_samples=100,
+            agentic_max_samples=40,
             local=True,
         )
         saved = save_llm_evaluation_results(summary)

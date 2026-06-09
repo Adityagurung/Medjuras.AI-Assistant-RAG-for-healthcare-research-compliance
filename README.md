@@ -284,7 +284,7 @@ python app/test_system.py
 PYTHONPATH=app python -m evaluation.retrieval_eval
 
 # RAG evaluation with LLM-as-judge
-jupyter notebook notebooks/offline-rag-evaluation.ipynb
+jupyter notebook notebooks/6_llm_evaluation.ipynb
 
 # View results
 open images/retrieval_eval_comparison.png
@@ -364,7 +364,7 @@ Comprehensive quality assessment with 11 criteria:
 - **Judge Model**: GPT-4o-mini with structured evaluation prompts
 - **Ground Truth**: 150+ medical queries with expected answers
 - **Implementation**: `app/evaluation/llm_judge.py`
-- **Notebook**: `notebooks/offline-rag-evaluation.ipynb`
+- **Notebook**: `notebooks/6_llm_evaluation.ipynb`
 
 ### Interface
 Streamlit provides the main user interface with role-based customization:
@@ -540,6 +540,7 @@ Production deployment considerations:
 │   │   ├── retrieval_eval.py
 │   │   ├── retrieval_plot.py
 │   │   └── simple_llm_eval.py
+│   │   ├── llm_evaluator.py
 │   ├── guards
 │   │   ├── __init__.py
 │   │   └── scope_guard.py
