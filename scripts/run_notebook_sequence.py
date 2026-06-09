@@ -1,4 +1,4 @@
-"""Run all six notebook pipelines in order (same logic as notebooks/)."""
+"""Run all notebook pipelines in order (same logic as notebooks/)."""
 from __future__ import annotations
 
 import json
@@ -25,7 +25,7 @@ def main():
     from evaluation.config_paths import ground_truth_path
     from evaluation.eval_utils import evaluate
     from evaluation.ground_truth import generate_ground_truth
-    from evaluation.llm_judge import evaluate_rag_batch
+    from evaluation.llm_evaluator import run_full_llm_evaluation, save_llm_evaluation_results
     from evaluation.results_utils import copy_to_results, results_path
     from ingestion.es_ingest import ingest_chunks as es_ingest
     from ingestion.paths import CHUNKS_JSONL, GROUND_TRUTH_JSON, ensure_data_dirs
@@ -71,14 +71,18 @@ def main():
 
         step(label, run_eval)
 
-    # 6 — offline RAG judge
-    def offline():
-        summary = evaluate_rag_batch(max_samples=20, local=True)
-        out = results_path("offline_rag_judge.json")
-        out.write_text(json.dumps(summary, indent=2), encoding="utf-8")
-        print(summary)
+    # 6 — comprehensive LLM evaluation (offline RAG judge + agentic)
+    def llm_eval():
+        summary = run_full_llm_evaluation(
+            rag_max_samples=20,
+            agentic_max_samples=10,
+            local=True,
+        )
+        saved = save_llm_evaluation_results(summary)
+        print(summary["summary"])
+        print("Saved:", saved)
 
-    step("6_offline_rag", offline)
+    step("6_llm_evaluation", llm_eval)
 
 
 if __name__ == "__main__":

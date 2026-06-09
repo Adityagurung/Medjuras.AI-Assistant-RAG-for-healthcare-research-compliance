@@ -1,4 +1,4 @@
-"""Generate the six MedJuras evaluation notebooks."""
+"""Generate the MedJuras evaluation notebooks."""
 import json
 from pathlib import Path
 
