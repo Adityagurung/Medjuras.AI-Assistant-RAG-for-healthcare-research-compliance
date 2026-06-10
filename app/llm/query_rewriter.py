@@ -109,7 +109,6 @@ if __name__ == "__main__":
     print(
         f"Hit@{top_k} / Recall@{top_k}: {metrics_orig[f'Hit@{top_k}']:.3f} | "
         f"MRR@{top_k}: {metrics_orig[f'MRR@{top_k}']:.3f} | "
-        f"MAP@{top_k}: {metrics_orig[f'MAP@{top_k}']:.3f} | "
         f"nDCG@{top_k}: {metrics_orig[f'nDCG@{top_k}']:.3f}"
     )
 
@@ -117,7 +116,6 @@ if __name__ == "__main__":
     print(
         f"Hit@{top_k} / Recall@{top_k}: {metrics_rw[f'Hit@{top_k}']:.3f} | "
         f"MRR@{top_k}: {metrics_rw[f'MRR@{top_k}']:.3f} | "
-        f"MAP@{top_k}: {metrics_rw[f'MAP@{top_k}']:.3f} | "
         f"nDCG@{top_k}: {metrics_rw[f'nDCG@{top_k}']:.3f}"
     )
     print("=" * 50)

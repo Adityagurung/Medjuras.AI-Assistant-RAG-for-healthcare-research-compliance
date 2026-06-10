@@ -51,36 +51,33 @@ if __name__ == "__main__":
 
     hybrid_hit = hybrid_metrics[f"Hit@{top_k}"]
     hybrid_mrr = hybrid_metrics[f"MRR@{top_k}"]
-    hybrid_map = hybrid_metrics[f"MAP@{top_k}"]
     hybrid_ndcg = hybrid_metrics[f"nDCG@{top_k}"]
 
     print("\n📊 Hybrid Evaluation Results (aggregate, per-query metrics)")
     print(
-        f"Hit@{top_k}: {hybrid_hit:.3f} | MRR@{top_k}: {hybrid_mrr:.3f} | MAP@{top_k}: {hybrid_map:.3f} | nDCG@{top_k}: {hybrid_ndcg:.3f}"
+        f"Hit@{top_k}: {hybrid_hit:.3f} | MRR@{top_k}: {hybrid_mrr:.3f} | nDCG@{top_k}: {hybrid_ndcg:.3f}"
     )
 
     es_metrics = evaluate(gt, search_elasticsearch, top_k=top_k)
 
     es_hit = es_metrics[f"Hit@{top_k}"]
     es_mrr = es_metrics[f"MRR@{top_k}"]
-    es_map = es_metrics[f"MAP@{top_k}"]
     es_ndcg = es_metrics[f"nDCG@{top_k}"]
 
     print("\n📊 Qdrant Evaluation Results (aggregate, per-query metrics)")
     print(
-        f"Hit@{top_k}: {es_hit:.3f} | MRR@{top_k}: {es_mrr:.3f} | MAP@{top_k}: {es_map:.3f} | nDCG@{top_k}: {es_ndcg:.3f}"
+        f"Hit@{top_k}: {es_hit:.3f} | MRR@{top_k}: {es_mrr:.3f} | nDCG@{top_k}: {es_ndcg:.3f}"
     )
 
     qdrant_metrics = evaluate(gt, search_qdrant, top_k=top_k)
 
     qdrant_hit = qdrant_metrics[f"Hit@{top_k}"]
     qdrant_mrr = qdrant_metrics[f"MRR@{top_k}"]
-    qdrant_map = qdrant_metrics[f"MAP@{top_k}"]
     qdrant_ndcg = qdrant_metrics[f"nDCG@{top_k}"]
 
     print("\n📊 Elastic Search Evaluation Results (aggregate, per-query metrics)")
     print(
-        f"Hit@{top_k}: {qdrant_hit:.3f} | MRR@{top_k}: {qdrant_mrr:.3f} | MAP@{top_k}: {qdrant_map:.3f} | nDCG@{top_k}: {qdrant_ndcg:.3f}"
+        f"Hit@{top_k}: {qdrant_hit:.3f} | MRR@{top_k}: {qdrant_mrr:.3f} | nDCG@{top_k}: {qdrant_ndcg:.3f}"
     )
 
     sample_queries = [gt[0]["query"], gt[6]["query"], gt[-1]["query"]]

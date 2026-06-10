@@ -20,7 +20,7 @@
 - **Dual-Index Hybrid Search**: Combines Elasticsearch (BM25 + dense vectors) and Qdrant vector database with Reciprocal Rank Fusion (RRF)
 - **Multi-Source Knowledge Base**: MedRAG textbooks, PubMed abstracts, EU regulatory PDFs, and Wikipedia medical articles
 - **User-Adaptive Interface**: Tailored responses for Medical Researchers, Healthcare Providers, and Patients
-- **Comprehensive Evaluation**: Retrieval metrics (Hit@K, MRR, MAP, nDCG) and LLM-as-Judge with 11 quality criteria
+- **Comprehensive Evaluation**: Retrieval metrics (Hit@K, MRR, nDCG) and LLM-as-Judge with 11 quality criteria
 - **Real-time Monitoring**: Grafana dashboard with PostgreSQL feedback collection
 - **Scalable Architecture**: Docker-containerized microservices
 - **Citation-Aware**: Source-grounded answers with traceable references
@@ -279,7 +279,7 @@ python app/test_system.py
 
 ### Step 6: Run Evaluations
 ```bash
-# Retrieval evaluation (Hit@K, MRR, MAP, nDCG)
+# Retrieval evaluation (Hit@K, MRR, nDCG)
 PYTHONPATH=app python -m evaluation.retrieval_eval
 
 # RAG evaluation with LLM-as-judge
@@ -329,17 +329,17 @@ Multiple retrieval approaches evaluated with quantitative metrics:
 
 **Evaluation Results:**
 
-| Method | Hit@5 | MRR@5 | MAP@5 | nDCG@5 |
+| Method | Hit@5 | MRR@5 | nDCG@5 |
 |--------|-------|-------|-------|--------|
-| **Hybrid RRF** | **0.756** | **0.612** | **0.524** | **0.689** |
-| Elasticsearch | 0.723 | 0.589 | 0.498 | 0.655 |
+| **Hybrid RRF** | **0.756** | **0.612** | **0.689** |
+| Elasticsearch | 0.723 | 0.589 | 0.655 |
 | Qdrant Dense | 0.698 | 0.567 | 0.476 | 0.628 |
 
 **Winner: Hybrid RRF Search** - Best overall performance across all metrics with optimal fusion of semantic and keyword search.
 
 **Evaluation Details:**
 - **Ground Truth**: 200+ medical question-answer pairs
-- **Metrics**: Hit@K (recall), Mean Reciprocal Rank, Mean Average Precision, Normalized Discounted Cumulative Gain
+- **Metrics**: Hit@K (recall), Mean Reciprocal Rank, Normalized Discounted Cumulative Gain
 - **Implementation**: `app/evaluation/retrieval_eval.py`
 - **Visualization**: `notebooks/notebooks/5_hybrid_search_evaluation_qdrant.ipynb`
 

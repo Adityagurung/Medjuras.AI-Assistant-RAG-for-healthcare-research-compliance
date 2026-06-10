@@ -46,24 +46,6 @@ def mrr_at_k(pred_ids, gold_ids, top_k=10):
     return 0.0
 
 
-def map_at_k(pred_ids, gold_ids, top_k=10):
-    """
-    MAP@k — “how pure is the list, considering *all* relevant docs?”
-    Averages precision each time you hit a relevant doc in top-k.
-    Best when multiple relevant docs may exist.
-    """
-    gold = set(gold_ids if isinstance(gold_ids, (list, tuple, set)) else [gold_ids])
-    if not gold:
-        return 0.0
-    hits, ap = 0, 0.0
-    for i, did in enumerate(pred_ids[:top_k], start=1):
-        if did in gold:
-            hits += 1
-            ap += hits / i
-    denom = min(len(gold), top_k)
-    return ap / denom if denom > 0 else 0.0
-
-
 def ndcg_at_k(pred_ids, gold_ids, top_k=10):
     """
     nDCG@k — “quality of the whole list, rewarding early hits (log discount).”
@@ -87,9 +69,9 @@ def evaluate(gt, retriever, top_k=10, local=False):
     Runs all metrics and averages across queries.
     - gt_rows: [{"query": "...", "doc_id": "X"}] or [{"query": "...", "doc_ids": ["X","Y"]}]
     - retriever: fn(query, k) -> ranked list of doc_ids
-    Returns: dict with Hit@k, MRR, MAP@k, nDCG@k
+    Returns: dict with Hit@k, MRR, nDCG@k
     """
-    hits, mrrs, maps, ndcgs = [], [], [], []
+    hits, mrrs, ndcgs = [], [], []
     for row in tqdm(gt, desc="Evaluating retrieval", unit="query"):
         gold_ids = row.get("doc_ids") or [row["doc_id"]]
 
@@ -101,13 +83,11 @@ def evaluate(gt, retriever, top_k=10, local=False):
 
         hits.append(hit_at_k(pred_ids, gold_ids, top_k=top_k))
         mrrs.append(mrr_at_k(pred_ids, gold_ids, top_k=top_k))
-        maps.append(map_at_k(pred_ids, gold_ids, top_k=top_k))
         ndcgs.append(ndcg_at_k(pred_ids, gold_ids, top_k=top_k))
 
     n = max(len(gt), 1)
     return {
         f"Hit@{top_k}": sum(hits) / n,
         f"MRR@{top_k}": sum(mrrs) / n,
-        f"MAP@{top_k}": sum(maps) / n,
         f"nDCG@{top_k}": sum(ndcgs) / n,
     }

@@ -78,7 +78,7 @@ specs = {
         ),
     ],
     "3_keyword_search_evaluation_minsearch.ipynb": [
-        md("# Notebook 3: Keyword / BM25 evaluation (Elasticsearch)\n\nMeasures Hit@K, MRR, MAP, nDCG using Elasticsearch BM25.\n"),
+        md("# Notebook 3: Keyword / BM25 evaluation (Elasticsearch)\n\nMeasures Hit@K, MRR, and nDCG using Elasticsearch BM25.\n"),
         code(
             BOOT
             + "import json\n"

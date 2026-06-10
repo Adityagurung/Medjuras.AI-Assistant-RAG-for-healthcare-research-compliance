@@ -127,12 +127,11 @@ if __name__ == "__main__":
 
     hit = metrics[f"Hit@{top_k}"]
     mrr = metrics[f"MRR@{top_k}"]
-    map_ = metrics[f"MAP@{top_k}"]
     ndcg = metrics[f"nDCG@{top_k}"]
 
     print("\n📊 Elastic Search Evaluation Results (aggregate, per-query metrics)")
     print(
-        f"Hit@{top_k}: {hit:.3f} | MRR@{top_k}: {mrr:.3f} | MAP@{top_k}: {map_:.3f} | nDCG@{top_k}: {ndcg:.3f}"
+        f"Hit@{top_k}: {hit:.3f} | MRR@{top_k}: {mrr:.3f} | nDCG@{top_k}: {ndcg:.3f}"
     )
 
     test_queries = [

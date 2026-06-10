@@ -27,7 +27,7 @@ METHOD_PNG = {
 def save_single_method_plot(method, metrics, top_k, out_path=None):
     info=RETRIEVER_INFO.get(method, {'title': method, 'subtitle': '', 'accent': '#2563eb'})
     metric_names=_metric_keys(top_k)
-    metric_colors=['#3b82f6', '#f97316', '#22c55e', '#ef4444']
+    metric_colors=['#3b82f6', '#f97316', '#22c55e']
     vals=[float(metrics[m]) for m in metric_names]
 
     fig, ax=plt.subplots(figsize=(9, 6), facecolor='#fafafa')

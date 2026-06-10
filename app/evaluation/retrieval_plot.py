@@ -29,7 +29,6 @@ RETRIEVER_INFO = {
 METRIC_FULL_NAME = {
     "Hit": "Hit Rate",
     "MRR": "Mean Reciprocal Rank",
-    "MAP": "Mean Average Precision",
     "nDCG": "Normalized Discounted Cumulative Gain",
 }
 
@@ -37,19 +36,18 @@ METRIC_FULL_NAME = {
 METRIC_HELP = {
     "Hit": "Found the right chunk somewhere in the top results",
     "MRR": "How high the first correct chunk was ranked",
-    "MAP": "Overall quality of the ranked list",
     "nDCG": "Rewards putting the right chunk nearer the top",
 }
 
 
 def _metric_keys(top_k: int) -> list[str]:
-    return [f"Hit@{top_k}", f"MRR@{top_k}", f"MAP@{top_k}", f"nDCG@{top_k}"]
+    return [f"Hit@{top_k}", f"MRR@{top_k}", f"nDCG@{top_k}"]
 
 
 def _chart_title(top_k: int) -> str:
     return (
         f"Same ground-truth questions — three retrieval approaches (top {top_k})\n"
-        "Hit Rate · Mean Reciprocal Rank · Mean Average Precision · "
+        "Hit Rate · Mean Reciprocal Rank · "
         "Normalized Discounted Cumulative Gain"
     )
 
@@ -70,10 +68,10 @@ def save_plot(
         raise ValueError("No metrics to plot")
 
     metric_names = _metric_keys(top_k)
-    metric_colors = ["#3b82f6", "#f97316", "#22c55e", "#ef4444"]
+    metric_colors = ["#3b82f6", "#f97316", "#22c55e"]
     x = list(range(len(methods)))
-    width = 0.18
-    offsets = [(-1.5 + i) * width for i in range(4)]
+    width = 0.22
+    offsets = [(-1.0 + i) * width for i in range(3)]
 
     fig, ax = plt.subplots(figsize=(12, 7), facecolor="#fafafa")
 
