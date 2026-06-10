@@ -140,7 +140,6 @@ def save_plot_html(
     metric_css = {
         metric_names[0]: "metric-hit",
         metric_names[1]: "metric-mrr",
-        metric_names[2]: "metric-map",
         metric_names[3]: "metric-ndcg",
     }
 
@@ -238,7 +237,6 @@ def save_plot_html(
     .bar-fill {{ height: 100%; border-radius: 999px; }}
     .metric-hit {{ background: #3b82f6; }}
     .metric-mrr {{ background: #f97316; }}
-    .metric-map {{ background: #22c55e; }}
     .metric-ndcg {{ background: #ef4444; }}
     .metric-value {{ font-size: 0.8rem; font-variant-numeric: tabular-nums; text-align: right; }}
     .legend {{
