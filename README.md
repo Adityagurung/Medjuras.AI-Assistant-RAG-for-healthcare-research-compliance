@@ -326,13 +326,11 @@ Complete RAG pipeline with dual knowledge bases and LLM:
 Multiple retrieval approaches evaluated with quantitative metrics:
 ![alt text](results/images/retrieval_eval_comparison.png)
 
-
 **Evaluation Results:**
-
-| Method | Hit | MRR | nDCG |
-|--------|-------|-------|-------|--------|
+| Method | Hit@10 | MRR@10 | nDCG@10 |
+|--------|--------|--------|---------|
 | **Hybrid RRF** | **1.0** | **0.872** | **0.904** |
-| **ElasticSearch** | **0.995** | **0.892** | **0.918** |
+| **Elasticsearch** | **0.995** | **0.892** | **0.918** |
 | **Qdrant Dense** | **0.985** | **0.841** | **0.877** |
 
 **Winner: Hybrid RRF Search** - Best overall performance across all metrics with optimal fusion of semantic and keyword search.
