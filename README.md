@@ -325,7 +325,7 @@ Complete RAG pipeline with dual knowledge bases and LLM:
 ### Retrieval Evaluation
 Multiple retrieval approaches evaluated with quantitative metrics:
 
-![Retrieval Evaluation Comparison](results/images/retrieval_eval_comparison.png)
+![Retrieval Evaluation Comparison][(results/images/retrieval_eval_comparison.png)]
 
 **Evaluation Results:**
 
