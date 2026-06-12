@@ -44,6 +44,19 @@ def run_agentic_evaluation(
     )
 
 
+
+
+def run_model_comparison_evaluation(
+    *,
+    max_samples: int = 25,
+    local: bool = True,
+) -> Dict[str, Any]:
+    """Same RAG context, three models, cosine similarity vs ground-truth passage."""
+    from evaluation.model_comparison_eval import run_model_comparison
+
+    return run_model_comparison(max_samples=max_samples, local=local)
+
+
 def run_full_llm_evaluation(
     *,
     rag_max_samples: int = 20,
@@ -101,6 +114,17 @@ def save_llm_evaluation_results(
             encoding="utf-8",
         )
         paths["agentic_evaluation"] = legacy_agentic
+
+    ag = results.get("agentic") or {}
+    if ag.get("mode") == "compare":
+        try:
+            from evaluation.llm_eval_charts import save_approach_comparison_dashboard
+            from ingestion.paths import RESULTS_DIR
+            out_png = RESULTS_DIR / "images" / "agentic_approach_comparison.png"
+            chart_file = save_approach_comparison_dashboard(ag, out_png)
+            paths["agentic_chart"] = chart_file
+        except Exception:
+            print("Warning: chart save failed")
 
     return paths
 

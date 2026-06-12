@@ -54,13 +54,12 @@ def evaluate_rag_batch(
         Summary dict with per-question scores and mean overall.
     """
     from evaluation.config_paths import load_ground_truth
-    from llm.openai_client import get_openai_client, DEFAULT_MODEL
     from search.hybrid_search import hybrid_search
     from tqdm.auto import tqdm
 
     rows = load_ground_truth()[:max_samples]
-    client = get_openai_client()
-    model = get_chat_model() if use_mygenassist() else os.getenv("OPENAI_DEFAULT_MODEL", DEFAULT_MODEL)
+    client = get_llm_client()
+    model = get_chat_model() if use_mygenassist() else os.getenv("OPENAI_DEFAULT_MODEL", "gpt-4o-mini")
     results = []
 
     for row in tqdm(rows, desc="RAG + LLM judge", unit="query"):

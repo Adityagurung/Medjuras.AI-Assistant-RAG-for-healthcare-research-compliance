@@ -342,6 +342,7 @@ Multiple retrieval approaches evaluated with quantitative metrics:
 - **Visualization**: `notebooks/notebooks/5_hybrid_search_evaluation_qdrant.ipynb`
 
 ### RAG Evaluation — LLM-as-Judge
+![alt text](results/images/agentic_approach_comparison.png)
 Comprehensive quality assessment with 11 criteria:
 
 **Evaluation Framework:**

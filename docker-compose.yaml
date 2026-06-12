@@ -24,6 +24,16 @@ services:
       retries: 30
       start_period: 90s #nEEDS LIKE 2 MINS TO START UP ES
 
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama_medi_rag
+    ports:
+      - "11434:11434"
+    volumes:
+      - ./data/ollama:/root/.ollama
+    restart: unless-stopped
+
   qdrant:
     image: qdrant/qdrant
     container_name: qdrant_medi_rag
@@ -55,6 +65,8 @@ services:
       SKIP_WARMUP: ${SKIP_WARMUP:-false}
       ES_URL: http://elasticsearch:9200
       QDRANT_URL: http://qdrant:6333
+      OLLAMA_BASE_URL: http://ollama:11434
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-llama3.2}
       #MCP_SERVER_URL: http://mcp-server:8765
     volumes:
       - ./app:/app/app         # hot-reload code
@@ -69,6 +81,8 @@ services:
       elasticsearch:
         condition: service_healthy
       qdrant:
+        condition: service_started
+      ollama:
         condition: service_started
 
   grafana:

@@ -252,7 +252,7 @@ def build_rag_prompt(
         context_text = "\n\n".join(d.get("text", "") for d in ranked)
 
     tool_info = "\n".join(
-        f"- {t['function']['name']}: {t['function']['description']}"
+        f"- {t['function']['name']}: {t['function'].get('description', 'No description')}"
         for t in tools
         if t.get("type") == "function" and "function" in t
     )

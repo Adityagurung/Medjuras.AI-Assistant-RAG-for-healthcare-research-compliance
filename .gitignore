@@ -20,6 +20,7 @@ credentials.json
 # Local DB / index state (rebuilt via Docker + notebooks)
 data/qdrant_storage/
 data/esdata/
+data/ollama
 data/postgres_data/
 grafana/data/
 
@@ -32,4 +33,4 @@ docs/
 reference/
 to_do/
 
-update_docs.py
+update_docs.pydata/ollama/

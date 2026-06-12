@@ -9,9 +9,8 @@ from typing import Any, Dict, List, Optional
 import numpy as np
 import pandas as pd
 from llm.mygenassist_client import get_aux_model, get_chat_model, use_mygenassist
-from llm.openai_client import DEFAULT_MODEL, get_openai_client
+from llm.mygenassist_client import get_llm_client
 from llm.rag_utils import build_rag_prompt
-from sentence_transformers import SentenceTransformer
 from tools.registry import FUNCTION_MAP, TOOLS_JSON
 from tqdm.auto import tqdm
 
@@ -19,7 +18,7 @@ from tqdm.auto import tqdm
 def _resolve_chat_model() -> str:
     if use_mygenassist():
         return get_chat_model()
-    return os.getenv("OPENAI_DEFAULT_MODEL", DEFAULT_MODEL)
+    return os.getenv("OPENAI_DEFAULT_MODEL", "gpt-4o-mini")
 
 
 def _resolve_judge_model() -> str:
@@ -60,9 +59,8 @@ def _parse_judge_json(text: str) -> Dict[str, Any]:
 class AgenticLLMEvaluator:
     """Evaluates agentic LLM performance by testing tool usage effectiveness."""
 
-    def __init__(self, embedding_model_name: str = "multi-qa-MiniLM-L6-cos-v1"):
-        self.embedding_model = SentenceTransformer(embedding_model_name)
-        self.client = get_openai_client()
+    def __init__(self):
+        self.client = get_llm_client()
 
         self.agentic_approaches = {
             "default": _default_approach_config(),
@@ -352,6 +350,7 @@ def evaluate_agentic_batch(
             "metrics_comparison": comparison["metrics_comparison"],
             "total_tool_calls": metrics["total_tool_calls"],
             "results": best_result["detailed_results"],
+            "all_approach_results": comparison["detailed_results"],
         }
 
     name = approach_name or "default"

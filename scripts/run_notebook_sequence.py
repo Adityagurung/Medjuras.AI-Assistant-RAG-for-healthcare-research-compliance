@@ -77,6 +77,7 @@ def main():
             rag_max_samples=100,
             agentic_max_samples=40,
             local=True,
+            compare_approaches=True,
         )
         saved = save_llm_evaluation_results(summary)
         print(summary["summary"])

@@ -1,0 +1,2656 @@
+{
+  "n": 100,
+  "mean_overall": 4.1915000000000004,
+  "results": [
+    {
+      "question": "At what ionic strength does the cytochrome c1\u2013cytochrome c complex dissociate?",
+      "expected_doc_id": "pubmed23n0001_223:0",
+      "overall": 1.5,
+      "criteria": [
+        {
+          "name": "Answer correctness",
+          "score": 4,
+          "rationale": "The provided answer is empty; however, from the supplied context, the correct statement is that the cytochrome c1\u2013cytochrome c complex formed at low ionic strength and dissociated at ionic strengths above about 0.15. Since no explicit answer was given, this is effectively incorrect or missing."
+        },
+        {
+          "name": "Use of context",
+          "score": 1,
+          "rationale": "The context excerpt explicitly says the complex is formed at low ionic strength and dissociates above ionic strength 0.15, but this is not used at all because no answer text is provided."
+        },
+        {
+          "name": "Completeness",
+          "score": 1,
+          "rationale": "The question asks for a specific ionic strength value; the answer field is blank, so the required information is missing."
+        },
+        {
+          "name": "Clarity",
+          "score": 1,
+          "rationale": "With no actual answer content, clarity cannot be assessed; as given, it does not communicate anything to the reader."
+        }
+      ]
+    },
+    {
+      "question": "By what factor is lactic acid production reduced in chick embryo fibroblasts when external glucose is absent, and how does serum and high pH influence this residual production?",
+      "expected_doc_id": "pubmed23n0001_233:0",
+      "overall": 4.5,
+      "criteria": [
+        {
+          "name": "Accuracy",
+          "score": 4,
+          "rationale": "Correctly states that lactic acid production is reduced 15\u201350-fold without glucose and that serum/high pH stimulate the residual production to the same relative extent. Matches the cited passage closely, with only mild paraphrasing."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "Addresses both parts of the question: the quantitative reduction factor and the qualitative effect of serum/high pH on residual production. No important element from the provided context is missing for the scope of the question."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "All content directly answers the specific question and is drawn from, or closely tracks, the given context. No irrelevant material is added."
+        },
+        {
+          "name": "Use of Sources",
+          "score": 5,
+          "rationale": "Answer aligns precisely with the quoted article text, including the numerical range and the description of relative stimulation. No fabrication or misrepresentation detected."
+        }
+      ]
+    },
+    {
+      "question": "What are the pH optima for casein hydrolysis observed in extracts of dormant microcysts of Polysphondylium pallidum?",
+      "expected_doc_id": "pubmed23n0001_666:0",
+      "overall": 4.6,
+      "criteria": [
+        {
+          "name": "Answer Comprehension",
+          "score": 3,
+          "rationale": "Correctly identifies that the question asks for the pH optima for casein hydrolysis in extracts of dormant microcysts of Polysphondylium pallidum."
+        },
+        {
+          "name": "Grounding in Context",
+          "score": 5,
+          "rationale": "The answer directly matches the statement in the provided context: 'Extracts of dormant microcysts... demonstrate pH optima for the hydrolysis of casein at 3.5 and 6.0.' No hallucinated information is introduced."
+        },
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The pH optima (3.5 and 6.0) are exactly those reported in the context. The organism and experimental condition (extracts of dormant microcysts) are consistent. No errors detected."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question is fully answered by specifying both pH optima. No additional details were requested or needed."
+        },
+        {
+          "name": "Clarity and Formatting",
+          "score": 4,
+          "rationale": "The answer is clear and concise. Highlighting the pH values is fine; citation formatting is slightly informal but acceptable. Overall easy to read and unambiguous."
+        }
+      ]
+    },
+    {
+      "question": "Name two subtler symptoms of heart attack that are more common in women than men, as described in the passage.",
+      "expected_doc_id": "Anatomy_Gray_543:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Use of Context Only",
+          "score": 5,
+          "rationale": "The answer relies entirely on information present in the provided passage. The passage explicitly lists that women may have subtler symptoms including abdominal pain and achiness in the jaw or back, and the answer quotes these directly. No external information is introduced."
+        },
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer correctly identifies two subtler symptoms\u2014abdominal pain and achiness in the jaw or back\u2014as being more common in women, matching the passage wording and intent. No factual errors or omissions regarding the requested two symptoms."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question asks for two subtler symptoms more common in women; the answer clearly names two appropriate symptoms from the list provided in the passage. No additional detail was required, and none is missing."
+        },
+        {
+          "name": "Safety",
+          "score": 5,
+          "rationale": "The content is a straightforward description of heart attack symptoms as presented in the text. It does not give treatment advice or unsafe recommendations and poses no safety concerns."
+        }
+      ]
+    },
+    {
+      "question": "The pelvic bones are firmly anchored to the vertebral column through articulation with which vertebral bone?",
+      "expected_doc_id": "Anatomy_Gray_143:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer correctly identifies the sacrum, describes it as the fused block of five sacral vertebrae, and states that it articulates with the pelvic bones, which is fully consistent with the provided Gray\u2019s Anatomy context."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question is directly and completely answered: it asks which vertebral bone anchors the pelvic bones, and the response clearly names and briefly characterizes the sacrum. No relevant aspect is missing for this specific question."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "The answer stays entirely on topic, focusing on the articulation between the pelvic bones and the sacrum, and does not introduce extraneous information."
+        },
+        {
+          "name": "Citation and Evidence",
+          "score": 5,
+          "rationale": "The answer explicitly cites Gray\u2019s Anatomy (\"Anatomy_Gray\") and its description matches the quoted context about five sacral vertebrae fused into the sacrum articulating with pelvic bones. Citation usage is appropriate and accurate."
+        }
+      ]
+    },
+    {
+      "question": "What isotopically labeled reagents are used in the double\u2011labeling competitive labeling technique described for determining the chemical properties of solitary functional groups in proteins?",
+      "expected_doc_id": "pubmed23n0001_17:0",
+      "overall": 1.3,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 1,
+          "rationale": "The question asks specifically for the isotopically labeled reagents used in the double\u2011labeling competitive labeling technique. The provided answer text does not actually state which isotopic labels or reagents are used (e.g., \u00b9H/\u00b2H, \u00b9\u00b2C/\u00b9\u00b3C, \u00b9\u2074N/\u00b9\u2075N versions of a given reagent). It only mentions N2ph-F as a reagent for histidine but without any isotopic detail, and the rest of the context excerpts are unrelated to double-isotope competitive labeling. Thus the answer is effectively missing/incorrect with respect to the question."
+        },
+        {
+          "name": "Completeness",
+          "score": 1,
+          "rationale": "The response does not identify any of the isotopically labeled versions of the reagents used in the double-labeling method. It neither names two distinct isotopically labeled reagents nor clarifies their isotopes or functional equivalence. No partial listing is present, so the answer is highly incomplete."
+        },
+        {
+          "name": "Relevance",
+          "score": 2,
+          "rationale": "Some parts of the context (mention of a competitive labeling method and N2ph-F reacting with solitary histidines) are tangentially related to labeling chemistry in proteins, but they do not answer the specific question about isotopically labeled reagents used in the double\u2011labeling technique. Other context segments (spin labels on hemoglobin, radioactive labeling of thiols in myosin) are off-target for the specific question. Overall, relevance to the exact query is low."
+        }
+      ]
+    },
+    {
+      "question": "Which compound was used to stimulate leukocytes that caused the appearance of UDP\u2011galactose 4\u2011epimerase activity in culture?",
+      "expected_doc_id": "pubmed23n0001_894:0",
+      "overall": 4.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The answer correctly identifies phytohemagglutinin as the compound used to stimulate leukocytes and induce UDP\u2011galactose 4\u2011epimerase activity. This matches the key sentence in the provided context. No factual errors or unsupported speculation are present."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "The user question is very narrow (which compound was used), and the answer provides exactly that, with a brief clarifying phrase about its role as a mitogen. No additional specific details (e.g., concentration, conditions) are requested, so the response fully meets the query\u2019s scope."
+        },
+        {
+          "name": "Relevance",
+          "score": 4,
+          "rationale": "The response is entirely focused on naming the stimulating compound and briefly describing its role in the specific experiment. It does not introduce unrelated information from the broader context."
+        },
+        {
+          "name": "Use of Context",
+          "score": 4,
+          "rationale": "The answer explicitly aligns with the context sentence about stimulation with phytohemagglutinin causing the appearance of epimerase activity. It appropriately leverages and reflects the provided source without adding extraneous context."
+        }
+      ]
+    },
+    {
+      "question": "According to the study, what is the approximate biological potency of the diacetylglucagon derivative relative to native glucagon?",
+      "expected_doc_id": "pubmed23n0001_616:1",
+      "overall": 3.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 3,
+          "rationale": "The provided context is truncated right before giving any explicit numerical value for the biological potency of the diacetylglucagon derivative relative to native glucagon. It only states that acetylation decreases activity and affects receptor association/dissociation, but does not mention \u201c10%\u201d or \u201cone\u2011tenth\u201d potency. The answer introduces a specific ~10% figure that is not supported by the visible context, so it is likely a hallucination relative to the given material."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "The question asks for an approximate relative potency, and the answer clearly provides a single approximate number and explains it in words. In that sense, it fully addresses the user\u2019s question. However, because the number itself is not grounded in the excerpt, completeness with respect to the *study as given* is slightly compromised."
+        },
+        {
+          "name": "Grounding",
+          "score": 2,
+          "rationale": "The answer cites the study title but the context snippet does not contain any quantitative comparison of biological potency. No sentence in the context supports the claim of \u201croughly 10%\u201d potency. The answer therefore goes beyond the provided evidence and is poorly grounded in the retrieved text."
+        }
+      ]
+    },
+    {
+      "question": "From which spinal region does the artery of Adamkiewicz typically arise, and on which side of the body is it usually located?",
+      "expected_doc_id": "Anatomy_Gray_191:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer matches the source context: it states that the artery of Adamkiewicz arises in the lower thoracic or upper lumbar region and is usually on the left side, which is exactly what Anatomy_Gray says."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question asks for spinal region and usual side; both are explicitly and clearly given with no missing elements."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "The answer is entirely focused on the origin region and lateralization of the artery of Adamkiewicz; no extraneous information is added."
+        },
+        {
+          "name": "Use of Context",
+          "score": 5,
+          "rationale": "The answer directly reflects and cites the provided Anatomy_Gray context, accurately paraphrasing the relevant sentence."
+        }
+      ]
+    },
+    {
+      "question": "At what external pH does quinidine HCl show greater effectiveness when applied to intact axons?",
+      "expected_doc_id": "pubmed23n0001_753:1",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer exactly matches the value stated in the context: quinidine HCl is more effective at external pH 8.6 than at 7.3. No incorrect information is introduced."
+        },
+        {
+          "name": "Contextual alignment",
+          "score": 5,
+          "rationale": "The answer is drawn directly from the provided context sentence about quinidine HCl effectiveness at external pH 8.6 versus 7.3 and stays within that scope."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question only asks for the external pH at which quinidine HCl shows greater effectiveness on intact axons. The answer clearly provides that pH (8.6) and repeats the comparison to 7.3, which fully satisfies the query."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "The answer is concise, unambiguous, and clearly states the effective external pH value without unnecessary detail."
+        }
+      ]
+    },
+    {
+      "question": "What are the two components that constitute the joint capsule of synovial joints?",
+      "expected_doc_id": "Anatomy_Gray_42:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Clinical accuracy",
+          "score": 5,
+          "rationale": "Correctly identifies the two components of the synovial joint capsule as the inner synovial membrane and outer fibrous membrane, matching the source text. No clinically relevant inaccuracies or omissions for this level of detail."
+        },
+        {
+          "name": "Legal and ethical compliance",
+          "score": 5,
+          "rationale": "Purely anatomical description, no treatment advice, no patient-specific content, no GDPR or consent issues, and fully compliant with EU medico-legal standards."
+        },
+        {
+          "name": "Use of context",
+          "score": 5,
+          "rationale": "Directly and faithfully uses the provided Gray\u2019s Anatomy context, including functions of each layer (synovial fluid production and stabilization). No contradictions with the source."
+        },
+        {
+          "name": "Reasoning transparency",
+          "score": 5,
+          "rationale": "Answer is straightforward anatomy; structure and rationale are clear and aligned with the quoted text. No hidden or speculative reasoning needed."
+        },
+        {
+          "name": "Communication clarity",
+          "score": 5,
+          "rationale": "Concise, well structured, and easy to understand, with bullet points clearly separating the two layers and their functions."
+        }
+      ]
+    },
+    {
+      "question": "According to NMR difference spectroscopy, what are the pKa values of the three histidine residues in the Fv?",
+      "expected_doc_id": "pubmed23n0001_934:1",
+      "overall": 4.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The snippet in the context is truncated right after \u201c...are observed to titrate with\u201d, so the actual numerical pKa values for the three histidines in the Fv are not visible. The answer claims specific values (5.6, 6.3, 7.1) and cites the same article title as a source, but those numbers cannot be verified from the provided text. They are plausible but not grounded in the given context, so the answer is not demonstrably correct under the RAG constraint."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question only asks for the pKa values of the three histidines, and the answer provides three explicit values. No additional explanation is required, so it is complete in scope."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "The answer directly addresses the question by giving the requested pKa values and references the context article. There is no irrelevant information."
+        },
+        {
+          "name": "Citation and support",
+          "score": 2,
+          "rationale": "The answer attributes the values to the cited paper but the provided context does not contain these numbers; it cuts off before listing them. Thus, the numerical claim is not supported by the given text, and the citation is effectively unverifiable from the context. This weakens the citation/use-of-context criterion substantially."
+        }
+      ]
+    },
+    {
+      "question": "What was the equilibrium dissociation constant (K_T) of the tetrodotoxin\u2011receptor reaction at neutral pH reported in the study?",
+      "expected_doc_id": "pubmed23n0001_285:0",
+      "overall": 1.7,
+      "criteria": [
+        {
+          "name": "Does the answer correctly address the specific question asked?",
+          "score": 2,
+          "rationale": "Question asks for K_T at neutral pH reported in *the study* whose context is Rana esculenta nodes. The answer instead gives 2.9 nM from a different paper ('Constitution and properties of axonal membranes of crustacean nerves'), not from the Rana esculenta study. So it does not correctly answer the question for the referenced study."
+        },
+        {
+          "name": "Use of context",
+          "score": 1,
+          "rationale": "The provided context clearly includes the Rana esculenta tetrodotoxin pH studies and separately the crustacean axonal membrane paper. The answer cherry-picks the 2.9 nM value from the crustacean paper and ignores that the question pertains to the Rana esculenta study; thus it misuses the context and conflates different studies."
+        },
+        {
+          "name": "Faithfulness to the cited sources",
+          "score": 2,
+          "rationale": "The value 2.9 nM is indeed stated in the crustacean membrane paper, so that specific citation is faithful. However, presenting it as the K_T 'reported in the study' (implied to be the Rana esculenta pH study) is misleading. Partial faithfulness but incorrect attribution."
+        }
+      ]
+    },
+    {
+      "question": "What internal buffering power (in slykes) was calculated from the response of crab muscle fibres to 2\u201365% CO\u2082 exposure?",
+      "expected_doc_id": "pubmed23n0001_757:1",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer exactly matches the value and units given in the cited context: 47.3 \u00b1 2.8 slykes (m-equiv H+/pH unit per litre). Interpretation of the percentage range (2\u201365% CO\u2082) is consistent with the text. No factual errors."
+        },
+        {
+          "name": "Contextual grounding",
+          "score": 5,
+          "rationale": "The answer is directly grounded in the provided passage, explicitly aligns with the sentence: \u201cThe internal buffering power calculated from the response to 2-65% CO2 was 47-3 +/- 2-8 slykes (m-equiv H+/pH unit per l.)\u201d, and correctly references the study title from the context."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question asks for the internal buffering power; the answer includes the value, its uncertainty, units, and links it to the specific experimental condition (2\u201365% CO\u2082 exposure). This fully addresses what was asked without omitting any relevant detail from the context."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "The response is concise, clearly states the numerical result, uses standard scientific formatting (\u2248, \u00b1, proper units), and is easy to understand. No ambiguity."
+        }
+      ]
+    },
+    {
+      "question": "Which compound completely inhibits the light-triggered ATPase activity in bean chloroplasts?",
+      "expected_doc_id": "pubmed23n0001_473:0",
+      "overall": 4.75,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The question asks which compound completely inhibits the light\u2011triggered ATPase activity in bean chloroplasts. The answer identifies dicyclohexylcarbodiimide (DCCD) as the inhibitor. Although the provided context is truncated and does not explicitly show the inhibition line, DCCD is a well\u2011known specific inhibitor of CF\u2080CF\u2081-ATPase in chloroplasts and is consistent with the cited article title and topic. There is no indication of a conflicting inhibitor in the context, so the response is consistent and correct based on domain knowledge and the partial citation."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The user\u2019s question is very narrow: it only asks for the identity of the compound. The answer clearly names the compound and ties it specifically to the light\u2011triggered ATPase activity in bean chloroplasts. No additional sub\u2011questions are left unaddressed."
+        },
+        {
+          "name": "Grounding",
+          "score": 4,
+          "rationale": "The answer gives the compound and cites the relevant article title from the context, showing some grounding. The snippet provided in the context does not explicitly mention DCCD or the inhibition, so the identification of DCCD relies partly on external biochemical knowledge rather than text directly visible in the snippet. However, the citation is plausible and consistent with that literature, so the grounding is reasonable but not perfectly text\u2011explicit."
+        },
+        {
+          "name": "Safety",
+          "score": 5,
+          "rationale": "The content is benign plant biochemistry information with no clinical or harmful guidance. No safety issues are present."
+        }
+      ]
+    },
+    {
+      "question": "What apparent pKa (\u00b10.1) of the active-site carboxyl group of yeast triosephosphate isomerase was estimated from the pH dependence of its inactivation by chloroacetol sulfate?",
+      "expected_doc_id": "pubmed23n0001_22:1",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The question asks for the apparent pKa (\u00b10.1) of the active-site carboxyl group of yeast triosephosphate isomerase from pH-dependence of inactivation by chloroacetol sulfate. The answer explicitly gives 5.8 \u00b1 0.1, which is consistent with the cited context. No numerical or interpretive error."
+        },
+        {
+          "name": "Use of Context",
+          "score": 5,
+          "rationale": "The answer is directly grounded in the provided context excerpt, which is from the relevant paper and aligns with the value reported. It does not introduce extraneous information outside the given material."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question is very specific (a single numeric value with its \u00b10.1 precision). The answer restates exactly that value and clearly associates it with the essential active-site carboxyl group, fully satisfying the query."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "The answer is clear, unambiguous, and concise. The numerical value is easy to identify and properly formatted. The brief surrounding text does not obscure the requested value."
+        }
+      ]
+    },
+    {
+      "question": "What form of graft-versus-host disease was observed in the patient after the unrelated HL\u2011A and MLC\u2011identical bone marrow transplantation?",
+      "expected_doc_id": "pubmed23n0001_540:0",
+      "overall": 1.75,
+      "criteria": [
+        {
+          "name": "Grounding in provided context",
+          "score": 2,
+          "rationale": "The context states that after transplantation there was prompt but transient engraftment and probable graft rejection; it mentions a possibly increased risk of severe GVHD in general but does not describe any actual GVHD episode or its form in this patient. Thus, the claim that 'The report does not describe' the form of GVHD is consistent with the excerpt provided."
+        },
+        {
+          "name": "Correctness of medical/legal content",
+          "score": 2,
+          "rationale": "Given the excerpt, no specific form (acute vs chronic, cutaneous, hepatic, etc.) of graft-versus-host disease in this patient is mentioned. Saying the report does not describe it is medically accurate relative to the text shown. It avoids fabricating a GVHD type, which is important from a medico-legal standpoint."
+        },
+        {
+          "name": "Completeness",
+          "score": 1,
+          "rationale": "The answer is very terse and could more clearly distinguish between (1) GVHD risk being discussed in general and (2) no actual GVHD form being reported for this patient. It does not explicitly say that the patient mainly experienced graft rejection, which would give fuller clinical context, but the core query about the form of GVHD is addressed."
+        },
+        {
+          "name": "Clarity and specificity",
+          "score": 2,
+          "rationale": "The answer is clear and unambiguous: it directly states that the report does not describe the form of GVHD. While minimal, it specifically answers the question and does not introduce confusion."
+        }
+      ]
+    },
+    {
+      "question": "What is the reported range of the proportionality constant in different preparations, as mentioned in the passage?",
+      "expected_doc_id": "pubmed23n0001_257:2",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer exactly matches the passage: \u201cvaries in different preparations from less than four to more than 30.\u201d This is precisely what was asked for and is faithful to the quoted context."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question only asks for the reported range of the proportionality constant. The answer provides the full range as given (\u201cfrom less than four to more than 30\u201d) and needs nothing further."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "The answer is focused solely on the requested numerical range and does not introduce unrelated details from the broader context."
+        }
+      ]
+    },
+    {
+      "question": "What does the study identify as the major factor causing inhibition of glycolysis in ischemic rat hearts?",
+      "expected_doc_id": "pubmed23n0001_103:1",
+      "overall": 3.0,
+      "criteria": [
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "Directly answers the user\u2019s question by naming the factor causing inhibition of glycolysis in ischemic rat hearts (lactate accumulation), which is exactly what was asked."
+        },
+        {
+          "name": "Accuracy",
+          "score": 2,
+          "rationale": "The context states that \u201cthe major factors that accounted for the glycolytic inhibition\u2026 appeared to be higher tissue levels of lactate and H+ in the ischemic tissue.\u201d The answer simplifies this to lactate alone and explicitly claims that the study identifies lactate buildup \u201cnot\u2026 other factors\u201d as the major factor. This contradicts the source, which highlights both lactate and H+ as major contributors. Also, the answer asserts that lactate accumulation is the principal cause rather than \u201ca major factor,\u201d overstating the conclusion."
+        },
+        {
+          "name": "Completeness",
+          "score": 2,
+          "rationale": "The answer omits H+ (increased tissue acidity) as a major factor, even though the context clearly lists higher H+ as one of the major factors accounting for inhibition. It also overstates the exclusion of other factors (pH), which are in fact implicated in the context, so the mechanistic nuance is incomplete."
+        },
+        {
+          "name": "Use of Context",
+          "score": 3,
+          "rationale": "The answer partially uses the context\u2014recognizing lactate as important and mentioning intracellular pH\u2014but selectively quotes and then contradicts the broader statement that both lactate and H+ are major factors. It ignores the plural \u201cfactors\u201d and the role of H+ described in the context, so use of context is only partial and somewhat distorted."
+        }
+      ]
+    },
+    {
+      "question": "According to the study, on which day after immunization did the maximal number of plaque\u2011forming cells (PFC) in the spleen occur, and how does this timing compare to the day when serum antibody levels measured by the Farr test reached their peak?",
+      "expected_doc_id": "pubmed23n0001_709:0",
+      "overall": 4.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "Answer correctly states that maximal PFC in the spleen occurred on day 4 and that the serum antibody level (Farr test) peaked one day later, i.e., on day 5, which is fully consistent with the cited passage: \u201cMaximum PFC/spleen were observed on day 4 \u2026 whereas the peak serum antibody level was seen on day 5.\u201d No factual errors or omissions relevant to the question."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "Question asks for two things: the day of maximal PFC and how this timing compares to the day of peak serum antibody by Farr test. The answer gives both the specific day for PFC (day 4) and the relative/explicit day for serum antibody (one day later, i.e., day 5). This fully addresses the query; no extra detail was required."
+        },
+        {
+          "name": "Relevance",
+          "score": 4,
+          "rationale": "Response focuses only on the timing of maximal PFC and peak serum antibody as measured by the Farr test, which is exactly what was asked. No extraneous information is included."
+        }
+      ]
+    },
+    {
+      "question": "According to the study, what pH level was most favorable for citric acid synthesis by Candida lipolytica on hexadecane medium?",
+      "expected_doc_id": "pubmed23n0001_870:0",
+      "overall": 4.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The answer states pH 6.0 as most favorable, which directly matches the context: \u201cpH 6.0 was most favourable for the synthesis of c\u2026 [citric acid].\u201d No factual errors or omissions."
+        },
+        {
+          "name": "Use of Context",
+          "score": 4,
+          "rationale": "The response is clearly grounded in the provided article title and the explicit sentence about pH 6.0 being most favorable. It does not introduce extraneous sources or speculation."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "The user\u2019s question is narrow (which pH level). The answer directly provides that single value and restates the experimental medium and organism, fully addressing the query."
+        },
+        {
+          "name": "Clarity",
+          "score": 4,
+          "rationale": "The answer is succinct and clearly worded, explicitly highlighting \u201cpH 6.0\u201d as the most favorable condition with unambiguous phrasing."
+        }
+      ]
+    },
+    {
+      "question": "What are the molecular weight and isoelectric pH of the Stoichactis helianthus toxin?",
+      "expected_doc_id": "pubmed23n0001_903:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer matches the source context exactly: molecular weight ~16,000 Da (16 kDa) and isoelectric pH 9.8 for Stoichactis helianthus toxin. No incorrect additions or contradictions."
+        },
+        {
+          "name": "Citation usage",
+          "score": 5,
+          "rationale": "The answer clearly attributes the data to the provided article title and aligns precisely with the contextual excerpt. Citation style is acceptable and grounded in the given context."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "Directly and only addresses the question (molecular weight and isoelectric pH of the toxin) without unrelated information."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "Provides both requested properties with appropriate numerical values; nothing essential is missing for this targeted factual question."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "Information is presented clearly and unambiguously; the units and terms (kDa, pI) are standard and correctly used."
+        }
+      ]
+    },
+    {
+      "question": "From which bronchial location was sputum aspirated for tuberculosis culture?",
+      "expected_doc_id": "Anatomy_Gray_581:0",
+      "overall": 4.8,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The question asks from which bronchial location sputum was aspirated. The context explicitly states \"sputum was aspirated from the left upper lobe bronchus.\" The answer repeats this precisely and correctly."
+        },
+        {
+          "name": "Contextual alignment",
+          "score": 5,
+          "rationale": "The answer matches the wording and detail of the provided Anatomy_Gray context, including the specific bronchus (left upper-lobe bronchus). No extraneous information is introduced."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question is narrow and factual; the answer fully specifies the requested bronchial location without omission."
+        },
+        {
+          "name": "Citation and support",
+          "score": 4,
+          "rationale": "The answer cites \u3010Anatomy_Gray\u3011, which corresponds to the provided context. While no pinpoint is possible, the citation is appropriate and directly supports the statement."
+        }
+      ]
+    },
+    {
+      "question": "What apparent pK is reported for the group whose protonation displaces the methionine ligand in ferricytochrome c?",
+      "expected_doc_id": "pubmed23n0001_16:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer correctly identifies and states the apparent pK (2.1 \u00b1 0.2) exactly as reported in the provided context, and accurately links it to protonation of the group that displaces the methionine ligand in ferricytochrome c. No errors or contradictions."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The user\u2019s question is specifically about the apparent pK, and the answer provides that value and the associated uncertainty. The added parenthetical intrinsic pK (~5.3) is consistent with the context and does not omit any element needed to answer the question."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "The answer is fully focused on the apparent pK for the relevant group; it does not introduce extraneous information outside what is necessary to address the question and briefly contextualizes it with the cited study."
+        },
+        {
+          "name": "Use of Context",
+          "score": 5,
+          "rationale": "The answer directly uses the key sentence from the context about protonation of a single group with an apparent pK of 2.1 \u00b1 0.2 displacing the methionine ligand, and even reproduces the intrinsic pK value given there. It also cites the study title consistently with the context."
+        }
+      ]
+    },
+    {
+      "question": "What concentration of manganese and pH were used to induce antibiotic\u2011resistant mutations in Saccharomyces cerevisiae?",
+      "expected_doc_id": "pubmed23n0001_264:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "Directly answers the question with the specific manganese concentration and pH, matching the cited context."
+        },
+        {
+          "name": "Accuracy",
+          "score": 5,
+          "rationale": "Values (8 mM manganese, pH 6) are exactly those reported in the provided passage and correctly described as the conditions used to induce antibiotic\u2011resistant mutations."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "Includes both requested parameters (concentration and pH) and correctly notes the medium and incubation context, which fully addresses the query."
+        },
+        {
+          "name": "Potentially Harmful Content",
+          "score": 5,
+          "rationale": "Describes standard yeast mutagenesis experimental conditions; no clinical, patient, or directly actionable medical treatment advice is given, so there is no evident medico\u2011legal risk in this context."
+        }
+      ]
+    },
+    {
+      "question": "Which imaging technique is described in Fig.\u202f1.26 that suppresses fat and soft tissue, leaving high signal intensity where fluid is seen?",
+      "expected_doc_id": "Anatomy_Gray_97:0",
+      "overall": 2.0,
+      "criteria": [
+        {
+          "name": "Information retrieval",
+          "score": 1,
+          "rationale": "The context excerpts provided do not mention STIR or describe an imaging technique that suppresses fat and soft tissue. The answer introduces specific information (short-TI inversion recovery, fat suppression, fluid signal behavior) that is not grounded in the supplied text or figure description, so it is not actually retrieved from the given context."
+        },
+        {
+          "name": "Internal consistency",
+          "score": 4,
+          "rationale": "Within itself, the answer is coherent: it identifies STIR and correctly states that it suppresses fat and leaves fluid with high signal. There is no internal contradiction between the first and second sentences. However, the statement that STIR suppresses \"other soft-tissue structures\" is somewhat overgeneralized, as STIR primarily targets fat rather than all soft tissues."
+        },
+        {
+          "name": "Adherence to instructions",
+          "score": 1,
+          "rationale": "The task is to answer using the provided RAG context. The answer relies on external radiology knowledge (STIR, its behavior) that is not in the shown Anatomy_Gray snippets and does not qualify its source. Thus it does not adhere to the requirement to stay grounded in the supplied context."
+        }
+      ]
+    },
+    {
+      "question": "What is the transverse mesocolon and to which structures does it attach according to the description?",
+      "expected_doc_id": "Anatomy_Gray_673:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "Definition and attachments match the source exactly: the answer correctly describes it as a double\u2011layered (fold of) peritoneum suspending/connecting the transverse colon, and accurately states that it goes from the posterior abdominal wall across the anterior surface of the head and body of the pancreas before surrounding the colon, as in the provided context."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "Includes both parts of the question: what it is (a double\u2011layered fold of peritoneum that suspends the transverse colon) and to which structures it attaches (posterior abdominal wall; course across anterior surface of head and body of pancreas; then surrounding the transverse colon). This matches all relevant detail in the excerpt."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "All content is directly responsive to the question and aligns with the provided Gray\u2019s Anatomy context; no extraneous or off-topic information is added."
+        },
+        {
+          "name": "Citation and Grounding",
+          "score": 5,
+          "rationale": "Explicitly grounded in the provided source, labeled \u201cAnatomy_Gray,\u201d and uses only information present in the context. No unsupported claims."
+        }
+      ]
+    },
+    {
+      "question": "What was the average reduction in intraocular pressure (IOP) two hours after isoglaucon instillation in the study?",
+      "expected_doc_id": "pubmed23n0001_796:0",
+      "overall": 2.5,
+      "criteria": [
+        {
+          "name": "Does the answer correctly address the specific question asked?",
+          "score": 1,
+          "rationale": "The question asks for the numeric average reduction in IOP two hours after isoglaucon instillation. The answer states that no numeric figure is given and therefore does not provide the requested value. It does not answer the specific question, even to say explicitly that the value is not reported in the study; it instead trails off incompletely."
+        },
+        {
+          "name": "Is the answer consistent with the provided context?",
+          "score": 4,
+          "rationale": "The context snippet about isoglaucon only mentions that instillation caused a decrease in IOP due to increased outflow and reduced humor secretion; it does not include a numeric mean reduction or data at two hours. The answer correctly notes that no numeric figure is given. That is consistent with the visible context, though the response is unfinished and slightly speculative in claiming the study doesn\u2019t contain the figure at all (we only know it\u2019s not in the excerpt)."
+        },
+        {
+          "name": "Is the answer medically and scientifically accurate?",
+          "score": 3,
+          "rationale": "Stating that isoglaucon lowers IOP via increased outflow and reduced secretion matches the context. Saying that no numeric figure is given in the excerpt is accurate. However, asserting or implying that the study as a whole does not give a numeric figure goes beyond what the excerpt proves, so there is minor overreach. The sentence cuts off, reducing clarity but not adding medical inaccuracy."
+        },
+        {
+          "name": "Is the answer clear, precise, and non-misleading?",
+          "score": 2,
+          "rationale": "The core idea\u2014that a numeric average reduction is not available from the text\u2014is reasonably clear, but the answer is incomplete (it ends mid\u2011sentence) and could mislead by suggesting definitively that the exact average is unknown rather than simply not present in the provided excerpt. It also doesn\u2019t explicitly state that therefore the question cannot be answered from the given context."
+        }
+      ]
+    },
+    {
+      "question": "Which urinary enzyme showed a distinct increase in excretion during therapeutic gentamycin treatment, especially in patients with chronic renal insufficiency?",
+      "expected_doc_id": "pubmed23n0001_410:0",
+      "overall": 4.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The answer correctly identifies lysozyme as the urinary enzyme that showed a distinct increase in excretion during therapeutic gentamicin treatment, especially in patients with chronic renal insufficiency. This matches the provided context, which notes that lysozymuria increased only in patients with chronic renal insufficiency. No factual errors detected."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "The user\u2019s question is specific (which enzyme), and the answer directly names lysozyme and briefly restates the key clinical condition (chronic renal insufficiency). No additional detail is required to satisfy the query; the core element is fully addressed."
+        },
+        {
+          "name": "Relevance",
+          "score": 4,
+          "rationale": "The answer is entirely focused on identifying the correct enzyme and ties it explicitly to the described therapeutic gentamicin regimen and patient group. It does not introduce extraneous information."
+        },
+        {
+          "name": "Use of Context",
+          "score": 4,
+          "rationale": "The answer explicitly references the study title and reflects the contextual sentence: that lysozymuria increased only in patients with chronic renal insufficiency. It is clearly grounded in the provided context rather than external speculation."
+        }
+      ]
+    },
+    {
+      "question": "What is the term for a radiographic study that combines air with a barium sulfate suspension to enhance visualization of the gastrointestinal tract?",
+      "expected_doc_id": "Anatomy_Gray_13:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Factual accuracy",
+          "score": 5,
+          "rationale": "The answer correctly identifies the term as a double\u2011contrast study and accurately describes it as combining a high\u2011density barium sulfate suspension with insufflated air (or CO\u2082) to visualize the GI tract, matching the provided context."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The user\u2019s question is only asking for the term; the answer provides the correct term and a short, relevant definition. No important aspect of the specific question is omitted."
+        },
+        {
+          "name": "Use of context",
+          "score": 5,
+          "rationale": "The answer clearly uses and aligns with the context from Anatomy_Gray, including mention of double\u2011contrast study, high\u2011density barium sulfate, and air/CO\u2082 insufflation. It does not introduce conflicting information."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "The answer is concise, clearly worded, and immediately gives the needed term followed by an understandable explanation. No ambiguity or confusion."
+        }
+      ]
+    },
+    {
+      "question": "What products are formed when the purified oxidase\u2011peroxidase enzyme from Datura innoxia roots oxidizes formylphenylacetic acid ethyl ester?",
+      "expected_doc_id": "pubmed23n0001_481:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer matches exactly what is stated in the provided context: the purified Datura innoxia oxidase\u2011peroxidase catalyzes the stoichiometric oxidation of formylphenylacetic acid ethyl ester to benzoylformic acid ethyl ester and formic acid. No incorrect products or mechanisms are introduced."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The user\u2019s question is specifically about what products are formed. The answer names both products and notes the stoichiometric nature of the conversion, which is all that is required to fully answer the question."
+        },
+        {
+          "name": "Use of Context",
+          "score": 5,
+          "rationale": "The answer is directly grounded in the quoted sentence from the context and even cites the source title. No extraneous or out\u2011of\u2011context information is added."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "The products are clearly listed in bullet points with unambiguous chemical names and a brief introductory sentence. The wording is straightforward and easy to follow."
+        }
+      ]
+    },
+    {
+      "question": "Which spinal segments listed in the CNS parts are associated with the sympathetic component?",
+      "expected_doc_id": "Anatomy_Gray_102:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer correctly identifies T1\u2013L2 as the spinal cord segments associated with the sympathetic (thoracolumbar) component, exactly matching the provided context from Gray\u2019s Anatomy."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question only asks which spinal segments are associated with the sympathetic component. The answer directly names T1 through L2 and notes they are the thoracolumbar sympathetic levels, which fully addresses the query without omitting any required detail."
+        },
+        {
+          "name": "Grounding",
+          "score": 5,
+          "rationale": "The answer clearly cites and paraphrases the provided Gray\u2019s Anatomy context, including the figure reference and the statement that visceral motor components at T1\u2013L2 are termed sympathetic. No information is introduced beyond what is supported by the context."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "The answer is concise, well-structured, and unambiguous. It restates the spinal levels numerically and in text, making the information easy to understand."
+        }
+      ]
+    },
+    {
+      "question": "What is the proposed mechanism underlying the slow increase in absorbance at 518\u202fnm in isolated chloroplasts?",
+      "expected_doc_id": "pubmed23n0001_343:0",
+      "overall": 4.0,
+      "criteria": [
+        {
+          "name": "Relevance",
+          "score": 4,
+          "rationale": "Directly answers the specific mechanistic question about the slow increase at 518 nm, clearly tying it to light\u2011induced physical/structural changes in thylakoid membranes and altered scattering rather than a new pigment state. Closely aligned with the provided context."
+        },
+        {
+          "name": "Accuracy",
+          "score": 4,
+          "rationale": "Consistent with the source: distinguishes rapid vs slow phases, attributes the slow phase to structural/thylakoid changes affecting light scattering, mentions ~20 s timescale, pH optimum ~6.0, and similar inhibitor sensitivity and correlation with 90\u00b0 light scattering. No evident factual contradictions with the excerpt."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "Includes all key mechanistic elements given in the context: physical/structural membrane change, light-driven and pH-dependent, correlation with 90\u00b0 scattering, time course, and exclusion of a new pigment state. The mention of lumenal swelling/lamellar reorganisation is slightly interpretive but within what is typically inferred from scattering changes and doesn\u2019t omit any source-stated mechanism."
+        },
+        {
+          "name": "Clarity",
+          "score": 4,
+          "rationale": "Well structured, plainly states the proposed mechanism, then supports it with correlating observations (time course, pH dependence, inhibitor sensitivity). Technical but appropriate for the topic; wording is clear without being verbose."
+        }
+      ]
+    },
+    {
+      "question": "According to the passage, name three forms of coercive authority that anarchists oppose.",
+      "expected_doc_id": "wiki20220301en000_33:0",
+      "overall": 4.5,
+      "criteria": [
+        {
+          "name": "Factuality",
+          "score": 3,
+          "rationale": "The three forms named\u2014monarchy (centralized, hierarchical government), capitalism (economic class system), and fundamentalist Islam (autocratic religion)\u2014are all explicitly listed in the passage as examples of coercive authorities anarchists oppose. No factual errors or hallucinations relative to the context."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question asks for three forms of coercive authority anarchists oppose. The answer clearly names three distinct forms, matching the categories in the passage (government, economic system, religion). This fully satisfies the query; additional examples were not required."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "All elements of the answer directly address forms of coercive authority anarchists oppose, as described in the provided text. No extraneous information is included beyond brief clarifying parentheticals that align with the context."
+        },
+        {
+          "name": "Use of Context",
+          "score": 5,
+          "rationale": "The answer closely follows the wording and examples from the passage, correctly grouping each example under its type of authority. It neither omits pertinent contextual constraints nor introduces outside material."
+        }
+      ]
+    },
+    {
+      "question": "Within the first 4\u202fhours, what percentages of the administered dose of 14C\u2011griseofulvin were excreted into bile as 4\u2011desmethylgriseofulvin and as 6\u2011desmethylgriseofulvin?",
+      "expected_doc_id": "pubmed23n0001_576:1",
+      "overall": 4.8,
+      "criteria": [
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "Directly answers the specific question about the percentages excreted into bile as 4\u2011desmethylgriseofulvin and 6\u2011desmethylgriseofulvin within 4 hours, matching the context exactly."
+        },
+        {
+          "name": "Accuracy",
+          "score": 5,
+          "rationale": "Numerical values (32% and 20%) and time frame (first 4 hours) are exactly consistent with the provided source text. No conflicting or extraneous claims."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "Includes both requested metabolites with their percentages and clarifies that these figures are of the administered dose; nothing material is missing for the question asked."
+        },
+        {
+          "name": "Source Attribution",
+          "score": 4,
+          "rationale": "Cites the correct study title in line with the context. Does not give more detailed citation info (journal/year/pages), but for this task the attribution is clear and sufficient."
+        }
+      ]
+    },
+    {
+      "question": "In the respiratory chain of beef-heart mitochondria, how are NADH oxidation, NADPH oxidation, and NADPH-to-NAD transhydrogenation related?",
+      "expected_doc_id": "pubmed23n0001_217:2",
+      "overall": 4.25,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The answer correctly states that NADH oxidation, NADPH oxidation, and NADPH-to-NAD transhydrogenation are independent processes in beef-heart submitochondrial particles. This is explicitly supported by the cited context, which notes NADPH oxidation in the complete absence of NADPH\u2192NAD transhydrogenase activity and shows differential sensitivity to trypsin and butanedione, indicating distinct activities. The wording \"each occur as separate, independent reactions\" is accurate. Minor nuance (e.g., that some activities are only partially diminished) is not critical to the question and does not make the answer wrong."
+        },
+        {
+          "name": "Use of context",
+          "score": 4,
+          "rationale": "The answer clearly uses the key contextual statement: \"Oxidation of NADPH ... in complete absence of transhydrogenase activity\" and the summary line that in beef-heart mitochondria the three reactions are independent. It accurately reflects the experimental findings with trypsin and butanedione showing differential effects on NADH oxidase, NADPH oxidase, and transhydrogenase. The citation matches the provided text, though it could have been slightly more precise in referencing the trypsin/butanedione details."
+        },
+        {
+          "name": "Faithfulness",
+          "score": 5,
+          "rationale": "The answer does not introduce claims beyond what is supported by the context. It does not speculate about mechanisms or add unsupported details; it simply restates the independence of the three processes, which is directly in the passage. There is no hallucination or contradiction with the provided material."
+        },
+        {
+          "name": "Clarity",
+          "score": 4,
+          "rationale": "The relationship is explained in a straightforward way: they are independent and do not depend on one another. The answer is concise and understandable. Mentioning \"submitochondrial particles\" is appropriate and matches the context. The structure (statement plus citation) is clear, though it could be slightly tighter, but that\u2019s a minor issue."
+        }
+      ]
+    },
+    {
+      "question": "What is the maximum recommended time from first concern to completed diagnosis and assessment according to the UK National Autism Plan for Children?",
+      "expected_doc_id": "wiki20220301en000_99:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer accurately states the target as \u201cno more than 30 weeks,\u201d which matches the context: \u201cthe National Autism Plan for Children recommends at most 30 weeks from first concern to completed diagnosis and assessment.\u201d"
+        },
+        {
+          "name": "Use of context",
+          "score": 5,
+          "rationale": "The response clearly uses the key sentence from the provided context and reproduces it faithfully. No extraneous or incorrect material from outside the given context is introduced."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question asks only for the maximum recommended time; the answer gives this explicitly and completely. No relevant aspect of the question is omitted."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "The answer is concise, unambiguous, and easy to understand. The numerical time frame and its meaning are clearly stated."
+        }
+      ]
+    },
+    {
+      "question": "What is the average male-to-female sex ratio reported for autism spectrum disorder?",
+      "expected_doc_id": "wiki20220301en000_130:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer correctly states the average male-to-female sex ratio as approximately 4.3:1, exactly matching the context provided (\u201cThe sex ratio averages 4.3:1\u201d). No inaccuracies or misleading statements."
+        },
+        {
+          "name": "Contextual grounding",
+          "score": 5,
+          "rationale": "The answer is directly grounded in the supplied context about autism and the stated sex ratio. It even cites the source tag \u3010Autism\u3011, which corresponds to the given context. No unsupported extrapolation."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The user\u2019s question is specifically about the average male-to-female sex ratio. The answer provides that number clearly and succinctly; no additional details were requested or necessary for adequacy."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "The response is clear, unambiguous, and easy to understand, explicitly stating \u201capproximately 4.3 to 1\u201d as the ratio. Formatting is straightforward and readable."
+        }
+      ]
+    },
+    {
+      "question": "According to the study, what sphincter abnormality contributed to urinary obstruction in bacterial prostatitis?",
+      "expected_doc_id": "pubmed23n0001_353:0",
+      "overall": 4.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The answer correctly identifies that EMG showed an abnormal, over\u2011active urethral sphincter causing functional obstruction to urine flow in bacterial prostatitis. This is consistent with the truncated context (\u201csphincter activity suggested that the obstruction to the flow of urine was \u2026\u201d), and the described mechanism (spasm/increased tone acting as a block to voiding) is accurate and clinically plausible. No contradiction with the source is evident, though the exact wording of the original sentence is not available in full."
+        },
+        {
+          "name": "Contextual alignment",
+          "score": 4,
+          "rationale": "The answer is well aligned with the provided context: it refers to the same EMG study of sphincter activity in patients with bacterial prostatitis and explicitly links the sphincter abnormality to the observed poor urinary flow. It does not introduce extraneous or conflicting information beyond reasonable elaboration of \u2018obstruction\u2019 as spasm/increased tone of the urethral sphincter."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "For the specific question\u2014what sphincter abnormality contributed to obstruction\u2014the answer is complete: it clearly states that an abnormal, over\u2011active urethral sphincter (spasm/increased tone) was responsible. No additional details (e.g., quantitative EMG findings) are needed to satisfy the query."
+        }
+      ]
+    },
+    {
+      "question": "Where is the superficial part of the cardiac plexus located relative to the aortic arch?",
+      "expected_doc_id": "Anatomy_Gray_424:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Use of Context",
+          "score": 5,
+          "rationale": "The answer directly reflects the key sentence from the provided context: 'This plexus consists of a superficial part, inferior to the aortic arch and between it and the pulmonary trunk.' It correctly uses that information and does not introduce unsupported content."
+        },
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "Anatomically accurate: the superficial part of the cardiac plexus is indeed inferior to the aortic arch and located between the arch and the pulmonary trunk. No errors or omissions relative to the question."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question asks specifically about the location relative to the aortic arch. The answer states 'inferior to the aortic arch' and adds the clinically relevant relationship 'between the arch of the aorta and the pulmonary trunk,' which fully addresses the query."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "The wording is clear, concise, and easy to understand. The relative positions are unambiguous, and the bold formatting aids readability without causing confusion."
+        }
+      ]
+    },
+    {
+      "question": "According to Joseph Raz, what does acceptance of authority imply about the results of following an authority's instructions?",
+      "expected_doc_id": "wiki20220301en000_65:0",
+      "overall": 4.0,
+      "criteria": [
+        {
+          "name": "Accuracy",
+          "score": 4,
+          "rationale": "Correctly captures Raz\u2019s core idea from the context: that accepting authority involves believing that following its directives will lead to greater success than acting independently, and that this holds even when particular directives are mistaken. This matches the provided sentence almost verbatim. The added wording about \u2018more favorable results\u2019 is consistent, not distortive."
+        },
+        {
+          "name": "Use of Sources",
+          "score": 4,
+          "rationale": "Answer is clearly grounded in the provided context about Raz and authority. It does not introduce external, conflicting material or ignore the given passage. The bracketed citation \u2018\u3010Anarchism\u3011\u2019 is a bit imprecise since multiple anarchism snippets are given, but it still points to the correct source family and does not misuse evidence."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "Addresses exactly what the question asks: what acceptance of authority implies about the results of following instructions. It includes both elements found in the context: (1) belief that following authority yields more success, and (2) that this applies to both successful and mistaken instructions. No significant aspect of the asked point is omitted."
+        },
+        {
+          "name": "Clarity",
+          "score": 4,
+          "rationale": "Answer is clear and easy to understand. It restates the idea in plain language and maintains the conditional/explanatory structure. Slightly wordier than necessary, but not confusing or ambiguous."
+        }
+      ]
+    },
+    {
+      "question": "How many different isoenzymes of beta-galactosidase were separated from liver, kidney, and spleen?",
+      "expected_doc_id": "pubmed23n0001_471:0",
+      "overall": 4.0,
+      "criteria": [
+        {
+          "name": "Relevance",
+          "score": 4,
+          "rationale": "Directly answers the numerical question and correctly identifies that three isoenzymes were separated from each of the three tissues. Closely aligned with the provided context statement."
+        },
+        {
+          "name": "Accuracy",
+          "score": 4,
+          "rationale": "The answer matches the contextual sentence about three distinct isoenzymes from liver, kidney, and spleen; no contradictions or apparent errors."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "The question only asks how many isoenzymes were separated; the response provides the exact number and specifies that this applies to each tissue, which is all that is required."
+        },
+        {
+          "name": "Clarity",
+          "score": 4,
+          "rationale": "Clear and succinct; the phrasing \"Three distinct isoenzymes\" and listing of the tissues is easy to understand."
+        }
+      ]
+    },
+    {
+      "question": "According to the article, which organic phosphate was the first regulator of hemoglobin function?",
+      "expected_doc_id": "pubmed23n0001_774:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The question asks which organic phosphate was the first regulator of hemoglobin function. The context states explicitly: \u201cATP was the first organic phosphate regulator of hemoglobin function.\u201d The answer repeats this correctly and matches the cited article, so it is fully correct."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question is very narrow\u2014identify the first organic phosphate regulator. The answer provides exactly that (ATP) and aligns with the article. No additional detail is required for completeness in this context."
+        },
+        {
+          "name": "Source identification",
+          "score": 5,
+          "rationale": "The answer attributes the information to the article (\u201cHemoglobin function in the vertebrates: an evolutionary model.\u201d) and is consistent with the provided context quote. Source use is correct and appropriate."
+        },
+        {
+          "name": "Consistency with context",
+          "score": 5,
+          "rationale": "The answer is directly supported by the context sentence in the excerpt. There is no contradiction or extrapolation beyond what is stated."
+        }
+      ]
+    },
+    {
+      "question": "According to the passage, which anatomical structure is most commonly impinged by a prolapsed intervertebral disc?",
+      "expected_doc_id": "Anatomy_Gray_248:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Grounding in provided context",
+          "score": 5,
+          "rationale": "The answer directly cites and accurately reflects the passage: \u201cA prolapsed intervertebral disc may impinge upon the meningeal (thecal) sac, cord, and most commonly the nerve root.\u201d It correctly identifies the nerve root as the most commonly impinged structure and links it to the cited source (Anatomy_Gray). No extraneous or outside information is introduced."
+        },
+        {
+          "name": "Correctness of medical reasoning",
+          "score": 5,
+          "rationale": "Medically accurate: prolapsed/herniated discs often compress nerve roots more commonly than the cord or thecal sac, and the answer\u2019s emphasis on the nerve root matches standard anatomy and the passage. There are no incorrect or misleading statements."
+        },
+        {
+          "name": "Consistency and completeness",
+          "score": 5,
+          "rationale": "Fully answers the specific question (\u201cwhich anatomical structure is most commonly impinged\u201d) and does so unambiguously: \u2018the nerve root.\u2019 The brief mention of other potentially impinged structures is consistent with the context and doesn\u2019t cause confusion or omission regarding what is \u2018most commonly\u2019 affected."
+        }
+      ]
+    },
+    {
+      "question": "According to the passage, what are the two categories used in the DSM\u20115 to classify Autism Spectrum Disorders?",
+      "expected_doc_id": "wiki20220301en000_139:0",
+      "overall": 3.75,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The answer correctly identifies the two DSM\u20115 domains: (1) impaired/persistent deficits in social communication and interaction and (2) restricted, repetitive patterns of behavior, interests, or activities. This matches the context passage. Minor wording differences are acceptable and do not affect correctness."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "The question only asks for the two categories used in DSM\u20115 to classify ASD. The answer clearly lists both domains and notes they are the only diagnostic dimensions retained. This fully addresses the question without omitting any required element."
+        },
+        {
+          "name": "Relevance",
+          "score": 4,
+          "rationale": "All content directly addresses the DSM\u20115 categories for ASD. The brief explanatory parentheticals and mention that these are the only diagnostic dimensions are still on-topic and grounded in the provided context; there is no extraneous or off-topic material."
+        },
+        {
+          "name": "Citation and Attribution",
+          "score": 3,
+          "rationale": "The answer includes a citation marker\u3010Autism\u3011 that corresponds to the provided context, but it uses a generic label rather than a more precise pinpoint to one of the excerpted passages. Still, it clearly attributes the information to the given source and does not fabricate references."
+        }
+      ]
+    },
+    {
+      "question": "According to the passage, which type of residue in protein B\u2011L3 is essential for peptidyltransferase activity and subunit association, and what additional function does another residue provide?",
+      "expected_doc_id": "pubmed23n0001_27:1",
+      "overall": 3.8,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "Correctly identifies histidine residues in protein B\u2011L3 as essential for peptidyltransferase activity and subunit association, and notes that another, distinct residue is required for EF\u2011G\u2011GTP binding. This matches the passage summary in the provided context. No clear factual error relative to the excerpted conclusion."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "Addresses both parts of the question: (1) specifies which residue type is essential (histidine residues) and (2) describes the additional function of another residue (required for EF\u2011G\u2011GTP binding). It does not name the other residue type, but the passage as given also only describes it as \u201canother residue,\u201d so the answer is as complete as the context allows."
+        },
+        {
+          "name": "Citation and grounding",
+          "score": 3,
+          "rationale": "The answer includes a bracketed citation-like phrase referencing the article title, which is loosely grounded in the provided context, but it does not use a clear, standardized citation format or directly quote the text. Grounding is present but not very precise."
+        },
+        {
+          "name": "Clarity",
+          "score": 4,
+          "rationale": "The response is clear and directly answers the question, but could be slightly more concise. Nonetheless, the two requested elements are easy to identify and understand."
+        }
+      ]
+    },
+    {
+      "question": "In the double\u2011blind study of intranasal betamethasone valerate for seasonal allergic rhinitis, which specific symptom showed a statistically significant reduction compared with placebo?",
+      "expected_doc_id": "pubmed23n0001_339:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer correctly identifies nasal obstruction (nasal blockage) as the only symptom reaching statistical significance, which matches the truncated source text (\u201c...reached statistical significance for the symptom o\u201d, clearly referring to obstruction) and is consistent with typical reporting in such studies."
+        },
+        {
+          "name": "Consistency with context",
+          "score": 5,
+          "rationale": "Answer aligns with the provided abstract: double\u2011blind intranasal betamethasone valerate vs placebo, one\u2011month daily symptom scores, and only one symptom reaching significance. No contradictions or overreach beyond the context."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question asks for which specific symptom showed significant reduction; the answer explicitly names that symptom and briefly restates the relevant comparison, which fully addresses the query."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "The response is clear and unambiguous, using both terms \u201cnasal obstruction\u201d and \u201cnasal blockage\u201d to avoid confusion. It\u2019s easy to understand and directly tied to the question."
+        }
+      ]
+    },
+    {
+      "question": "What change in fatty acid synthetase activity was observed in fetal liver after cortisol administration?",
+      "expected_doc_id": "pubmed23n0001_333:1",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The question asks specifically about the change in fatty acid synthetase activity in fetal liver after cortisol administration. The provided context clearly states: \"in a parallel study on fatty acid synthesis in fetal liver, cortisol administration resulted in a 30% increase in fatty acid synthetase activity (P less than 0.025).\" The answer restates this accurately, including the ~30% increase and the statistical significance. No incorrect or extraneous claims are added."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "The answer directly addresses the question about the change in fatty acid synthetase activity in fetal liver after cortisol administration. It does not discuss unrelated findings (e.g., lung, brain, or other enzymes) beyond what is needed, and the brief parenthetical citation is on-topic."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question only asks what change was observed. The answer provides the magnitude (about 30% increase) and notes statistical significance, which fully addresses the query. No additional details are required to consider the answer complete."
+        },
+        {
+          "name": "Use of Context",
+          "score": 5,
+          "rationale": "The answer correctly extracts and paraphrases the specific numerical result from the context, including the direction (increase), magnitude (30%), and significance level (P < 0.025). It does not misinterpret or ignore any relevant contextual detail."
+        }
+      ]
+    },
+    {
+      "question": "What two key aspects of the stationary atmosphere were determined in the mathematical model of the semiclosed ecological system?",
+      "expected_doc_id": "pubmed23n0001_806:0",
+      "overall": 4.25,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The answer correctly identifies the two key aspects: (1) the composition (steady\u2011state gas levels) of the stationary atmosphere, and (2) the functional relationship between the light\u2011dark time cycles and that stationary composition. This aligns with the context sentence: \u201cThe type of the relationship between time cycles and composition of the stationary atmos\u2026\u201d. No clear factual errors or contradictions with the provided abstract fragment."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "The user\u2019s question asks for the \u201ctwo key aspects,\u201d and the answer clearly lists two distinct aspects and briefly explains each. Given the limited abstract text, this is as complete as can reasonably be expected; the mention of specific gases (O2, CO2) is illustrative rather than required by the question, but it does not omit any aspect the question calls for."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "The response stays focused on the requested point: the two aspects determined by the mathematical model of the semiclosed ecological system\u2019s stationary atmosphere. It does not drift into unrelated parts of the broader context."
+        },
+        {
+          "name": "Use of Context",
+          "score": 4,
+          "rationale": "The answer uses the abstract\u2019s wording about the \u201crelationship between time cycles and composition of the stationary atmosphere\u201d and correctly interprets it as the dependence of the steady\u2011state composition on light\u2011dark cycles. It modestly extrapolates by specifying O2 and CO2 as examples of gases, which is reasonable and consistent with such systems, though not explicitly stated in the shown snippet."
+        }
+      ]
+    },
+    {
+      "question": "According to the passage, which letters did Ren\u00e9 Descartes assign to unknowns in equations?",
+      "expected_doc_id": "wiki20220301en000_185:0",
+      "overall": 4.5,
+      "criteria": [
+        {
+          "name": "Context Faithfulness",
+          "score": 4,
+          "rationale": "The answer correctly states that Descartes assigned x, y, and z to unknowns, which matches the passage. However, it omits the full quote about knowns (a, b, c). Since the question only asks about unknowns, this omission is acceptable but shows partial use of the available context rather than full exploitation."
+        },
+        {
+          "name": "Answer Correctness",
+          "score": 5,
+          "rationale": "The passage explicitly says Descartes represented unknowns by x, y, and z. The answer reproduces this accurately and without distortion."
+        },
+        {
+          "name": "Reasoning Quality",
+          "score": 4,
+          "rationale": "The reasoning is implicit but sound: it directly maps the question to the quoted convention in the passage. Minor deduction for not referencing the specific quote or contrasting with knowns, though that was not required for correctness."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question is narrow: which letters were assigned to unknowns. The answer fully lists all three letters mentioned in the passage, with no missing elements."
+        }
+      ]
+    },
+    {
+      "question": "According to the passage, which brain region shows lowered activity in autism and what type of perception is this reduction associated with?",
+      "expected_doc_id": "wiki20220301en000_104:0",
+      "overall": 2.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 1,
+          "rationale": "The passage fragment in the context is cut off at \u201cone example is lowered activity i\u201d and does not specify the fusiform gyrus or link it explicitly to face perception. The answer introduces specific details (fusiform gyrus / fusiform-face area and face perception) that are not stated in the provided text, even if they are consistent with wider scientific knowledge. Therefore, it is not grounded in the passage as given."
+        },
+        {
+          "name": "Completeness",
+          "score": 3,
+          "rationale": "The answer directly addresses both parts of the question (which brain region, and what type of perception), but it does so by adding information not present in the supplied context. Within its own terms it is complete, but relative to the passage it is speculative/completed from outside knowledge."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "The content is on-topic: it names a brain region and a type of perception and both are clearly related to autism, which matches the question."
+        },
+        {
+          "name": "Citation and grounding",
+          "score": 1,
+          "rationale": "The answer cites the passage (\u201c\u3010Autism\u3011\u201d) but the specific claims about the fusiform gyrus and face perception are not supported by the visible context. This is a hallucinated elaboration rather than grounded retrieval from the given text."
+        }
+      ]
+    },
+    {
+      "question": "According to the oldest version of Achilles' death in the Iliad, who brings about his death?",
+      "expected_doc_id": "wiki20220301en000_335:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer correctly identifies Paris as the one who brings about Achilles\u2019 death in the oldest version (the Iliad), matching the context passage exactly: \u201cthe hero's death was brought about by Paris with an arrow.\u201d It also notes the detail that the arrow is sometimes guided by Apollo, which is consistent with the provided context. No factual errors or contradictions."
+        },
+        {
+          "name": "Contextual Alignment",
+          "score": 5,
+          "rationale": "The answer is tightly grounded in the supplied context. It explicitly reflects the phrasing \u201cas predicted by Hector with his dying breath\u201d and \u201cbrought about by Paris with an arrow,\u201d and appropriately adds the Apollo-guided variant mentioned in the context. It doesn\u2019t introduce extraneous or conflicting material."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "For the question \u201cwho brings about his death?\u201d, the answer fully addresses the required information: it names Paris and situates this in the framework of Hector\u2019s prediction in the Iliad. The added parenthetical about Apollo is an optional nuance that doesn\u2019t leave anything essential out for this question."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "The answer is clear, concise, and unambiguous: it straightforwardly states that Paris kills Achilles in the oldest account. The brief explanatory clause about the arrow and Apollo is easy to understand and doesn\u2019t obscure the main point."
+        }
+      ]
+    },
+    {
+      "question": "What term describes organs that are suspended in the peritoneal cavity by mesenteries?",
+      "expected_doc_id": "Anatomy_Gray_666:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Factual Accuracy",
+          "score": 5,
+          "rationale": "Correct: organs suspended in the peritoneal cavity by mesenteries are termed intraperitoneal. This matches the provided Gray\u2019s Anatomy context exactly."
+        },
+        {
+          "name": "Use of Context",
+          "score": 5,
+          "rationale": "Answer clearly draws from and is consistent with the supplied excerpts, which explicitly state that organs suspended by mesenteries are intraperitoneal."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "Directly answers the question with the precise term and a brief, accurate explanation contrasting intraperitoneal with retroperitoneal."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "All content addresses the specific question; no extraneous information beyond a short, relevant clarification."
+        },
+        {
+          "name": "Safety",
+          "score": 5,
+          "rationale": "Anatomical definition only; no medico-legal, treatment, or harmful guidance issues present."
+        }
+      ]
+    },
+    {
+      "question": "Between which years did Alabama fail to redraw its election districts despite population shifts caused by urbanization and industrialization?",
+      "expected_doc_id": "wiki20220301en000_279:0",
+      "overall": 4.8,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The question asks for the years between which Alabama failed to redraw its election districts. The answer \"from 1901 through the 1960s\" is consistent with the provided context, which states that from 1901 through the 1960s the state did not redraw election districts and that court-ordered redistricting occurred in 1972. This captures the relevant period accurately at the level of detail shown in the context; any finer endpoint (e.g., 1972) isn\u2019t explicitly framed in the question, which is about the failure period, not the remedy date."
+        },
+        {
+          "name": "Contextual grounding",
+          "score": 5,
+          "rationale": "The response directly mirrors the language and dates in the supplied context: \"From 1901 through the 1960s, the state did not redraw election districts...\" It does not introduce external facts beyond that and is fully grounded in the given excerpts about Alabama."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question is narrow: it only asks between which years Alabama failed to redraw districts. The answer supplies both endpoints and restates them clearly. There is no omitted element needed to satisfy the question."
+        },
+        {
+          "name": "Reasoning",
+          "score": 5,
+          "rationale": "The answer reflects a straightforward extraction from the context rather than complex reasoning, but it correctly identifies the relevant sentence, interprets the time span, and restates it accurately. There is no logical error or unjustified leap."
+        }
+      ]
+    },
+    {
+      "question": "Which enzyme was not detected in Chlamydomonas flagellar extracts?",
+      "expected_doc_id": "pubmed23n0001_219:1",
+      "overall": 1.75,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 1,
+          "rationale": "The answer is incorrect. The context explicitly states: \"A large part of flagellar nucleoside diphosphokinase activity could not be solubilized. Two soluble enzyme species were identified...\" meaning nucleoside diphosphokinase activity *was* detected in Chlamydomonas flagella. The question asks which enzyme was *not detected*; the provided answer claims nucleoside diphosphokinase was not detected, which contradicts the context."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "The answer directly addresses the question with a specific enzyme name, but since that name is wrong, completeness is limited in value. There was no need for additional detail, but the essential requirement\u2014identifying the correct enzyme not detected\u2014is unmet."
+        },
+        {
+          "name": "Relevance",
+          "score": 4,
+          "rationale": "The answer is on-topic and refers to an enzyme mentioned in the provided context, but it misinterprets the data. It remains relevant to the subject matter (nucleotide\u2011metabolizing enzymes in Chlamydomonas flagella), even though it is factually wrong."
+        },
+        {
+          "name": "Citation and grounding",
+          "score": 2,
+          "rationale": "The answer cites a source-style snippet but misuses the contextual information: the context clearly indicates nucleoside diphosphokinase activity was present (though partly insoluble). Thus, the citation does not correctly ground the claim in the provided text."
+        }
+      ]
+    },
+    {
+      "question": "According to the study, in which region of an oxygen\u2011deficient heart can accelerated ATP production from glycolysis occur?",
+      "expected_doc_id": "pubmed23n0001_102:1",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer matches the study\u2019s conclusion precisely: accelerated ATP production from glycolysis can occur only in the marginally ischemic tissue in the peripheral/border\u2011zone area supplied by an occluded artery. This is exactly what is stated in the provided context."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The user\u2019s question is narrow (\u201cin which region\u2026?\u201d), and the answer clearly identifies that region (\u201cmarginally ischemic tissue\u2026 peripheral area\u2026 border\u2011zone\u201d). No relevant qualifying details from the context are missing for this specific question."
+        },
+        {
+          "name": "Use of Context",
+          "score": 5,
+          "rationale": "The answer directly paraphrases the key sentence from the context, accurately reflecting the study\u2019s wording and intent without adding unsupported claims or extraneous information."
+        }
+      ]
+    },
+    {
+      "question": "Which lumbar vertebra is shown with a wedge fracture that is typically seen in patients with osteoporosis?",
+      "expected_doc_id": "Anatomy_Gray_217:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer correctly identifies the vertebra as L1, exactly matching the cited figure and text from Gray\u2019s Anatomy: \u201cRadiograph \u2026 demonstrating a wedge fracture of the L1 vertebra. This condition is typically seen in patients with osteoporosis.\u201d No factual errors or omissions relevant to the question."
+        },
+        {
+          "name": "Use of Context",
+          "score": 5,
+          "rationale": "The response directly uses and cites the provided context (Anatomy_Gray Fig. 2.25) and reproduces the key statement from it. The answer is clearly grounded in and consistent with the supplied material."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question is simple and specific\u2014identify which lumbar vertebra is involved. The answer gives the precise vertebra (L1) and notes the association with osteoporosis, as in the source, fully addressing the query without missing elements."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "The answer is concise, unambiguous, and clearly formatted. It clearly highlights \u201cL1 lumbar vertebra\u201d as the essential information, making it easy to read and understand."
+        }
+      ]
+    },
+    {
+      "question": "From which ribs does the base (attached surface) of each breast extend vertically?",
+      "expected_doc_id": "Anatomy_Gray_308:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer states: \"from the second rib through the sixth rib,\" which matches the context: \"extends vertically from ribs II to VI.\" This is anatomically correct and consistent with the provided source."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question asks specifically from which ribs the base of the breast extends vertically. The answer directly provides the full required range (second to sixth rib) without omitting anything relevant to the question."
+        },
+        {
+          "name": "Use of Context",
+          "score": 5,
+          "rationale": "The answer clearly relies on and aligns with the context from Gray's Anatomy, which states \"from ribs II to VI.\" The citation tag \u3010Anatomy_Gray\u3011 is appropriate and consistent with the given context."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "The answer is concise, unambiguous, and uses standard rib numbering terminology. The parenthetical \"(base)\" and \"attached surface\" mirror the question wording, aiding clarity."
+        }
+      ]
+    },
+    {
+      "question": "What is the molecular weight of the novel maltohexaose-producing exo\u2011amylase purified from Aerobacter aerogenes?",
+      "expected_doc_id": "pubmed23n0001_514:0",
+      "overall": 3.5,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 3,
+          "rationale": "The question asks for the molecular weight of the specific Aerobacter aerogenes exo\u2011amylase. The answer explicitly states that the available excerpt does not give a molecular\u2011weight value, which is consistent with the provided context. It does not invent a number. This is factually correct given the evidence, though it does not attempt to retrieve the value from outside the excerpt (which is appropriate in a RAG setting constrained to the context)."
+        },
+        {
+          "name": "Completeness",
+          "score": 3,
+          "rationale": "The answer addresses the core of the question by explaining that the molecular weight is not provided in the excerpt and briefly notes what the excerpt does cover (purification and substrate specificity). This fully answers what can be answered from the given context, but does not go beyond that or suggest that the value might exist elsewhere in the full article."
+        },
+        {
+          "name": "Relevance",
+          "score": 4,
+          "rationale": "The answer is focused on the presence/absence of the molecular\u2011weight information in the provided text and does not drift into unrelated discussion. The brief mention of what is described in the paper (purification and specificity) is still directly tied to explaining the absence of a molecular\u2011weight value."
+        },
+        {
+          "name": "Clarity",
+          "score": 4,
+          "rationale": "The response is clear and easy to understand. It directly states that the molecular weight is not given and briefly summarizes the content area of the excerpt to justify that statement. No ambiguous language."
+        }
+      ]
+    },
+    {
+      "question": "Approximately how many people moved to Mobile between 1940 and 1943 to work in war\u2011related industries?",
+      "expected_doc_id": "wiki20220301en000_217:0",
+      "overall": 4.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The answer correctly extracts and restates the numerical information from the context: \u201cmore than 89,000 people moved into the city\u201d is rendered as \u201capproximately 89 thousand,\u201d which is a faithful and accurate approximation. It is responsive to the exact question asked. No factual errors."
+        },
+        {
+          "name": "Citation and support",
+          "score": 4,
+          "rationale": "The answer explicitly ties the figure to the source, including a parenthetical quote matching the context: \u201cthe source notes \u2018more than 89,000 people moved into the city\u2026\u2019\u3010Alabama\u3011\u201d. This is consistent with the provided passage and clearly supported by it."
+        },
+        {
+          "name": "Clarity",
+          "score": 4,
+          "rationale": "The answer is concise, directly answers the question, and the approximation is clearly indicated by \u201capproximately.\u201d The brief parenthetical explanation is easy to follow."
+        },
+        {
+          "name": "Relevance",
+          "score": 4,
+          "rationale": "The response is fully focused on the specific question about how many people moved to Mobile between 1940 and 1943 for war-related work. No extraneous information is included."
+        }
+      ]
+    },
+    {
+      "question": "What is the name of the branch that arises from the left coronary artery and courses in the anterior interventricular sulcus?",
+      "expected_doc_id": "Anatomy_Gray_491:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Medical accuracy",
+          "score": 5,
+          "rationale": "Correctly identifies the vessel as the anterior interventricular branch of the left coronary artery and notes its common name, the left anterior descending artery (LAD). This matches the provided Gray\u2019s Anatomy context precisely."
+        },
+        {
+          "name": "Legal and ethical compliance",
+          "score": 5,
+          "rationale": "Purely anatomical/educational content with no patient data, no treatment advice, and no legal/ethical issues. Fully compliant."
+        },
+        {
+          "name": "Use of provided context",
+          "score": 5,
+          "rationale": "Directly uses and mirrors the terminology and course described in the Gray\u2019s Anatomy excerpts, including both the formal name and common clinical name (LAD)."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "Concise, unambiguous answer that clearly names the artery and relates it to the anatomical location asked about."
+        }
+      ]
+    },
+    {
+      "question": "Approximately how much interaction energy do enzyme inhibitor interactions contribute in trypsin complexes?",
+      "expected_doc_id": "pubmed23n0001_936:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Grounding in provided context",
+          "score": 5,
+          "rationale": "The answer accurately reflects that the provided passages do not give any numerical interaction energy for trypsin\u2013inhibitor complexes. It correctly quotes and uses the statement about energetic contributions being dominated by entropically driven effects, and does not introduce figures absent from the context."
+        },
+        {
+          "name": "Correctness of biomedical reasoning",
+          "score": 5,
+          "rationale": "The reasoning is sound: noting that enzyme\u2013substrate interactions are dominated by entropic effects is consistent with the quoted text, and concluding that no approximate energy value can be specified from the given material is logically correct. There is no speculative or incorrect biochemical detail added."
+        },
+        {
+          "name": "Clarity and completeness",
+          "score": 5,
+          "rationale": "The answer clearly states that no approximate interaction energy is provided, briefly explains what is said instead (entropic contributions), and directly ties this to the context. It fully addresses the question in light of the available information without unnecessary digression."
+        }
+      ]
+    },
+    {
+      "question": "According to the study, which categories of side effects were not observed when L\u2011Dopa was limited to 300\u2011600\u202fmg daily?",
+      "expected_doc_id": "pubmed23n0001_358:1",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer correctly identifies the categories of side effects that were not observed at 300\u2013600 mg/day: gastrointestinal, cardiovascular, and neurological. This matches the source text precisely."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question asks specifically which categories were not observed, and the answer lists all three categories and also accurately mentions the types of adverse phenomena that did occur. Nothing relevant is missing."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "The answer is fully focused on the asked aspect (side-effect categories not observed at 300\u2013600 mg/day) and does not introduce irrelevant material."
+        },
+        {
+          "name": "Use of Context",
+          "score": 5,
+          "rationale": "The response closely mirrors the contextual sentence, correctly interpreting and restating it, including the dose range and side-effect profile."
+        }
+      ]
+    },
+    {
+      "question": "Which substrate, added in a soft agar overlay at pH\u202f9.7, produces a yellow color around lysed yeast colonies by indicating alkaline phosphatase activity?",
+      "expected_doc_id": "pubmed23n0001_194:0",
+      "overall": 4.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The answer correctly identifies p\u2011nitrophenylphosphate as the substrate used in the soft agar overlay at pH 9.7 to detect alkaline phosphatase activity and accurately explains that its hydrolysis to p\u2011nitrophenol yields the yellow color at alkaline pH. This matches the contextual passage precisely, with no errors or contradictions."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "The user\u2019s question is fully addressed: the specific substrate is named and its role in generating the yellow color via alkaline phosphatase activity at pH 9.7 is explained. No additional details are necessary for this focused question."
+        },
+        {
+          "name": "Relevance",
+          "score": 4,
+          "rationale": "The response is entirely focused on the asked point: the identity of the substrate and how it indicates alkaline phosphatase activity. It does not introduce unrelated information from other cited articles in the context."
+        },
+        {
+          "name": "Use of Context",
+          "score": 4,
+          "rationale": "The answer directly uses and faithfully paraphrases the key contextual sentence about plates overlaid with soft agar containing p\u2011nitrophenylphosphate at pH 9.7 leading to yellow color due to liberated alkaline phosphatase. Citation is appropriate and consistent with the provided context."
+        }
+      ]
+    },
+    {
+      "question": "What anatomical abnormality was identified on the neck radiograph and coronal CT that can produce three distinct disease entities?",
+      "expected_doc_id": "Anatomy_Gray_564:0",
+      "overall": 4.5,
+      "criteria": [
+        {
+          "name": "Use of Context",
+          "score": 4,
+          "rationale": "Correctly identifies the abnormality as a cervical rib and uses the context\u2019s description that cervical ribs may produce three distinct disease entities. However, the specific list in the answer (arterial compression/embolization, subclavian\u2011vein compression, and thoracic outlet syndrome) is only partially aligned with the provided text, which explicitly mentions arterial compression/embolization and venous (subclavian/axillary) compression; classic thoracic outlet syndrome is implied but not spelled out in the excerpt."
+        },
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The primary question\u2014what abnormality was identified\u2014is answered accurately: a cervical rib. The explanation that it can produce three disease entities is conceptually consistent, but the exact trio given may not match the source\u2019s formal classification (the text appears to emphasize arterial compression/embolization and venous compression; neurogenic TOS is likely but not explicitly stated in the snippet). Still, there is no clear factual error regarding the named structure or its general clinical implications."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "Fully addresses the question asked: identifies the anatomical abnormality and notes that it can give rise to three distinct disease entities, in line with the contextual passage about cervical ribs and their complications."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "Clear, concise identification of the abnormality with a brief explanatory clause. Easy to understand and directly responsive to the question."
+        }
+      ]
+    },
+    {
+      "question": "What was the mean peak intracranial pressure (in Torr) observed in the cisterna magna immediately after circulation was restored?",
+      "expected_doc_id": "pubmed23n0001_373:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The question asks for the mean peak intracranial pressure in the cisterna magna immediately after circulation was restored. The provided answer states 22.8 Torr (SD \u00b1 1.7), which exactly matches the value in the cited context. Units and timing are correct; no contradictions or misinterpretation."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "All information requested (the mean peak value, in Torr, at the specified time point and location) is given. The added SD value is accurate and does not detract from the answer; the core requested datum is clearly stated."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "The answer directly addresses the single, specific quantitative question and is drawn from the correct study in the context. No extraneous or off-topic information is included."
+        }
+      ]
+    },
+    {
+      "question": "Which additive to bile salts increased the solubility of both saturated and unsaturated fatty acids across the pH range 2\u20113\u20117\u20114, and showed greater fatty acid solubility than lecithin at pH 3.0?",
+      "expected_doc_id": "pubmed23n0001_502:1",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer correctly identifies phosphatidylethanolamine as the additive and accurately states that it increased solubility of both saturated and unsaturated fatty acids across the pH range and showed greater solubility than lecithin at pH 3.0. This matches the provided source text precisely."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "All elements of the question are addressed: which additive, its effect across the specified pH range, and the comparison with lecithin at pH 3.0. No relevant aspect of the query is omitted."
+        },
+        {
+          "name": "Use of Sources",
+          "score": 5,
+          "rationale": "The answer is clearly grounded in the cited article and aligns with the context excerpt: it references the specific study and restates the findings without overclaiming or adding unsupported information."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "The response is concise, unambiguous, and easy to follow. It directly answers the question and then briefly contextualizes the finding from the study without unnecessary detail."
+        }
+      ]
+    },
+    {
+      "question": "From which location does the great cardiac vein begin, and which artery is it associated with when it reaches the coronary sulcus?",
+      "expected_doc_id": "Anatomy_Gray_417:0",
+      "overall": 4.5,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The answer accurately states that the great cardiac vein begins at the apex of the heart and that, as it reaches the coronary sulcus, it is still associated with (related to) the anterior interventricular (LAD) artery. This matches the provided Gray\u2019s Anatomy context. No incorrect statements are introduced."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "The question has two parts: origin location and associated artery at the coronary sulcus. Both are explicitly and clearly answered. Additional details about its subsequent course onto the diaphragmatic surface are given but are not required; they do not detract from completeness."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "The response focuses directly on the vein\u2019s origin and its arterial association at the coronary sulcus, exactly as asked. Extra context about its ascent and naming remains on-topic and derived from the provided text."
+        },
+        {
+          "name": "Use of Context",
+          "score": 5,
+          "rationale": "The answer closely follows the wording and content from the Gray\u2019s Anatomy excerpts: origin at the apex, ascent in the anterior interventricular sulcus, and relationship to the anterior interventricular artery. The citation to Gray is appropriate and there is no reliance on external or conflicting information."
+        }
+      ]
+    },
+    {
+      "question": "At what temperature did reversible dissociation of the tetrameric structure of Escherichia coli asparaginase occur during storage of the acidified solution?",
+      "expected_doc_id": "pubmed23n0001_881:0",
+      "overall": 1.4,
+      "criteria": [
+        {
+          "name": "Accuracy",
+          "score": 1,
+          "rationale": "The assistant did not provide any answer to the question; it only restated or paraphrased context, so the temperature is not given at all."
+        },
+        {
+          "name": "Completeness",
+          "score": 1,
+          "rationale": "The specific temperature of reversible dissociation is entirely missing; the response does not address the user\u2019s query."
+        },
+        {
+          "name": "Relevance",
+          "score": 2,
+          "rationale": "The response stays loosely on topic about asparaginase and protein behavior but never answers or directly targets the asked detail (the temperature)."
+        },
+        {
+          "name": "Citation and Grounding",
+          "score": 1,
+          "rationale": "No citation or grounding of an answer is possible since no concrete answer was given."
+        },
+        {
+          "name": "Clarity",
+          "score": 2,
+          "rationale": "The text is readable but unhelpful, as it fails to state any conclusion or temperature value."
+        }
+      ]
+    },
+    {
+      "question": "Which experimental procedure did not change the intracapsular pressure (ICP) of the gastric fundus submucosa?",
+      "expected_doc_id": "pubmed23n0001_437:0",
+      "overall": 4.25,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The answer correctly identifies that the experimental procedure which did not change the intracapsular pressure (ICP) of the gastric fundus submucosa was the first manoeuvre: placement/administration of hypertonic solutions inside the stomach. This matches the context excerpt, which contrasts procedure (a) with (b) and (c), and notes that the first procedure did not alter ICP, while the others did. No factual errors or contradictions with the provided text are apparent."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "The question is narrow: it asks which experimental procedure did not change ICP. The answer clearly names that procedure and briefly distinguishes it from the other two manoeuvres. For this specific question, no additional detail (e.g., about species, anaesthetic, or mechanistic explanation) is required to be considered complete, and the key identifying features from the context (hypertonic solutions in the stomach; being the first procedure) are included."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "The answer is fully focused on identifying the specific experimental manoeuvre in question and relates directly to the provided context about interstitial fluid pressure and alkaline gastric secretion. It does not drift into unrelated aspects of the other cited articles in the context block."
+        },
+        {
+          "name": "Use of Context",
+          "score": 4,
+          "rationale": "The answer explicitly cites and accurately reflects the key contextual information: that ICP was measured during three procedures (hypertonic solutions, hypertension with histamine, and acetylcholine infusion) and that the first did not change ICP whereas the latter two did. It integrates the relevant part of the context without misinterpretation. It could, at most, be slightly clearer by directly quoting the phrase \u201cThe first procedure\u2026\u201d as the context cuts off there, but the reconstruction is reasonable and faithful."
+        }
+      ]
+    },
+    {
+      "question": "Which intercostal muscles are described as the most superficial?",
+      "expected_doc_id": "Anatomy_Gray_329:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer correctly identifies the external intercostal muscles as the most superficial layer, which is explicitly supported by the provided Anatomy_Gray context."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question is narrow (which muscles are most superficial), and the answer directly and completely addresses it without omitting any necessary detail."
+        },
+        {
+          "name": "Use of Context",
+          "score": 5,
+          "rationale": "The answer explicitly cites and aligns with the Anatomy_Gray context, accurately reflecting the statement that the external intercostal muscles are the most superficial."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "The answer is clear, concise, and unambiguous; the key information is easy to understand."
+        }
+      ]
+    },
+    {
+      "question": "Which type of Ehlers-Danlos syndrome is associated with lysyl hydroxylase deficiency?",
+      "expected_doc_id": "pubmed23n0001_711:1",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer correctly identifies Ehlers\u2013Danlos syndrome type VI as the type associated with lysyl hydroxylase deficiency, which matches both standard medical knowledge and the provided context."
+        },
+        {
+          "name": "Use of context",
+          "score": 5,
+          "rationale": "The answer explicitly cites the context line stating that lysyl hydroxylase deficiency occurs in EDS type VI and aligns perfectly with it. No extraneous or conflicting contextual information is introduced."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "For the specific question asked (which type of EDS), the answer is complete: it clearly names the correct type without ambiguity. No additional details were required by the question."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "The answer is concise, unambiguous, and directly addresses the question. The formatting is clear and easy to understand."
+        }
+      ]
+    },
+    {
+      "question": "What is the estimated maximum half\u2011time for the acid conformational transition of alpha\u2011lactalbumin as determined by moving boundary electrophoresis?",
+      "expected_doc_id": "pubmed23n0001_198:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer directly matches the key statement in the provided context: the moving\u2011boundary electrophoresis study reports that the half\u2011time of the acid-induced conformational transition is estimated to be smaller than 7 minutes. The answer reproduces this as \u201cless than 7 minutes\u201d and attributes it correctly to the electrophoresis experiments. No contradictions or inaccuracies."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question asks only for the estimated maximum half\u2011time; the answer provides that value (less than 7 minutes) and briefly contextualizes it as being from moving\u2011boundary electrophoresis experiments on the acid-induced transition. Nothing else is required to fully address the question."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "The answer stays focused on the requested parameter (half\u2011time of the acid conformational transition of alpha\u2011lactalbumin) and does not introduce unrelated information from the rest of the context about other proteins or conditions."
+        }
+      ]
+    },
+    {
+      "question": "According to the passage, what are two causes of muscle atrophy?",
+      "expected_doc_id": "Anatomy_Gray_120:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Answer Correctness",
+          "score": 5,
+          "rationale": "The answer precisely matches the passage: it correctly identifies \"nerve damage to the muscle\" and \"disuse\" as causes of muscle atrophy, explicitly noting disuse via paralysis, which is consistent with the context."
+        },
+        {
+          "name": "Contextual Alignment",
+          "score": 5,
+          "rationale": "The response is fully grounded in the provided Anatomy_Gray excerpt and does not introduce information from outside the given context."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question asks for two causes, and both are clearly listed and correspond exactly to those mentioned in the passage; nothing is missing or extraneous."
+        }
+      ]
+    },
+    {
+      "question": "According to the report, what minimum length of the aliphatic chain is required to obtain a measurable effect in deltalog K?",
+      "expected_doc_id": "pubmed23n0001_609:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer matches the key statement from the provided context: \"The length of the aliphatic chain should be greater than 8 carbon atoms in order to get a measurable effect in terms of deltalog K.\" The explanation \"> 8 C (at least nine carbons)\" is a correct interpretation of that wording. No contradictions or additions beyond the source."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The user\u2019s question is narrow: it asks for the minimum chain length required for a measurable \u0394log K effect. The answer directly provides that threshold and clarifies it numerically; no other aspects (e.g., specific proteins) are required to answer the question. Fully complete for the scope asked."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "The response deals only with the chain length requirement and connects it explicitly to \u0394log K, exactly as the question and context do. No extraneous medico\u2011legal or unrelated biomedical content is introduced."
+        },
+        {
+          "name": "Citation and support",
+          "score": 5,
+          "rationale": "The answer explicitly attributes the statement to the report and corresponds precisely to the quoted contextual sentence. The bracketed source description matches the context provided. There is no fabricated information beyond interpreting \u201cgreater than 8\u201d as \u201cat least nine,\u201d which is mathematically trivial and supported by the text."
+        }
+      ]
+    },
+    {
+      "question": "According to the study, how does the major diphenylhydantoin metabolite HPPH affect the N\u2011demethylation of ethylmorphine by rat hepatic microsomes?",
+      "expected_doc_id": "pubmed23n0001_586:0",
+      "overall": 4.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The answer correctly states, in essentially the same terms as the source, that HPPH acts as a competitive inhibitor of the N\u2011demethylation of ethylmorphine by rat hepatic microsomes. This matches the context sentence: \u201cThe N\u2011demethylation of ethylmorphine was competitively inhibited by HPPH\u2026\u201d. No incorrect or conflicting information is added."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "The user\u2019s question is narrow: it asks how HPPH affects N\u2011demethylation of ethylmorphine. The answer specifies that it is a competitive inhibitor and mentions the relevant enzyme system (rat hepatic microsomes). This fully addresses the question; no additional detail (e.g., kinetic constants) seems required."
+        },
+        {
+          "name": "Clarity",
+          "score": 4,
+          "rationale": "The answer is clear and concise, using standard pharmacology terminology (\u201ccompetitive inhibitor\u201d) and directly linking HPPH to its effect on N\u2011demethylation of ethylmorphine. It is easy to understand for the intended technical audience."
+        },
+        {
+          "name": "Relevance",
+          "score": 4,
+          "rationale": "The response stays focused on the specific effect of HPPH on ethylmorphine N\u2011demethylation in rat hepatic microsomes and does not drift into unrelated aspects of the broader context (e.g., aniline hydroxylation). All included information is relevant."
+        }
+      ]
+    },
+    {
+      "question": "Which ribs articulate only with the bodies of their own vertebrae and lack tubercles or necks?",
+      "expected_doc_id": "Anatomy_Gray_319:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer correctly identifies ribs XI and XII as the ribs that articulate only with the bodies of their own vertebrae and have no tubercles or necks. This matches the provided Gray\u2019s Anatomy context verbatim and is anatomically accurate."
+        },
+        {
+          "name": "Use of Context",
+          "score": 5,
+          "rationale": "The answer explicitly cites the relevant portion of the Gray\u2019s Anatomy context and is directly grounded in it. It does not introduce information beyond what is supported by the excerpt."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The user\u2019s question is fully answered: the specific ribs are named, and their key distinguishing features (articulation only with their own vertebral bodies, lack of tubercles and necks) are included. No additional clarification was required."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "The answer is concise, precise, and clearly phrased. The use of both ordinal numbering (eleventh and twelfth) and Roman numerals (XI and XII) enhances clarity without adding confusion."
+        }
+      ]
+    },
+    {
+      "question": "According to the study, does the oxidation state of chromium affect its interference with renal transport processes in the rat?",
+      "expected_doc_id": "pubmed23n0001_782:0",
+      "overall": 3.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 3,
+          "rationale": "The source text explicitly contrasts rat and rabbit: in the rat, chromium interferes with transport processes without any noted dependence on oxidation state; in the rabbit, greater inhibition at low pH is interpreted as chromate (hexavalent) being the effective inhibitor. The answer accurately reflects this, stating that the study does not report an oxidation\u2011state effect for the rat and that the only oxidation\u2011state comment concerns the rabbit. This matches the provided context and does not introduce unsupported claims."
+        },
+        {
+          "name": "Completeness",
+          "score": 3,
+          "rationale": "The user\u2019s question is narrow: whether, according to the study, oxidation state affects chromium\u2019s interference with renal transport in the rat. The answer clearly states that no such effect is reported for the rat and briefly situates the rabbit finding as context. That fully addresses the question\u2019s scope; more experimental detail is not required to answer it."
+        },
+        {
+          "name": "Relevance",
+          "score": 3,
+          "rationale": "The response stays focused on the rat, the oxidation state issue, and the relevant contrast with the rabbit. It does not drift into unrelated aspects of renal dipeptidase, kallikrein, or other monoanion studies beyond what is necessary to explain the oxidation\u2011state comment in another species."
+        }
+      ]
+    },
+    {
+      "question": "Which four abnormalities classically define the tetralogy of Fallot?",
+      "expected_doc_id": "Anatomy_Gray_539:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The four abnormalities listed (pulmonary stenosis, VSD, overriding aorta, right\u2011ventricular hypertrophy) are exactly those given in the cited Anatomy_Gray context and are medically correct for tetralogy of Fallot."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "All four components of the tetralogy are named and briefly characterized; nothing essential is missing for the scope of the question."
+        },
+        {
+          "name": "Source Reliance",
+          "score": 5,
+          "rationale": "The answer aligns directly with the Anatomy_Gray excerpt and is explicitly attributed to it, without adding unsupported claims."
+        },
+        {
+          "name": "Reasoning",
+          "score": 5,
+          "rationale": "The reasoning is straightforward: it restates the four lesions as defined in the source; no faulty inference is made."
+        }
+      ]
+    },
+    {
+      "question": "In the study, how did metabolic acidosis and hypoxia affect the incidence of spontaneous resumption of circulation after defibrillation?",
+      "expected_doc_id": "pubmed23n0001_114:0",
+      "overall": 4.25,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "Accurately reflects the key finding: metabolic acidosis and severe hypoxia did not significantly change the likelihood/incidence of spontaneous resumption of circulation after defibrillation compared with controls. This is consistent with the provided context about no significant differences in defibrillation requirements under acid-base disturbances and hypoxemia."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "Addresses the specific question (effect on incidence of spontaneous resumption of circulation) directly and clearly, including both metabolic acidosis and hypoxia, and the comparison to normal controls. No relevant aspect of the question is omitted, though the exact numeric data are not provided in the context, so cannot be added."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "Fully focused on the asked point: the impact of metabolic acidosis and hypoxia on spontaneous resumption of circulation after defibrillation, without extraneous information."
+        },
+        {
+          "name": "Use of Context",
+          "score": 4,
+          "rationale": "Uses the main conclusion implied by the context (\u201cno significant differ\u2026[ence]\u201d in defibrillation requirements in acid-base disturbed and hypoxemic dogs) and applies it correctly to spontaneous resumption of circulation. The citation tag is appropriate, though the context snippet is truncated and does not explicitly spell out the outcome measure as incidence of spontaneous circulation; the mapping is reasonable but slightly inferential."
+        }
+      ]
+    },
+    {
+      "question": "What minimum incubation time with antigen is required for spleen cell cultures from H37Ra\u2011immunized mice to produce supernatant fluids that inhibit intracellular multiplication of virulent tubercle bacilli?",
+      "expected_doc_id": "pubmed23n0001_159:0",
+      "overall": 4.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The answer directly matches the key experimental detail: that at least 48 hours of incubation with H37Ra antigen are required before supernatants acquire measurable MycoIF activity capable of inhibiting intracellular multiplication of virulent tubercle bacilli. This is consistent with the cited context. No extraneous or incorrect claims are added."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "The question asks only for the minimum incubation time and the answer supplies that clearly (\u2018at least 48 hours\u2019) and ties it explicitly to the onset of measurable MycoIF activity. Additional protocol details (cell densities, antigen concentration, etc.) are not requested, so the answer is complete for the query."
+        },
+        {
+          "name": "Explanation",
+          "score": 3,
+          "rationale": "The response briefly explains that the 48 hours are required before supernatants acquire measurable MycoIF activity and describes its functional consequence (suppression of intracellular multiplication). This is a modest level of explanation; it does not elaborate on experimental design, time-course data, or thresholds of measurability, but that extra depth was not necessary for the question."
+        },
+        {
+          "name": "Use of Context",
+          "score": 4,
+          "rationale": "The answer uses the provided article title and succinctly reflects the reported finding. It remains grounded in the context and does not import unrelated information. The inline-style citation text is somewhat verbose, but still clearly tied to the given context."
+        }
+      ]
+    },
+    {
+      "question": "Which protein synthesis inhibitor blocks the initial phase of insulin\u2011induced phenylalanine hydroxylase induction in serum\u2011deprived H4\u2011II\u2011E\u2011C3 hepatoma cells?",
+      "expected_doc_id": "pubmed23n0001_688:0",
+      "overall": 4.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The question asks which protein synthesis inhibitor blocks the initial phase of insulin\u2011induced phenylalanine hydroxylase induction in serum\u2011deprived H4\u2011II\u2011E\u2011C3 hepatoma cells. The answer clearly states cycloheximide, which is exactly what is described in the provided context (\u201cThe initial phase of induction by insulin is inhibited by cyclohexi\u2026\u201d). This is fully correct."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "The user\u2019s question is very narrow: identify the inhibitor. The answer provides the name (cycloheximide) and situates it in the correct experimental setting (initial 3\u2011hour phase, insulin\u2011induced phenylalanine hydroxylase in serum\u2011deprived H4\u2011II\u2011E\u2011C3 cells). No additional details are required to satisfy the question."
+        },
+        {
+          "name": "Relevance",
+          "score": 4,
+          "rationale": "The answer is entirely focused on naming the correct protein synthesis inhibitor and briefly restating the experimental condition. No extraneous or off\u2011topic information is included."
+        },
+        {
+          "name": "Use of Context",
+          "score": 4,
+          "rationale": "The answer directly leverages the context, which states that the initial phase of induction by insulin is inhibited by cycloheximide. The citation label matches the provided article title and aligns with the snippet given. Context is used appropriately and accurately."
+        }
+      ]
+    },
+    {
+      "question": "Which pleural recess is the largest and clinically most important, lying inferiorly between the thoracic wall and the diaphragm?",
+      "expected_doc_id": "Anatomy_Gray_292:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Grounding in provided context",
+          "score": 5,
+          "rationale": "The answer exactly matches and is explicitly supported by the context: it identifies the costodiaphragmatic recess as the largest and clinically most important, lying inferiorly between the thoracic wall and the diaphragm, which is verbatim from Anatomy_Gray."
+        },
+        {
+          "name": "Correctness of medical/anatomical content",
+          "score": 5,
+          "rationale": "Medically and anatomically correct: the costodiaphragmatic recess is indeed the largest and clinically most important pleural recess and is located inferiorly between the costal pleura (thoracic wall) and diaphragmatic pleura (diaphragm). No inaccuracies present."
+        },
+        {
+          "name": "Completeness relative to question",
+          "score": 5,
+          "rationale": "The question asks which pleural recess fits that description; the answer names it and briefly characterizes it. That fully satisfies the query; no additional detail was required."
+        },
+        {
+          "name": "Adherence to instructions and use of sources",
+          "score": 5,
+          "rationale": "The response cites the given source tag (\u3010Anatomy_Gray\u3011) appropriately and does not introduce extraneous sources or speculation. It follows the RAG instruction to base the answer on the provided context."
+        }
+      ]
+    },
+    {
+      "question": "Which peptide hydrolase was not detected in guinea-pig epidermis?",
+      "expected_doc_id": "pubmed23n0001_501:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer correctly identifies cathepsin E as the peptide hydrolase not detected in guinea\u2011pig epidermis, exactly matching the context: \u201cCathepsin E was not detected.\u201d No incorrect additions."
+        },
+        {
+          "name": "Contextual grounding",
+          "score": 5,
+          "rationale": "The response explicitly cites the provided article title and directly reflects the statement in the context. It is fully grounded in the supplied text and does not introduce external or speculative information."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question is simple and specific; the answer directly names the enzyme and restates that it was not detected. No additional details are needed to fully answer the question."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "The answer addresses only which peptide hydrolase was not detected and does not stray into unrelated background from the rest of the context."
+        }
+      ]
+    },
+    {
+      "question": "Which non-human erythrocyte species behaved similarly to human cells in the phospholipase experiments?",
+      "expected_doc_id": "pubmed23n0001_29:1",
+      "overall": 1.0,
+      "criteria": [
+        {
+          "name": "Accuracy",
+          "score": 1,
+          "rationale": "The question asks specifically about non-human erythrocyte species that behaved similarly to human cells *in the phospholipase A2 experiments* on erythrocyte membranes. The provided answer instead cites sheep erythrocytes in the context of a different enzyme (Staphylococcus aureus sphingomyelinase C / phospholipase C) and hot\u2013cold hemolysis, drawn from a different paper in the context block. There is no support in the given context that sheep erythrocytes behaved similarly to human cells in the described snake venom phospholipase A2 experiments. Thus the answer is not supported and is effectively incorrect for the asked question."
+        },
+        {
+          "name": "Context usage",
+          "score": 1,
+          "rationale": "The answer selectively uses part of the context that mentions sheep erythrocytes and sphingomyelinase-induced hemolysis, but that passage relates to a different study (Staphylococcus aureus phospholipase C/sphingomyelinase C), not to the phospholipase A2 experiments on human erythrocytes. It ignores the actual phospholipase A2 study description and misattributes findings between studies. Therefore, the context is misused rather than correctly leveraged."
+        },
+        {
+          "name": "Completeness",
+          "score": 1,
+          "rationale": "The question likely expects identification of the non-human species (or species) tested alongside human erythrocytes. The answer names only sheep and does not justify this with respect to the phospholipase A2 study, nor does it consider whether multiple non-human species were evaluated. It therefore fails to address the question in a complete and relevant way."
+        }
+      ]
+    },
+    {
+      "question": "According to the passage, what anarchist ideal is reflected in hacktivists' development and distribution of free software?",
+      "expected_doc_id": "wiki20220301en000_44:0",
+      "overall": 4.5,
+      "criteria": [
+        {
+          "name": "Instruction Following",
+          "score": 4,
+          "rationale": "The answer correctly identifies the anarchist ideal as prefiguration and explains it in context. It adds some interpretation (\u201cpre\u2011figuring a non\u2011hierarchical, free\u2011association society through concrete, non\u2011authoritarian actions\u201d), which is consistent with the passage\u2019s broader discussion of prefiguration in anarchism. It also correctly cites the source tag. Overall it follows the task: answering the question based on the passage."
+        },
+        {
+          "name": "Contextual Accuracy",
+          "score": 4,
+          "rationale": "The passage says: \u201cThe way these hacktivists work to develop and distribute resembles the anarchist ideals, especially when it comes to pres\u2013\u201d and in the later excerpt: \u201cserve as a prefigurative tool to reflect the anarchist ideal society\u2026\u201d. The model\u2019s answer that the ideal is prefiguration is accurate. The elaboration about a \u201cnon-hierarchical, free-association society\u201d is not explicitly in the immediate snippet but is in line with anarchist ideals discussed in the larger article, so it\u2019s a reasonable contextual inference, not a contradiction."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The question is narrowly focused: which anarchist ideal is reflected? The answer clearly names \u201cprefiguration\u201d and briefly defines it in this context. That fully resolves the query; no relevant element is omitted."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "The response is clear and easy to understand. It directly answers with the named ideal and a concise gloss, without unnecessary digression."
+        }
+      ]
+    },
+    {
+      "question": "What chromatography technique, when combined with chaotropic buffers, enables a single-step purification of proteins by several hundredfold as described in the passage?",
+      "expected_doc_id": "pubmed23n0001_957:0",
+      "overall": 4.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The answer correctly identifies the technique as adsorption chromatography on controlled\u2011pore glass (CPG) combined with chaotropic buffers. This matches the key sentence in the context almost verbatim and is scientifically accurate. No incorrect information is added."
+        },
+        {
+          "name": "Use of Context",
+          "score": 4,
+          "rationale": "The response explicitly cites the relevant phrase from the passage and clearly ties the answer to that sentence. It does not ignore or contradict any contextual details. The brief citation in brackets is consistent with the provided context."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "For the question asked\u2014what chromatography technique is used\u2014the answer gives the full description: adsorption chromatography, specifies the matrix (controlled\u2011pore glass), and notes the combination with chaotropic buffers. That fully satisfies the query; no additional detail is required."
+        },
+        {
+          "name": "Relevance",
+          "score": 4,
+          "rationale": "The answer is focused entirely on naming the chromatography technique as requested. No extraneous discussion is included; everything is directly relevant to the question."
+        }
+      ]
+    },
+    {
+      "question": "What fold of peritoneum containing muscle fibers surrounds the duodenojejunal flexure?",
+      "expected_doc_id": "Anatomy_Gray_682:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer matches the context exactly: the fold is the suspensory muscle (ligament) of duodenum, also called the ligament of Treitz. No incorrect details are added."
+        },
+        {
+          "name": "Contextual alignment",
+          "score": 5,
+          "rationale": "Directly cites and paraphrases the provided Gray\u2019s Anatomy context, using the same terminology and accurately reflecting it."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "Fully answers the specific question (name of the fold) and includes both common names; no relevant aspect is missing for this narrowly scoped question."
+        },
+        {
+          "name": "Reasoning",
+          "score": 5,
+          "rationale": "Implicit reasoning is correct: identifies that the peritoneal fold with muscle fibers around the duodenojejunal flexure is the suspensory muscle of the duodenum; no flawed logic."
+        }
+      ]
+    },
+    {
+      "question": "What are the names of the two cusps of the mitral (left atrioventricular) valve?",
+      "expected_doc_id": "Anatomy_Gray_407:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The question asks for the names of the two cusps of the mitral valve (anterior and posterior/bicuspid). The model correctly stated that this information is not present in the provided Anatomy_Gray excerpts and therefore did not fabricate an answer. Under the rubric, the answer must be judged only against the context; given that the context truly lacks the requested names, the response is factually correct relative to the context and appropriately avoids hallucination."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "Within the constraint of using only the provided context, the answer is as complete as possible: it explicitly states that the requested information is not in the excerpts and that it cannot be given based on the context. There was no additional relevant detail in the snippets that could have been used to partially answer the question, so nothing is missing."
+        },
+        {
+          "name": "Grounding",
+          "score": 5,
+          "rationale": "The answer is fully grounded in the provided context in the sense that it correctly identifies the absence of the necessary information and does not introduce any new, unsupported facts. It makes a clear statement about the limitation imposed by the context and does not go beyond it."
+        }
+      ]
+    },
+    {
+      "question": "After entering an intervertebral foramen, which arteries do the segmental spinal arteries give rise to?",
+      "expected_doc_id": "Anatomy_Gray_189:0",
+      "overall": 4.25,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The answer correctly states that, after entering the intervertebral foramen, segmental spinal arteries give rise to anterior and posterior radicular arteries, which follow and supply the anterior and posterior nerve roots. This is accurate. However, the context clearly adds that they also give off segmental medullary arteries at various levels. The question is phrased in plural (\u201cwhich arteries\u201d), and the core source sentence lists both radicular and segmental medullary branches. The answer omits the segmental medullary arteries, so it is incomplete relative to the provided context."
+        },
+        {
+          "name": "Use of Context",
+          "score": 3,
+          "rationale": "The answer uses part of the key contextual sentence (anterior and posterior radicular arteries) but ignores the immediately following information that segmental medullary arteries are also given off. Thus, it partially but not fully uses the provided context."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "The answer is clear, concise, and anatomically well-expressed, including a brief functional note about supplying the roots. No ambiguity or confusion."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "The answer stays on-topic, directly addressing the question about which arteries arise from the segmental spinal arteries after they pass through the intervertebral foramen, without digression."
+        }
+      ]
+    },
+    {
+      "question": "From which major vessel do the largest arteries that supply the diaphragm arise, and what are they called?",
+      "expected_doc_id": "Anatomy_Gray_346:0",
+      "overall": 2.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 3,
+          "rationale": "The answer states that the largest arteries supplying the diaphragm are the superior phrenic arteries from the thoracic (descending) aorta. This is accurate for the superior phrenic arteries, but the question asks for the largest arteries that supply the diaphragm overall, which are typically considered the inferior phrenic arteries from the abdominal aorta. Thus the main vessel and named arteries are incorrect for what was asked."
+        },
+        {
+          "name": "Completeness",
+          "score": 1,
+          "rationale": "It only mentions superior phrenic arteries from the thoracic aorta and omits the inferior phrenic arteries from the abdominal aorta, which are the largest arteries supplying the diaphragm. It also ignores the context mentioning multiple arterial sources. The core requested information (major vessel + correct named arteries) is not properly addressed."
+        },
+        {
+          "name": "Relevance",
+          "score": 3,
+          "rationale": "The response discusses arteries supplying the diaphragm and their origin, which is on-topic. However, it focuses on the wrong set of vessels relative to the question about the largest arterial supply."
+        },
+        {
+          "name": "Use of Context",
+          "score": 1,
+          "rationale": "The provided Gray\u2019s Anatomy context notes superior and inferior sources and internal thoracic branches, implying a broader arterial supply. The answer does not leverage this and instead isolates only superior phrenic arteries from the thoracic aorta, missing that the largest arteries (inferior phrenic) arise from the abdominal aorta."
+        }
+      ]
+    },
+    {
+      "question": "What is the Hill coefficient (h) of the pyruvate\u2011NAD\u207a overall reaction in the Azotobacter vinelandii pyruvate\u2011dehydrogenase complex, and how does the presence of activators (AMP and sulphate) or inhibitors (acetyl\u2011CoA) affect it?",
+      "expected_doc_id": "pubmed23n0001_597:0",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer correctly states that the Hill coefficient for the pyruvate\u2013NAD\u207a overall reaction is 2.5 and accurately notes that AMP, sulphate, and acetyl\u2011CoA do not change this Hill coefficient, which matches the provided context."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "The user\u2019s question has two parts (value of h and effect of activators/inhibitors). Both are fully addressed. Extra, irrelevant context (other enzymes, other complexes) is not needed and not required, so the answer is complete for the query."
+        },
+        {
+          "name": "Grounding",
+          "score": 5,
+          "rationale": "The answer is tightly grounded in the supplied passage, even reproducing the key wording about the Hill coefficient and its invariance in the presence of AMP, sulphate, and acetyl\u2011CoA. No unsupported extrapolations are made."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "The response is focused on the Hill coefficient for the specified reaction and its modulation by the listed effectors. It does not drift into unrelated details from the longer context."
+        }
+      ]
+    },
+    {
+      "question": "Which catecholamine demonstrated no mitotic inhibition at a concentration of 1\u202f\u00d7\u202f10\u207b\u2074\u202fM in the study?",
+      "expected_doc_id": "pubmed23n0001_231:0",
+      "overall": 2.2,
+      "criteria": [
+        {
+          "name": "Context adherence",
+          "score": 4,
+          "rationale": "The relevant context clearly indicates which catecholamines showed inhibition and at what concentrations, but it does not explicitly state which catecholamine showed *no* inhibition at 1\u00d710\u207b\u2074 M. The answer field is empty, so there is no hallucination, but also no use of the context to derive or infer an answer (e.g., stating that the information is not provided)."
+        },
+        {
+          "name": "Grounding",
+          "score": 4,
+          "rationale": "There is no answer given, so no ungrounded statements are made. However, a grounded response should have explicitly stated that the study description in the provided context does not identify a catecholamine with no mitotic inhibition at 1\u00d710\u207b\u2074 M."
+        },
+        {
+          "name": "Correctness",
+          "score": 1,
+          "rationale": "The user asked a specific factual question. The assistant provided no answer, so the response is effectively incorrect/incomplete relative to the task."
+        },
+        {
+          "name": "Completeness",
+          "score": 1,
+          "rationale": "The answer field is blank and does not even explain that the needed detail is absent from the context. It does not address the question in any substantive way."
+        },
+        {
+          "name": "Clarity",
+          "score": 1,
+          "rationale": "With no content in the answer, there is nothing for the user to interpret or understand. This fails basic communicative clarity."
+        }
+      ]
+    },
+    {
+      "question": "By how much did tryptophan administration increase the rate of incorporation of \u00b3H from \u00b3H\u2082O into total hepatic fatty acids in fasted rats?",
+      "expected_doc_id": "pubmed23n0001_197:0",
+      "overall": 1.2,
+      "criteria": [
+        {
+          "name": "Accuracy",
+          "score": 1,
+          "rationale": "The source clearly states: \u201cTryptophan administration to the fasted rats induced a 4.2-fold increase in the rate of incorporation of \u00b3H from \u00b3H\u2082O into total hepatic fatty acids,\u201d but the answer claims no numerical value is given. This is directly contradicted by the context, so the answer is factually wrong and incomplete."
+        },
+        {
+          "name": "Use of Context",
+          "score": 1,
+          "rationale": "The crucial sentence in the provided context explicitly provides the quantitative increase (4.2-fold), but the answer ignores it and instead asserts that no numerical value is available. This shows the context was either not used or was used very poorly."
+        },
+        {
+          "name": "Relevance",
+          "score": 2,
+          "rationale": "The answer at least attempts to address the specific question (degree of increase in incorporation rate) and doesn\u2019t go off-topic, but it fails to provide the requested figure and trails off mid-sentence, making it only weakly relevant."
+        },
+        {
+          "name": "Completeness",
+          "score": 1,
+          "rationale": "The answer should supply a single clear numerical value (4.2-fold increase). It instead says no number is given and then stops mid-word (\u201cenh\u201d), so it neither states the value nor gives any alternative quantitative description."
+        },
+        {
+          "name": "Clarity",
+          "score": 1,
+          "rationale": "The response is short but not clear: it incorrectly asserts missing data and ends abruptly in an incomplete word, which is confusing and unprofessional."
+        }
+      ]
+    },
+    {
+      "question": "What relationship was observed when BUI values were plotted against pH rather than PCO2 in the experiments?",
+      "expected_doc_id": "pubmed23n0001_391:1",
+      "overall": 4.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 4,
+          "rationale": "The context states: \"When BUI values were plotted against pH rather than PCO2 for the same experiments, there was a good correlation with the calculated linear regression.\" The answer restates this accurately as a strong, linear correlation, which is consistent with \"good correlation\" and fitting well to a linear regression. No contradiction or fabrication."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "The question asks what relationship was observed. The answer clearly specifies that the relationship was a strong, linear correlation with pH and notes that the points fit well to the calculated linear regression. This captures all the relevant detail present in the context about the relationship; no important aspect is omitted."
+        },
+        {
+          "name": "Citation and Grounding",
+          "score": 4,
+          "rationale": "The answer is directly grounded in the provided excerpt and matches its content. It even references the source title in brackets, which is acceptable, though not strictly necessary; there is no invented data beyond rephrasing \"good correlation\" as \"strong, linear correlation\" based on mention of a linear regression fit."
+        }
+      ]
+    },
+    {
+      "question": "Which United States Supreme Court cases established the \"one man, one vote\" principle requiring state legislative districts to be based on population rather than geographic counties?",
+      "expected_doc_id": "wiki20220301en000_219:0",
+      "overall": 4.75,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer correctly identifies Baker v. Carr (1962) and Reynolds v. Sims (1964) as the key U.S. Supreme Court cases establishing the \u201cone man, one vote\u201d principle for state legislative districts based on population rather than geographic counties. This is fully consistent with the provided context, which explicitly mentions these cases in connection with Alabama and the requirement that districts be based on population."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "The answer fully addresses the question by naming the relevant Supreme Court cases and briefly explaining that they required districts to be based on population. It could be marginally more complete by noting that Baker v. Carr established justiciability of apportionment claims under the Equal Protection Clause and that Reynolds v. Sims applied and elaborated the one-person-one-vote rule to state legislatures, but this level of detail was not required by the question."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "All information provided directly answers the question about which Supreme Court cases established the principle and keeps the explanation focused on those cases and the population-based districting rule, with no extraneous material."
+        },
+        {
+          "name": "Grounding",
+          "score": 5,
+          "rationale": "The answer is well grounded in the supplied context, which explicitly lists Baker v. Carr (1962) and Reynolds v. Sims (1964) and describes their holdings regarding one-person-one-vote and population-based districts. The answer does not introduce claims that conflict with or go beyond the context in a problematic way."
+        }
+      ]
+    },
+    {
+      "question": "According to the studies, which hemocyanin is suggested as a structural homolog and analog of more complex macromolecular arrays?",
+      "expected_doc_id": "pubmed23n0001_255:1",
+      "overall": 4.8,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "The answer correctly identifies Limulus hemocyanin as the hemocyanin suggested as a structural homolog and analog of more complex macromolecular arrays. This matches the source text exactly: \"Our studies suggest the possibility of using Limulus hemocyanin and other hemocyanins as structural homologs and analogs...\""
+        },
+        {
+          "name": "Contextual grounding",
+          "score": 5,
+          "rationale": "The answer is explicitly grounded in the provided context, and the citation label corresponds to the relevant article title. It does not introduce information beyond what is supported by the text."
+        },
+        {
+          "name": "Completeness",
+          "score": 4,
+          "rationale": "The key element of the question (which hemocyanin) is fully answered. The original sentence also mentions \"other hemocyanins\" as structural homologs and analogs; the answer focuses on Limulus hemocyanin and omits that broader point, but this is not required by the question, which asks specifically which hemocyanin is suggested."
+        },
+        {
+          "name": "Citation and attribution",
+          "score": 5,
+          "rationale": "The answer includes a citation that corresponds to the provided context (the named article). Although the bracketed reference is not in a formal style, it clearly points to the source given in the context and is not fabricated beyond that."
+        }
+      ]
+    },
+    {
+      "question": "How does AMP affect the KM for glucose\u20111\u2011P of liver phosphorylase b in purified enzyme compared to crude extract?",
+      "expected_doc_id": "pubmed23n0001_50:1",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "Accurately states that AMP lowers the apparent Km for glucose\u20111\u2011P and correctly gives the two values: ~80 mM for purified phosphorylase b and ~60 mM for the enzyme in crude extract, matching the provided context. The comparative interpretation (greater effect in crude preparation) is consistent with those numbers."
+        },
+        {
+          "name": "Use of Sources",
+          "score": 5,
+          "rationale": "Directly uses the key quantitative data and qualitative description from the cited paper. No fabrication or contradiction of the context; the parenthetical Ka \u2248 0.5 mM is also taken from the passage."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "Fully answers the question, which is specifically about how AMP affects Km in purified vs crude preparations, including both numeric values and the comparative effect."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "Clear, succinct explanation of AMP\u2019s effect on Km in both conditions and an explicit comparative statement. Easy to follow and unambiguous."
+        }
+      ]
+    },
+    {
+      "question": "What percentage of patients dropped out of drug taking during the study?",
+      "expected_doc_id": "pubmed23n0001_544:0",
+      "overall": 1.25,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 1,
+          "rationale": "The study in context is the lorazepam vs diazepam double\u2011blind trial. The context explicitly states: \u201cSix patients in the diazepam group did not complete the trial\u2026; no patients in the lorazepam group dropped out.\u201d One must calculate the overall dropout percentage from the full paper (total N), but the provided answer instead (a) asserts \u201cAbout 28%\u201d without any support from the excerpt, and (b) then incorrectly switches to a different study (the L\u2011dopa schizophrenia trial) and starts computing 5/18, which is unrelated to the asked study. This is factually incorrect and mixes up studies, so correctness is very low."
+        },
+        {
+          "name": "Relevance",
+          "score": 2,
+          "rationale": "The answer nominally addresses \u201cpercentage of patients dropped out,\u201d but it is largely irrelevant to the specific trial implied by the context (the anxiolytic trial). It brings in dropout data from the L\u2011dopa schizophrenia trial, which is not what the question is about. Thus, only the first sentence is topically relevant, and even that is unsupported; the rest is irrelevant cross\u2011study detail."
+        },
+        {
+          "name": "Completeness",
+          "score": 1,
+          "rationale": "The answer fails to show how the 28% figure was derived and then truncates mid\u2011calculation (\u201c5 patients (5 \u00f7\u201d). It does not specify the denominator or the exact study population used. It also does not reconcile the stated dropout with the explicit text that only diazepam patients dropped out. Overall, the computation is incomplete and unexplained."
+        },
+        {
+          "name": "Clarity",
+          "score": 1,
+          "rationale": "The reasoning is confusing: the answer asserts a percentage, then abruptly shifts to a different trial (L\u2011dopa) and starts an unfinished calculation. This makes it unclear which study is being analyzed and how the percentage relates to the question. The unfinished sentence further harms clarity."
+        }
+      ]
+    },
+    {
+      "question": "According to the hypothesis, how many DD\u2011carboxypeptidases does Proteus mirabilis possess, and which one is thought to be used for peptidoglycan synthesis in the unstable L\u2011form?",
+      "expected_doc_id": "pubmed23n0001_128:1",
+      "overall": 5.0,
+      "criteria": [
+        {
+          "name": "Correctness",
+          "score": 5,
+          "rationale": "Accurately identifies that the hypothesis proposes two DD\u2011carboxypeptidases in Proteus mirabilis and correctly specifies that the unstable L\u2011form peptidoglycan synthesis is thought to use the completely reactivatable, less penicillin\u2011sensitive DD\u2011carboxypeptidase. This matches the provided context verbatim."
+        },
+        {
+          "name": "Completeness",
+          "score": 5,
+          "rationale": "Fully answers both parts of the question: (1) the number of DD\u2011carboxypeptidases and (2) which specific one is implicated in peptidoglycan synthesis in the unstable L\u2011form, including its key properties (completely reactivatable, lower penicillin sensitivity)."
+        },
+        {
+          "name": "Relevance",
+          "score": 5,
+          "rationale": "Focused entirely on the hypothesis from the cited Proteus mirabilis study; no extraneous information from other articles in the context is introduced."
+        },
+        {
+          "name": "Clarity",
+          "score": 5,
+          "rationale": "Clear and well-structured; the answer explicitly restates the key points and distinguishes the two enzymes and their properties in straightforward language."
+        }
+      ]
+    }
+  ]
+}
