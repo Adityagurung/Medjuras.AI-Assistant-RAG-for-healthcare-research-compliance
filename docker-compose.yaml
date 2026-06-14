@@ -65,6 +65,8 @@ services:
       SKIP_WARMUP: ${SKIP_WARMUP:-false}
       ES_URL: http://elasticsearch:9200
       QDRANT_URL: http://qdrant:6333
+      ES_LOCAL_URL: http://elasticsearch:9200
+      QDRANT_LOCAL_URL: http://qdrant:6333
       OLLAMA_BASE_URL: http://ollama:11434
       OLLAMA_MODEL: ${OLLAMA_MODEL:-llama3.2}
       #MCP_SERVER_URL: http://mcp-server:8765
@@ -81,6 +83,8 @@ services:
       elasticsearch:
         condition: service_healthy
       qdrant:
+        condition: service_started
+      postgres:
         condition: service_started
       ollama:
         condition: service_started
