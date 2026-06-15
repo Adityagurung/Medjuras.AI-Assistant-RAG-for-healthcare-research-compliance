@@ -257,7 +257,7 @@ python app/test_system.py
 
 ### Step 5: Access the Applications
 
-**Medical RAG Assistant:**
+**Medjuras.AI:**
 - URL: http://localhost:8501
 - Interface: Streamlit chat application
 - Features: Role selection, citation viewing, feedback submission

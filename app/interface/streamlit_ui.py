@@ -22,7 +22,7 @@ class MedicalRAG_UI:
 
     def setup_page_config(self):
         st.set_page_config(
-            page_title="Medical RAG Assistant",
+            page_title="Medjuras.AI",
             page_icon="🏥",
             layout="wide",
             initial_sidebar_state="expanded",
@@ -64,7 +64,7 @@ class MedicalRAG_UI:
                     ),  # Auto-set response detail based on user type but Default to "Detailed"
                 )
                 show_sources = st.checkbox("Show Sources", value=False)
-        st.sidebar.text("© Jordan Alexander Harris")
+        st.sidebar.text("© Aditya Gurung")
 
         # Returns settings dict for use in chat class
         return {
@@ -75,7 +75,7 @@ class MedicalRAG_UI:
         }
 
     def render_chat_interface(self, settings):
-        st.title("🏥 Medical RAG Assistant")
+        st.title("🏥 Medjuras.AI")
         st.caption("Ask medical questions with confident sources")
 
         # Display chat history

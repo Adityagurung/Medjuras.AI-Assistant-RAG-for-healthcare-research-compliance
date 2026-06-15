@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "MedJuras.AI PostgreSQL",
+      "Group": "MedJuras.AI",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "ragdb",
+      "Username": "admin",
+      "SSLMode": "prefer"
+    }
+  }
+}
