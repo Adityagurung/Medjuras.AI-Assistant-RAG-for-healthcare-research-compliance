@@ -437,6 +437,7 @@ Complete Docker Compose stack for one-command deployment:
 | **qdrant** | 6333, 6334 | Vector database |
 | **postgres** | 5433 | Feedback and logs |
 | **grafana** | 3010 | Monitoring dashboard |
+| **pgadmin** | 5050 | Q&A Database  |
 
 **Features:**
 - Health checks for all services
