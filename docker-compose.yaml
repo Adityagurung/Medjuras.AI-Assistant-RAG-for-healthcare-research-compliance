@@ -90,6 +90,7 @@ services:
     volumes:
       - ./app:/app/app         # hot-reload code
       - ./data:/app/data       # (optional) local datasets
+      - ./images:/app/images 
     ports:
       - "8501:8501"
     #command: streamlit run ./app/main.py --server.port=8501 --server.address=0.0.0.0
