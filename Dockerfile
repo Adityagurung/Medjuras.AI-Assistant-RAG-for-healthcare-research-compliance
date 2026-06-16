@@ -17,6 +17,7 @@ COPY app/ ./app/
 COPY config/ ./config/
 COPY data/ ./data/
 
+COPY images/ ./images/
 COPY scripts/entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 

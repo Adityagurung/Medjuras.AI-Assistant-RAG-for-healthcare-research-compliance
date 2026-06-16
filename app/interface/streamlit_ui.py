@@ -52,9 +52,9 @@ class MedicalRAG_UI:
             with st.expander("⚙️ Settings"):
                 llm_provider = st.selectbox(
                     "LLM Provider:",
-                    ["openai", "ollama"],
+                    ["openai", "anthropic", "ollama"],
                     index=0,
-                    format_func=lambda x: "OpenAI (gpt-4o-mini)" if x == "openai" else "Ollama (llama3.2)",
+                    format_func=lambda x: {"openai": "OpenAI GPT-5.1", "anthropic": "Anthropic: Claude Opus 4.5", "ollama": "Ollama (llama 3.2)"}[x],
                 )
                 response_detail = st.selectbox(
                     "Response Detail:",

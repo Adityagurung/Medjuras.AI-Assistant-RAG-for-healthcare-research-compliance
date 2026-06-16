@@ -1,13 +1,23 @@
-"""Streamlit chat backend with OpenAI (default) or Ollama."""
+"""Streamlit chat backend via MyGenAssist or local Ollama."""
 from __future__ import annotations
+import os
+
 
 from typing import Any, Dict, List
+
+from llm.mygenassist_client import (
+    get_streamlit_anthropic_model,
+    get_streamlit_openai_model,
+    mygenassist_chat,
+    use_mygenassist,
+)
 
 from llm.ollama_client import ollama_chat
 from llm.openai_client import LLMResponse, agentic_llm
 from llm.query_rewriter import rewrite_query_with_context
 from llm.rag_utils import build_rag_context
 from search.hybrid_search import hybrid_search
+
 
 
 class ChatAssistant:
@@ -21,8 +31,19 @@ class ChatAssistant:
             {"role": "developer", "content": self.developer_prompt}
         ]
 
-    def _ollama_rag_response(self, query: str, settings: Dict[str, Any]) -> LLMResponse:
-        """Retrieve with hybrid search and answer via Ollama."""
+    def _require_mygenassist(self) -> None:
+        if not use_mygenassist():
+            raise ValueError("MYGENASSIST_API_KEY is required for cloud LLM providers. Set it in .env or choose Ollama (llama 3.2).")
+
+
+    def _rag_response(
+        self,
+        query: str,
+        settings: Dict[str, Any],
+        *,
+        provider: str,
+        model: str,
+    ) -> LLMResponse:
         re_query = rewrite_query_with_context(query, self.chat_messages)
         hits = hybrid_search(re_query, top_k=5, local=True)
         context_parts = [
@@ -31,35 +52,53 @@ class ChatAssistant:
         context = "\n\n".join(context_parts) or "No retrieved context."
         sys_prompt = build_rag_context(settings, self.chat_messages)
         user_prompt = f"Question: {query}\n\nRetrieved context:\n{context}"
-        resp = ollama_chat(user_prompt, system=sys_prompt)
+        if provider == "ollama":
+            resp = ollama_chat(user_prompt, system=sys_prompt, model=model)
+            prompt_tokens = 0
+            completion_tokens = 0
+            total_tokens = 0
+        else:
+            self._require_mygenassist()
+            resp = mygenassist_chat(user_prompt, system=sys_prompt, model=model)
+            prompt_tokens = resp.prompt_tokens
+            completion_tokens = resp.completion_tokens
+            total_tokens = resp.total_tokens
         citations = [h.to_dict() for h in hits]
         return LLMResponse(
             text=resp.text,
             model=resp.model,
-            prompt_tokens=0,
-            completion_tokens=0,
-            total_tokens=0,
+            prompt_tokens=prompt_tokens,
+            completion_tokens=completion_tokens,
+            total_tokens=total_tokens,
             used_tools=[("hybrid_search", citations)],
         )
 
     def query_llm(self, query: str, settings: Dict[str, Any]) -> tuple[LLMResponse, list]:
-        """Route to OpenAI agentic RAG or Ollama RAG based on settings."""
         provider = (settings.get("llm_provider") or "openai").lower()
         if provider == "ollama":
-            result = self._ollama_rag_response(query, settings)
+            result = self._rag_response(query, settings, provider="ollama", model=os.getenv("OLLAMA_MODEL", "llama3.2"))
             citations = []
             if result.used_tools:
                 for _name, payload in result.used_tools:
                     if isinstance(payload, list):
                         citations.extend(payload)
             return result, citations
-
+        if provider == "anthropic":
+            result = self._rag_response(query, settings, provider="anthropic", model=get_streamlit_anthropic_model())
+            citations = []
+            if result.used_tools:
+                for _name, payload in result.used_tools:
+                    if isinstance(payload, list):
+                        citations.extend(payload)
+            return result, citations
+        self._require_mygenassist()
         re_query = rewrite_query_with_context(query, self.chat_messages)
         result, out_citations = agentic_llm(
             query=re_query,
             settings=settings,
             chat_history=self.chat_messages,
             local=True,
+            model=get_streamlit_openai_model(),
         )
         return result, out_citations
 

@@ -113,3 +113,60 @@ def structured_chat_parse(
             raw = raw[4:].strip()
     data = json.loads(raw)
     return response_format.model_validate(data)
+
+from dataclasses import dataclass
+
+
+@dataclass
+class MyGenAssistChatResponse:
+    text: str
+    model: str
+    prompt_tokens: int = 0
+    completion_tokens: int = 0
+    total_tokens: int = 0
+
+
+def get_streamlit_openai_model() -> str:
+    return os.getenv("MYGENASSIST_STREAMLIT_OPENAI_MODEL", get_aux_model())
+
+
+def get_streamlit_anthropic_model() -> str:
+    return os.getenv("MYGENASSIST_STREAMLIT_ANTHROPIC_MODEL", "claude-opus-4-5")
+
+
+def mygenassist_chat(
+    prompt: str,
+    *,
+    system: Optional[str] = None,
+    model: Optional[str] = None,
+    temperature: float = 0.1,
+    max_tokens: Optional[int] = None,
+) -> MyGenAssistChatResponse:
+    if not use_mygenassist():
+        raise ValueError("MYGENASSIST_API_KEY is not set in .env")
+    client = get_llm_client()
+    messages: List[dict[str, Any]] = []
+    if system:
+        messages.append({"role": "system", "content": system})
+    messages.append({"role": "user", "content": prompt})
+    chosen_model = model or get_aux_model()
+    token_limit = max_tokens or min(get_max_tokens("MYGENASSIST_MAX_TOKENS", 8191), 2048)
+    resp = client.chat.completions.create(
+        model=chosen_model,
+        messages=messages,
+        temperature=temperature,
+        max_tokens=token_limit,
+    )
+    msg = resp.choices[0].message.content or ""
+    usage = getattr(resp, "usage", None)
+    prompt_tok = getattr(usage, "prompt_tokens", 0) if usage else 0
+    completion_tok = getattr(usage, "completion_tokens", 0) if usage else 0
+    total_tok = getattr(usage, "total_tokens", prompt_tok + completion_tok) if usage else 0
+    return MyGenAssistChatResponse(
+        text=msg.strip(),
+        model=chosen_model,
+        prompt_tokens=prompt_tok,
+        completion_tokens=completion_tok,
+        total_tokens=total_tok,
+    )
+
