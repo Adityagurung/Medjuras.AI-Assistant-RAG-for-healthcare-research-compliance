@@ -1,6 +1,7 @@
 """Streamlit chat backend via MyGenAssist or local Ollama."""
 from __future__ import annotations
 import os
+import time
 
 
 from typing import Any, Dict, List
@@ -14,6 +15,7 @@ from llm.mygenassist_client import (
 
 from llm.ollama_client import ollama_chat
 from llm.openai_client import LLMResponse, agentic_llm
+from monitoring import cost_utils
 from llm.query_rewriter import rewrite_query_with_context
 from llm.rag_utils import build_rag_context
 from search.hybrid_search import hybrid_search
@@ -33,7 +35,7 @@ class ChatAssistant:
 
     def _require_mygenassist(self) -> None:
         if not use_mygenassist():
-            raise ValueError("MYGENASSIST_API_KEY is required for cloud LLM providers. Set it in .env or choose Ollama (llama 3.2).")
+            raise ValueError("MYGENASSIST_API_KEY is required. Set it in .env.")
 
 
     def _rag_response(
@@ -108,7 +110,9 @@ class ChatAssistant:
             return {"answer": "Chat ended."}
 
         self.chat_messages.append({"role": "user", "content": question})
+        started = time.perf_counter()
         response, out_citations = self.query_llm(query=question, settings=settings)
+        elapsed = time.perf_counter() - started
         self.chat_messages.append(
             {"role": "assistant", "content": response.text, "citations": out_citations}
         )
@@ -116,6 +120,10 @@ class ChatAssistant:
             "answer": response.text,
             "model": response.model,
             "tokens": response.total_tokens,
+            "prompt_tokens": response.prompt_tokens,
+            "completion_tokens": response.completion_tokens,
+            "response_time_sec": round(elapsed, 2),
+            "estimated_cost_usd": cost_utils.estimate_llm_cost_usd(response.model, response.prompt_tokens, response.completion_tokens),
             "citations": out_citations,
             "used_tools": response.used_tools or [],
         }

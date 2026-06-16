@@ -2,7 +2,7 @@ import logging
 import uuid
 from typing import Optional
 
-from monitoring.database import db_connection
+from monitoring.database import db_connection, migrate_feedback_schema
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

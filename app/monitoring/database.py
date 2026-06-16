@@ -63,10 +63,17 @@ def create_feedback_table():
         message_id VARCHAR(255) NOT NULL UNIQUE,
         user_query TEXT NOT NULL,
         assistant_response TEXT NOT NULL,
-        feedback INTEGER NOT NULL CHECK (feedback IN (1, -1)),
+        feedback INTEGER NOT NULL DEFAULT 0 CHECK (feedback >= 0 AND feedback <= 5),
         user_type VARCHAR(50),
         response_detail VARCHAR(50),
         tool_used VARCHAR(100),
+        model VARCHAR(100),
+        prompt_tokens INTEGER DEFAULT 0,
+        completion_tokens INTEGER DEFAULT 0,
+        total_tokens INTEGER DEFAULT 0,
+        response_time_sec DOUBLE PRECISION DEFAULT 0,
+        estimated_cost_usd DOUBLE PRECISION DEFAULT 0,
+        llm_provider VARCHAR(50),
         timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         session_id VARCHAR(255)
     );
@@ -92,6 +99,7 @@ def create_feedback_table():
                     logger.info(f"Index created: {index_sql}")
 
                 conn.commit()
+                migrate_feedback_schema()
                 logger.info("Database schema setup completed")
 
     except psycopg2.Error as e:
@@ -173,3 +181,53 @@ def log_compliance_violation(violation_type, query_excerpt='', jurisdiction_hint
             conn.commit()
     except psycopg2.Error as e:
         logger.error('compliance log failed: %s', e)
+
+
+def migrate_feedback_schema():
+    alters = [
+        "ALTER TABLE conversation_feedback ADD COLUMN IF NOT EXISTS model VARCHAR(100)",
+        "ALTER TABLE conversation_feedback ADD COLUMN IF NOT EXISTS prompt_tokens INTEGER DEFAULT 0",
+        "ALTER TABLE conversation_feedback ADD COLUMN IF NOT EXISTS completion_tokens INTEGER DEFAULT 0",
+        "ALTER TABLE conversation_feedback ADD COLUMN IF NOT EXISTS total_tokens INTEGER DEFAULT 0",
+        "ALTER TABLE conversation_feedback ADD COLUMN IF NOT EXISTS response_time_sec DOUBLE PRECISION DEFAULT 0",
+        "ALTER TABLE conversation_feedback ADD COLUMN IF NOT EXISTS estimated_cost_usd DOUBLE PRECISION DEFAULT 0",
+        "ALTER TABLE conversation_feedback ADD COLUMN IF NOT EXISTS llm_provider VARCHAR(50)",
+    ]
+    try:
+        with db_connection() as conn:
+            with conn.cursor() as cursor:
+                for sql in alters:
+                    try:
+                        cursor.execute(sql)
+                    except psycopg2.Error:
+                        pass
+                try:
+                    cursor.execute("ALTER TABLE conversation_feedback ALTER COLUMN feedback SET DEFAULT 0")
+                except psycopg2.Error:
+                    pass
+                cursor.execute(
+                    """
+                    SELECT conname FROM pg_constraint
+                    WHERE conrelid = 'conversation_feedback'::regclass AND contype = 'c'
+                    """
+                )
+                for (cname,) in cursor.fetchall():
+                    try:
+                        cursor.execute(
+                            f"ALTER TABLE conversation_feedback DROP CONSTRAINT IF EXISTS {cname}"
+                        )
+                    except psycopg2.Error:
+                        pass
+                try:
+                    cursor.execute(
+                        """
+                        ALTER TABLE conversation_feedback
+                        ADD CONSTRAINT conversation_feedback_feedback_check
+                        CHECK (feedback >= 0 AND feedback <= 5)
+                        """
+                    )
+                except psycopg2.Error:
+                    pass
+            conn.commit()
+    except psycopg2.Error as e:
+        logger.warning("migrate_feedback_schema: %s", e)

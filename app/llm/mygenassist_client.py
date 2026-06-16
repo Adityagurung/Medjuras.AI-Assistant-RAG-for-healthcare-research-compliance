@@ -127,11 +127,11 @@ class MyGenAssistChatResponse:
 
 
 def get_streamlit_openai_model() -> str:
-    return os.getenv("MYGENASSIST_STREAMLIT_OPENAI_MODEL", get_aux_model())
+    return os.getenv("MYGENASSIST_STREAMLIT_OPENAI_MODEL", get_chat_model())
 
 
 def get_streamlit_anthropic_model() -> str:
-    return os.getenv("MYGENASSIST_STREAMLIT_ANTHROPIC_MODEL", "claude-opus-4-5")
+    return os.getenv("MYGENASSIST_STREAMLIT_ANTHROPIC_MODEL", "claude-sonnet-4-5")
 
 
 def mygenassist_chat(

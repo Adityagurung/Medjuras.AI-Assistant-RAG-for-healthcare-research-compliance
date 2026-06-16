@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import os
+from pathlib import Path
 
 from dotenv import load_dotenv
 from qdrant_client import QdrantClient
@@ -12,6 +13,42 @@ from search.search_utils import Hit
 
 load_dotenv()
 
+import certifi
+
+
+def _sanitize_ssl_env():
+    ca = certifi.where()
+    for key in ("SSL_CERT_FILE", "REQUESTS_CA_BUNDLE", "CORPORATE_CA_BUNDLE"):
+        candidate = os.getenv(key)
+        if candidate and Path(candidate).is_file():
+            try:
+                if "BEGIN CERTIFICATE" in Path(candidate).read_text(encoding="utf-8", errors="ignore"):
+                    ca = candidate
+                    break
+            except OSError:
+                pass
+    os.environ["SSL_CERT_FILE"] = ca
+    os.environ["REQUESTS_CA_BUNDLE"] = ca
+
+
+def _qdrant_verify(url):
+    if (url or "").lower().startswith("http://"):
+        return False
+    ca = certifi.where()
+    for key in ("SSL_CERT_FILE", "REQUESTS_CA_BUNDLE"):
+        candidate = os.getenv(key)
+        if candidate and Path(candidate).is_file():
+            try:
+                if "BEGIN CERTIFICATE" in Path(candidate).read_text(encoding="utf-8", errors="ignore"):
+                    ca = candidate
+                    break
+            except OSError:
+                pass
+    os.environ["SSL_CERT_FILE"] = ca
+    os.environ["REQUESTS_CA_BUNDLE"] = ca
+    return ca
+
+_sanitize_ssl_env()
 COLLECTION_NAME = os.getenv("QDRANT_COLLECTION", "medjuris")
 _QDRANT: QdrantClient | None = None
 
@@ -24,7 +61,7 @@ def get_qdrant_client(local: bool = False) -> QdrantClient:
             url = os.getenv("QDRANT_LOCAL_URL", "http://localhost:6333")
         else:
             url = os.getenv("QDRANT_URL", "http://qdrant:6333")
-        _QDRANT = QdrantClient(url, prefer_grpc=False, timeout=30, check_compatibility=False)
+        _QDRANT = QdrantClient(url, prefer_grpc=False, timeout=30, check_compatibility=False, verify=_qdrant_verify(url))
     return _QDRANT
 
 
