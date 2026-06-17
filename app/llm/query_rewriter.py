@@ -46,6 +46,13 @@ def rewrite_query_with_context(query: str, chat_history: list = None) -> str:
     Rewrite user query to be more specific, searchable, and medically precise.
     Includes query expansion, synonym handling, and intent clarification.
     """
+    if os.getenv("SKIP_QUERY_REWRITE", "").lower() in {"1", "true", "yes"}:
+        return query
+
+    turns = [m for m in (chat_history or []) if m.get("role") in {"user", "assistant"}]
+    if len(turns) <= 1:
+        return query
+
     # Build context from recent conversation
     recent_context = ""
     if chat_history:

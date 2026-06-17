@@ -14,7 +14,7 @@ from llm.mygenassist_client import (
 )
 
 from llm.ollama_client import ollama_chat
-from llm.openai_client import LLMResponse, agentic_llm
+from llm.openai_client import LLMResponse
 from monitoring import cost_utils
 from llm.query_rewriter import rewrite_query_with_context
 from llm.rag_utils import build_rag_context
@@ -32,6 +32,13 @@ class ChatAssistant:
         self.chat_messages: List[Dict[str, Any]] = [
             {"role": "developer", "content": self.developer_prompt}
         ]
+    def _load_chat_history(self, prior_messages=None) -> None:
+        self.chat_messages = [{"role": "developer", "content": self.developer_prompt}]
+        for msg in prior_messages or []:
+            if msg.get("role") in ("user", "assistant") and msg.get("content"):
+                self.chat_messages.append({"role": msg["role"], "content": msg["content"]})
+
+
 
     def _require_mygenassist(self) -> None:
         if not use_mygenassist():
@@ -93,23 +100,32 @@ class ChatAssistant:
                     if isinstance(payload, list):
                         citations.extend(payload)
             return result, citations
-        self._require_mygenassist()
-        re_query = rewrite_query_with_context(query, self.chat_messages)
-        result, out_citations = agentic_llm(
-            query=re_query,
-            settings=settings,
-            chat_history=self.chat_messages,
-            local=True,
+        result = self._rag_response(
+            query,
+            settings,
+            provider="openai",
             model=get_streamlit_openai_model(),
         )
-        return result, out_citations
+        citations = []
+        if result.used_tools:
+            for _name, payload in result.used_tools:
+                if isinstance(payload, list):
+                    citations.extend(payload)
+        return result, citations
 
-    def process_message(self, question: str, settings: Dict[str, Any]) -> Dict[str, Any]:
+    def process_message(
+        self,
+        question: str,
+        settings: Dict[str, Any],
+        prior_messages: List[Dict[str, Any]] | None = None,
+    ) -> Dict[str, Any]:
         """Handle one user turn and update chat history."""
         if question.strip().lower() == "stop":
             return {"answer": "Chat ended."}
 
-        self.chat_messages.append({"role": "user", "content": question})
+        self._load_chat_history(prior_messages)
+        if not self.chat_messages or self.chat_messages[-1].get("content") != question:
+            self.chat_messages.append({"role": "user", "content": question})
         started = time.perf_counter()
         response, out_citations = self.query_llm(query=question, settings=settings)
         elapsed = time.perf_counter() - started

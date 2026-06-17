@@ -1,17 +1,25 @@
 apiVersion: 1
 
+deleteDatasources:
+  - name: PostgreSQL
+    orgId: 1
+  - name: postgres
+    orgId: 1
+
 datasources:
   - name: PostgreSQL
     type: postgres
     uid: medjuras-pg
     access: proxy
     url: postgres:5432
-    user: ${POSTGRES_USER}
+    user: $POSTGRES_USER
     secureJsonData:
-      password: ${POSTGRES_PASSWORD}
+      password: $POSTGRES_PASSWORD
     jsonData:
-      database: ${POSTGRES_DB}
+      database: $POSTGRES_DB
       sslmode: disable
       postgresVersion: 1300
+      timescaledb: false
     isDefault: true
     editable: true
+    version: 1

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import os
+from concurrent.futures import ThreadPoolExecutor
 
 from dotenv import load_dotenv
 
@@ -33,8 +34,12 @@ def reciprocal_rank_fusion(
 
 def hybrid_search(query: str, top_k: int = 5, local: bool = True) -> list[Hit]:
     """Run dual retrieval and return hydrated Hit objects with rrf_score."""
-    dense = qdrant_ids(query, limit=50, local=local)
-    sparse = es_ids(query, limit=50, local=local)
+    retrieve_limit = int(os.getenv("HYBRID_RETRIEVE_LIMIT", "30"))
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        dense_future = pool.submit(qdrant_ids, query, retrieve_limit, local)
+        sparse_future = pool.submit(es_ids, query, retrieve_limit, local)
+        dense = dense_future.result()
+        sparse = sparse_future.result()
     fused_ids = reciprocal_rank_fusion(
         [(dense, WEIGHT_DENSE), (sparse, WEIGHT_SPARSE)],
         top_k=top_k,

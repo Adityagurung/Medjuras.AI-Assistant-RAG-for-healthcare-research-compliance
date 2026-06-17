@@ -61,6 +61,8 @@ class MedicalRAG_UI:
             st.session_state.conversation_id = str(uuid.uuid4())
         if "show_feedback_thanks" not in st.session_state:
             st.session_state.show_feedback_thanks = False
+        if "pending_response" not in st.session_state:
+            st.session_state.pending_response = None
 
     def _inject_ui_styles(self):
         if st.session_state.get("_ui_styles"):
@@ -228,13 +230,16 @@ class MedicalRAG_UI:
             main=True,
         )
 
-        # Display chat history
+        # Display chat history (includes the latest user question once queued)
         for msg in st.session_state.chat_messages:
             self.render_message(msg, settings)
 
-        # Promp User input
-        if prompt := st.chat_input("Ask a medical question..."):
-            self.handle_user_input(prompt, settings)
+        if st.session_state.pending_response:
+            self._complete_pending_response(settings)
+        elif prompt := st.chat_input("Ask a medical question..."):
+            st.session_state.chat_messages.append({"role": "user", "content": prompt})
+            st.session_state.pending_response = {"prompt": prompt}
+            st.rerun()
 
     def render_message(self, message, settings):
         role = message["role"]
@@ -273,23 +278,26 @@ class MedicalRAG_UI:
                 with st.expander(f"🔧 {message['tool_name']}"):
                     st.json(message["output"])
 
-    def handle_user_input(self, prompt, settings):
-        # Add user message to chat history above
-        user_msg = {"role": "user", "content": prompt}
-        st.session_state.chat_messages.append(user_msg)
+    def _complete_pending_response(self, settings):
+        pending = st.session_state.pending_response
+        if not pending:
+            return
 
-        # user_type = settings.get("user_type", "Healthcare Provider")
-        # response_detail = settings.get("response_detail")
-        # user_type = st.session_state.get('user_type', 'Healthcare Provider')
-        # override_detail = st.session_state.get('response_detail')
+        prompt = pending["prompt"]
+        prior_messages = [
+            m
+            for m in st.session_state.chat_messages
+            if m.get("role") in ("user", "assistant")
+        ]
 
-        # Get assistant response with current settings
-        with st.spinner("Thinking..."):
-            response = self.assistant.process_message(
-                question=prompt, settings=settings
-            )
+        with st.chat_message("assistant"):
+            with st.spinner("Retrieving context and generating answer..."):
+                response = self.assistant.process_message(
+                    question=prompt,
+                    settings=settings,
+                    prior_messages=prior_messages,
+                )
 
-        # Add assistant response with unique ID for feedback
         assistant_msg = {
             "role": "assistant",
             "content": response["answer"],
@@ -328,8 +336,8 @@ class MedicalRAG_UI:
             llm_provider=settings.get("llm_provider"),
         )
         st.session_state.chat_messages.append(assistant_msg)
+        st.session_state.pending_response = None
         st.rerun()
-
 
     def submit_star_feedback(self, message, stars, settings):
         ok = update_star_rating(
@@ -356,6 +364,7 @@ class MedicalRAG_UI:
     def reset_conversation(self):
         st.session_state.chat_messages = []
         st.session_state.conversation_id = str(uuid.uuid4())
+        st.session_state.pending_response = None
         st.rerun()
 
     def render(self):
