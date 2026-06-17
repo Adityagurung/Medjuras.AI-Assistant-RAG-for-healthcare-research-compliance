@@ -204,7 +204,7 @@
           "refId": "A"
         }
       ],
-      "title": "Avg response s",
+      "title": "Avg response",
       "type": "stat"
     },
     {
@@ -231,7 +231,7 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "SELECT \"timestamp\" AS Time, tool_used AS Tool, feedback AS Stars, model AS Model, llm_provider AS Provider, total_tokens AS Tokens, ROUND(estimated_cost_usd::numeric,4) AS CostUSD, ROUND(response_time_sec::numeric,2) AS ResponseSec FROM conversation_feedback WHERE \"timestamp\" BETWEEN $__timeFrom() AND $__timeTo() ORDER BY \"timestamp\" DESC LIMIT 5",
+          "rawSql": "SELECT \"timestamp\" AS Time, tool_used AS Tool, feedback AS Stars, model AS Model, llm_provider AS Provider, prompt_tokens AS PromptTokens, total_tokens AS Tokens, ROUND(estimated_cost_usd::numeric,4) AS CostUSD, ROUND(response_time_sec::numeric,2) AS ResponseSec FROM conversation_feedback WHERE \"timestamp\" BETWEEN $__timeFrom() AND $__timeTo() ORDER BY \"timestamp\" DESC LIMIT 5",
           "refId": "A"
         }
       ],
@@ -415,7 +415,7 @@
         "orientation": "vertical",
         "showValue": "auto",
         "xTickLabelRotation": 0,
-        "barWidth": 0.8,
+        "barWidth": 0.3,
         "legend": {
           "displayMode": "list",
           "placement": "bottom"
@@ -514,7 +514,7 @@
         "orientation": "vertical",
         "showValue": "auto",
         "xTickLabelRotation": 0,
-        "barWidth": 0.8,
+        "barWidth": 0.3,
         "legend": {
           "displayMode": "list",
           "placement": "bottom"

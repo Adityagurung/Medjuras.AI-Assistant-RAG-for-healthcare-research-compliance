@@ -1,7 +1,5 @@
 # MedJuras.AI - Your Medical Research Assistant
 
-Your browser does not support the video tag.
-
 *Demo video — to be uploaded*
 
 ## Table of Contents
@@ -117,8 +115,7 @@ Our technology stack combines cutting-edge AI/ML tools with robust infrastructur
 - **VS Code**: IDE with Docker and Python extensions
 
 ## End to End Advanced RAG Flow
-
-End-to-end advanced RAG pipeline
+![alt text](images/rag-flow-e2e.png)
 
 ### 1. **Data Ingestion**
 
@@ -318,6 +315,7 @@ python app/test_system.py
 - URL: [http://localhost:6333/dashboard](http://localhost:6333/dashboard)
 - Collection: medjuris
 - Management interface for vector operations
+![alt text](images/qdrant_collection.png)
 
 ### Step 6: Run Evaluations
 
@@ -372,7 +370,7 @@ Complete RAG pipeline with dual knowledge bases and LLM:
 ### Retrieval Evaluation
 
 Multiple retrieval approaches evaluated with quantitative metrics:
-alt text
+![alt text](results/images/retrieval_eval_comparison.png)
 
 **Evaluation Results:**
 
@@ -394,8 +392,8 @@ alt text
 - **Visualization**: `notebooks/notebooks/5_hybrid_search_evaluation_qdrant.ipynb`
 
 ### RAG Evaluation — LLM-as-Judge
+![alt text](results/images/agentic_approach_comparison.png)
 
-alt text
 Comprehensive quality assessment with 11 criteria:
 
 **Evaluation Framework:**
@@ -467,6 +465,8 @@ Comprehensive monitoring with PostgreSQL + Grafana:
 - **Query Analytics**: Popular queries, failure patterns
 - **System Health**: Service availability and latency
 
+![alt text](images/grafana_dashboard_1.png)
+![alt text](images/grafana_dashboard_2.png)
 **Grafana Dashboard Charts:**
 
 1. Recent Conversations Table
