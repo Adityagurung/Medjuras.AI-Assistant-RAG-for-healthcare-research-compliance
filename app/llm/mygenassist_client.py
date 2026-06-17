@@ -13,7 +13,7 @@ from pydantic import BaseModel
 T = TypeVar("T", bound=BaseModel)
 
 DEFAULT_BASE_URL = "https://chat.int.bayer.com/api/v2"
-DEFAULT_CHAT_MODEL = "gpt-oss-120b"
+DEFAULT_CHAT_MODEL = "gpt-5.1"
 DEFAULT_AUX_MODEL = "gpt-5.1"
 DEFAULT_EMBEDDING_MODEL = "text-embedding-3-small"
 

@@ -98,7 +98,7 @@ class MedicalRAG_UI:
                 line-height: 1.15;
                 color: rgb(49, 51, 63);
             }
-            .brand-caption {
+            [data-testid="stChatMessageContent"] .stMarkdown, [data-testid="stChatMessageContent"] .stMarkdown p, [data-testid="stChatMessageContent"] .stMarkdown li { font-size: 1rem !important; line-height: 1.6 !important; } [data-testid="stChatMessageContent"] .stMarkdown h1 { font-size: 1.35rem !important; } [data-testid="stChatMessageContent"] .stMarkdown h2 { font-size: 1.2rem !important; } [data-testid="stChatMessageContent"] .stMarkdown h3, [data-testid="stChatMessageContent"] .stMarkdown h4 { font-size: 1.05rem !important; } div[data-testid="stSpinner"] label, div[data-testid="stSpinner"] p, div[data-testid="stSpinner"] span { font-size: 1rem !important; } .brand-caption {
                 font-size: 0.875rem;
                 color: rgb(128, 132, 149);
                 margin: 0.15rem 0 0 0;
@@ -156,7 +156,7 @@ class MedicalRAG_UI:
                     ["openai", "anthropic"],
                     index=0,
                     format_func=lambda x: {
-                        "openai": "ChatGPT GPT-OSS-120B",
+                        "openai": "ChatGPT GPT-5.1",
                         "anthropic": "Claude Sonnet 4.5",
                     }[x],
                 )

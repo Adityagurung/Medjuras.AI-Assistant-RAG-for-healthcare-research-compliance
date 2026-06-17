@@ -14,7 +14,6 @@ from evaluation.results_utils import results_images_dir
 PathLike = Union[str, Path]
 
 MODEL_COLORS = {
-    "gpt-oss-120b": "#e07a7a",
     "gpt-5.1": "#7ec8e3",
     "ollama": "#8fd19e",
 }

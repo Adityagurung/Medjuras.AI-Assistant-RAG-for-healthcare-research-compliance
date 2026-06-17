@@ -2,7 +2,7 @@ from __future__ import annotations
 
 # USD per 1M tokens (input, output)
 _MODEL_COST_PER_1M: dict[str, tuple[float, float]] = {
-    "gpt-oss-120b": (0.15, 0.60),
+    "gpt-5.1": (2.50, 10.00),
     "claude-sonnet-4-5": (3.00, 15.00),
 }
 
