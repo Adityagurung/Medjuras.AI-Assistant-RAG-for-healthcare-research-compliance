@@ -32,7 +32,14 @@
           "calcs": [
             "lastNotNull"
           ]
-        }
+        },
+        "text": {
+          "titleSize": 14,
+          "valueSize": 32
+        },
+        "graphMode": "none",
+        "textMode": "value",
+        "justifyMode": "center"
       },
       "fieldConfig": {
         "defaults": {
@@ -74,7 +81,14 @@
           "calcs": [
             "lastNotNull"
           ]
-        }
+        },
+        "text": {
+          "titleSize": 14,
+          "valueSize": 32
+        },
+        "graphMode": "none",
+        "textMode": "value",
+        "justifyMode": "center"
       },
       "fieldConfig": {
         "defaults": {
@@ -115,7 +129,14 @@
           "calcs": [
             "lastNotNull"
           ]
-        }
+        },
+        "text": {
+          "titleSize": 14,
+          "valueSize": 32
+        },
+        "graphMode": "none",
+        "textMode": "value",
+        "justifyMode": "center"
       },
       "fieldConfig": {
         "defaults": {
@@ -156,7 +177,14 @@
           "calcs": [
             "lastNotNull"
           ]
-        }
+        },
+        "text": {
+          "titleSize": 14,
+          "valueSize": 32
+        },
+        "graphMode": "none",
+        "textMode": "value",
+        "justifyMode": "center"
       },
       "fieldConfig": {
         "defaults": {
@@ -333,7 +361,12 @@
           ]
         },
         "graphMode": "none",
-        "textMode": "value_and_name"
+        "textMode": "value_and_name",
+        "text": {
+          "titleSize": 14,
+          "valueSize": 32
+        },
+        "justifyMode": "center"
       },
       "fieldConfig": {
         "defaults": {
@@ -367,7 +400,7 @@
         "y": 21
       },
       "id": 12,
-      "type": "timeseries",
+      "type": "barchart",
       "title": "Daily total tokens",
       "description": "Sum of tokens per calendar day (IST).",
       "timeFrom": "now-30d",
@@ -379,6 +412,10 @@
         }
       },
       "options": {
+        "orientation": "vertical",
+        "showValue": "auto",
+        "xTickLabelRotation": 0,
+        "barWidth": 0.8,
         "legend": {
           "displayMode": "list",
           "placement": "bottom"
@@ -391,10 +428,10 @@
             "uid": "medjuras-pg"
           },
           "editorMode": "code",
-          "format": "time_series",
+          "format": "table",
           "rawQuery": true,
           "refId": "A",
-          "rawSql": "SELECT date_trunc('day', \"timestamp\") AS time, SUM(total_tokens) AS daily_tokens FROM conversation_feedback WHERE \"timestamp\" BETWEEN $__timeFrom() AND $__timeTo() GROUP BY 1 ORDER BY 1"
+          "rawSql": "SELECT date_trunc('day', \"timestamp\")::date AS day, SUM(total_tokens) AS \"Daily tokens\" FROM conversation_feedback WHERE \"timestamp\" BETWEEN $__timeFrom() AND $__timeTo() GROUP BY 1 ORDER BY 1"
         }
       ]
     },
@@ -423,7 +460,12 @@
           ]
         },
         "graphMode": "none",
-        "textMode": "value_and_name"
+        "textMode": "value_and_name",
+        "text": {
+          "titleSize": 14,
+          "valueSize": 32
+        },
+        "justifyMode": "center"
       },
       "fieldConfig": {
         "defaults": {
@@ -457,7 +499,7 @@
         "y": 21
       },
       "id": 13,
-      "type": "timeseries",
+      "type": "barchart",
       "title": "Daily total cost",
       "description": "Sum of estimated cost per calendar day USD (IST).",
       "timeFrom": "now-30d",
@@ -469,6 +511,10 @@
         }
       },
       "options": {
+        "orientation": "vertical",
+        "showValue": "auto",
+        "xTickLabelRotation": 0,
+        "barWidth": 0.8,
         "legend": {
           "displayMode": "list",
           "placement": "bottom"
@@ -481,10 +527,10 @@
             "uid": "medjuras-pg"
           },
           "editorMode": "code",
-          "format": "time_series",
+          "format": "table",
           "rawQuery": true,
           "refId": "A",
-          "rawSql": "SELECT date_trunc('day', \"timestamp\") AS time, ROUND(SUM(estimated_cost_usd)::numeric, 4) AS daily_cost FROM conversation_feedback WHERE \"timestamp\" BETWEEN $__timeFrom() AND $__timeTo() AND estimated_cost_usd > 0 GROUP BY 1 ORDER BY 1"
+          "rawSql": "SELECT date_trunc('day', \"timestamp\")::date AS day, ROUND(SUM(estimated_cost_usd)::numeric, 4) AS \"Daily cost USD\" FROM conversation_feedback WHERE \"timestamp\" BETWEEN $__timeFrom() AND $__timeTo() AND estimated_cost_usd > 0 GROUP BY 1 ORDER BY 1"
         }
       ]
     },
@@ -523,5 +569,5 @@
     }
   ],
   "id": null,
-  "version": 6
+  "version": 7
 }
