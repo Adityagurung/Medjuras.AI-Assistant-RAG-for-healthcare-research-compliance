@@ -420,6 +420,7 @@ Comprehensive quality assessment with 11 criteria:
 ### Interface
 
 Streamlit provides the main user interface with role-based customization:
+![alt text](images/streamlit_page.png)
 
 **Interface Features:**
 
