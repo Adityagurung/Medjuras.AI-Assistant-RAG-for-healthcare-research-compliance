@@ -626,17 +626,6 @@ for doc in results:
     print(f"Text: {doc['text'][:200]}...")
     print("---")
 ```
-
-### Agent with Tools (Notebook 08)
-
-```python
-# Run agent demo with ClinicalTrials.eu and PubMed
-jupyter notebook notebooks/08_agent_demo.ipynb
-
-# Agent automatically selects tools based on query
-# Example: "Find recent clinical trials for cardiovascular drugs"
-```
-
 ## Monitoring & Feedback
 
 ### PostgreSQL Schema
@@ -659,7 +648,7 @@ CREATE TABLE conversation_feedback (
 
 ```bash
 # URL: http://localhost:3010
-# Login: admin / (from .env GRAFANA_ADMIN_PASSWORD)
+# Login: your-username / (from .env GRAFANA_ADMIN_PASSWORD)
 
 # Pre-configured dashboards:
 # - Query volume and latency
@@ -687,7 +676,7 @@ CREATE TABLE conversation_feedback (
 
 ⚠️ **IMPORTANT NOTICE**
 
-This is an **educational prototype** for demonstration and research purposes only.
+This is an **educational prototype** for demonstration and educational purposes only.
 
 - **NOT a Medical Device**: Not cleared or approved by any regulatory authority
 - **NOT Medical Advice**: Consult qualified healthcare professionals for medical decisions
@@ -725,7 +714,6 @@ limitations under the License.
 
 **Built with ❤️ by Aditya Gurung** 
 
-*For questions, issues, or contributions, please visit the [GitHub repository](https://github.com/aditya-gurung-bayer/Medjuras.AI-Assistant-RAG-for-healthcare-research-compliance).*
+*For questions, issues, or contributions, please write to <aditya.gurung03@outlook.com>*
 
 ---
-
