@@ -114,8 +114,8 @@ Our technology stack combines cutting-edge AI/ML tools with robust infrastructur
 - **Pytest**: Unit and integration testing
 - **VS Code**: IDE with Docker and Python extensions
 
-## End to End Advanced RAG Flow
-![alt text](images/rag-flow-e2e.png)
+## Advanced RAG Flow
+![alt text](images/Agentic_RAG.png)
 
 ### 1. **Data Ingestion**
 
