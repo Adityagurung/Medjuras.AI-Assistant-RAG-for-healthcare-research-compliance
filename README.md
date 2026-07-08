@@ -20,7 +20,7 @@
 **Key Features:**
 
 - **Dual-Index Hybrid Search**: Combines Elasticsearch (BM25 + dense vectors) and Qdrant vector database with Reciprocal Rank Fusion (RRF)
-- **Multi-Source Knowledge Base**: MedRAG textbooks, PubMed abstracts, EU regulatory PDFs, and Wikipedia medical articles
+- **Multi-Source Knowledge Base**: MedRAG textbooks, PubMed abstracts and Wikipedia medical articles
 - **User-Adaptive Interface**: Tailored responses for Medical Researchers, Healthcare Providers, and Patients
 - **Comprehensive Evaluation**: Retrieval metrics (Hit@K, MRR, nDCG) and LLM-as-Judge with 11 quality criteria
 - **Real-time Monitoring**: Grafana dashboard with PostgreSQL feedback collection
@@ -444,7 +444,6 @@ Streamlit provides the main user interface with role-based customization:
 
 1. **Data Acquisition**:
   - Local MedRAG JSON ingest (textbooks, PubMed)
-  - EU regulatory PDF collection
   - **Notebook**: `1_ingest_medrag.ipynb`
 2. **Normalization**:
   - Unified schema across all sources
