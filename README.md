@@ -310,6 +310,11 @@ python app/test_system.py
 - Index: medical_docs
 - API: REST API for direct queries
 
+**PgAdmin:**
+
+- URL: [http://localhost:5050](...)
+- Database for table conversation_feedback
+
 **Qdrant Vector Database:**
 
 - URL: [http://localhost:6333/dashboard](http://localhost:6333/dashboard)
@@ -636,7 +641,7 @@ CREATE TABLE conversation_feedback (
     conversation_id UUID,
     query TEXT,
     response TEXT,
-    feedback INTEGER,  -- 1 for positive, -1 for negative
+    feedback INTEGER,
     response_time FLOAT,
     tokens_used INTEGER,
     model VARCHAR(50),
