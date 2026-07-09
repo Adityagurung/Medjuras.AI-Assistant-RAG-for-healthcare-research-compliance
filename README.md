@@ -586,12 +586,6 @@ Production deployment considerations:
   - Load balancer for Streamlit
 - Kubernetes/Helm charts: Planned for future
 
-## Project Structure
-
-```
-[placeholder]
-```
-
 ## Usage Examples
 
 ### Streamlit Chat Interface
