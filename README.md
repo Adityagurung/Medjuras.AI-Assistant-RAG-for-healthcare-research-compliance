@@ -1,9 +1,6 @@
 # MedJuras.AI - Your Medical Research Assistant
-
-*Demo video — to be uploaded*
-
+![demo.gif](images/demo.gif)
 ## Table of Contents
-
 - [Project Overview](#project-overview)
 - [Problem Statement](#problem-statement)
 - [Data Sources](#data-sources)
@@ -470,8 +467,8 @@ Comprehensive monitoring with PostgreSQL + Grafana:
 - **Query Analytics**: Popular queries, failure patterns
 - **System Health**: Service availability and latency
 
-![alt text](images/grafana_dashboard_1.png)
-![alt text](images/grafana_dashboard_2.png)
+![grafana_dashboard1.png](images/grafana_dashboard1.png)
+![grafana_dashboard2.png](images/grafana_dashboard2.png)
 **Grafana Dashboard Charts:**
 
 1. Recent Conversations Table
